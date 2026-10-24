@@ -1,0 +1,45 @@
+name: Refresh CoinScope symbol cache
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 0'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch TradingView symbols
+        run: python backend/build_symbol_cache.py --output docs/symbols-cache.next.js
+      - name: Validate before publishing
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          def read(path):
+              return json.loads(pathlib.Path(path).read_text().split('=',1)[1].strip().rstrip(';'))
+          old = read('docs/symbols-cache.js')
+          new = read('docs/symbols-cache.next.js')
+          if new['itemCount'] < max(500, int(old['itemCount'] * .7)):
+              raise SystemExit('Refusing to publish an unexpectedly small symbol cache')
+          print('Cache verified:', new['itemCount'], 'items')
+          PY
+          mv docs/symbols-cache.next.js docs/symbols-cache.js
+      - name: Commit cache update if changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/symbols-cache.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh symbol cache'
+            git push
+          fi

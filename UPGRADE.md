@@ -1,24 +1,33 @@
-# CoinScope 2.0 업데이트 방법
+# CoinScope 2.1 업데이트 안내
 
-## GitHub 저장소에 적용
+**기존 GitHub 저장소를 보존하면서 업데이트합니다.** `CoinScope-v3-update.zip`은 변경한 파일만 담았습니다. 이미 연결한 `docs/config.js`, `docs/symbols-cache.js` 및 Git 이력은 덮어쓰지 않습니다.
 
-1. 기존 `haksu-kim/CoinScope` 저장소를 clone한 폴더로 이동합니다. `.git` 폴더가 보존된 상태여야 합니다.
-2. 백업 브랜치를 생성합니다: `git branch backup/before-ui-v2` (중복 이름이라면 생략).
-3. `CoinScope-v2-update.zip`을 **저장소 루트**에서 압축 해제합니다. 예: `unzip -o ~/Downloads/CoinScope-v2-update.zip -d .`
-4. `docs/index.html`, `docs/styles.css`, `docs/app.js`가 교체됩니다. `docs/config.js`, `docs/symbols-cache.js`, `backend`는 그대로 둡니다.
-5. 검사: `node --check docs/app.js`, `git diff --stat`
-6. `git add docs/index.html docs/styles.css docs/app.js`, `git commit -m "feat: redesign CoinScope responsive trading workspace"`, `git push origin main`
-7. GitHub Pages 설정이 `main` / `/docs`라면 자동 배포됩니다.
+## 적용
 
-## 새 UI
+```bash
+cd ~/Documents/git_local/coinscope
+git status -sb
+git switch main
+git pull --ff-only
+# 업데이트 전 백업 브랜치를 선택적으로 생성
+git branch backup/pre-coinscope-v3
+unzip -o ~/Downloads/CoinScope-v3-update.zip -d .
+node --check docs/app.js
+python3 -m py_compile backend/server.py
+git add -A
+git commit -m "feat: upgrade CoinScope search and responsive workspace"
+git push origin main
+```
 
-- PC: 사이드바에서 차트를 선택하고 자동/1열/2열/3열 배치로 변경할 수 있습니다.
-- 모바일: 종목 탭과 양옆 화살표로 차트를 변경합니다. 기본적으로 현재 차트만 불러옵니다.
-- 각 차트 우측의 돋보기로 종목을 변경하고 확대 버튼으로 차트를 크게 볼 수 있습니다.
-- 차트 관리에서 차트별 봉 주기를 조정하고, 모바일에서도 위/아래 버튼으로 순서를 변경할 수 있습니다.
+## 확인
 
-Render 배포는 필수가 아닙니다. 차트는 TradingView 스크립트에 의존하며, 종목 검색은 기존 브라우저 캐시나 외부 API 접근 가능 여부에 따라 일부 차이가 있습니다.
+1. GitHub Pages 주소에서 3개 기본 차트가 표시되는지 확인합니다.
+2. **차트 관리 → 종목 검색**에서 `BTC` 검색 시 Binance가 앞쪽에 나오는지 확인합니다.
+3. 선호 거래소를 Bybit로 바꾸고 같은 검색에서 Bybit가 먼저 표시되는지 확인합니다.
+4. 종목 옆 ☆를 눌러 즐겨찾기가 유지되는지 확인합니다.
+5. 상단 **새 작업 공간**을 만들고 차트를 추가한 뒤 다른 작업 공간으로 전환해 봅니다.
+6. 모바일에서 한 차트만 크게 보이며 이전/다음 전환이 가능한지 확인합니다.
+7. `<https://coinscope-api-zhel.onrender.com/health>`에서 API 응답을 확인합니다.
+8. Render 자동 배포가 꺼져 있다면 새 커밋으로 수동 재배포합니다.
 
-## 검증
-
-Chromium 기반 오프라인 UI 검사(TradingView 위젯은 테스트용 모의 객체)를 다음에서 통과했습니다: 데스크톱 1440×900, 태블릿 800×1000, 모바일 390×844, 작은 모바일 320×640, 모바일 가로 844×390. 실제 TradingView CDN 연동과 외부 거래소 API 응답은 GitHub Pages 배포 후 브라우저에서 별도 확인해야 합니다.
+**참고:** 서버의 변경은 실시간 종목 검색 결과 정렬을 안정화합니다. API가 작동하지 않는 경우에도 저장 목록 검색은 사용할 수 있습니다. 브라우저/OS/네트워크에 따라 TradingView 위젯 화면은 달라질 수 있습니다.

@@ -237,10 +237,28 @@ def tradingview_symbol_search(text, exchange="", limit=40):
                     continue
                 seen.add(result["symbol"])
                 results.append(result)
-                if len(results) >= limit:
-                    SEARCH_CACHE[cache_key] = {"time": now, "items": results}
-                    return results
+    # Sort after collecting all search types. Otherwise the first completed
+    # upstream request determines which exchanges appear in a capped result.
+    priority = {"BINANCE": 0, "BYBIT": 1, "OKX": 2, "GATEIO": 3,
+                "BITGET": 4, "MEXC": 5, "KUCOIN": 6}
+    cleaned = "".join(text.upper().replace("/", "").split())
 
+    def rank(item):
+        pair = item["symbol"].split(":", 1)[-1].upper()
+        title = item.get("title", "").upper()
+        if pair == cleaned or title == cleaned:
+            match = 0
+        elif pair.startswith(cleaned) or title.startswith(cleaned):
+            match = 1
+        elif cleaned in pair or cleaned in title:
+            match = 2
+        else:
+            match = 3
+        exch = normalize_exchange_id(item["symbol"].split(":", 1)[0])
+        return (match, priority.get(exch, 99), item["symbol"])
+
+    results.sort(key=rank)
+    results = results[:limit]
     SEARCH_CACHE[cache_key] = {"time": now, "items": results}
     return results
 

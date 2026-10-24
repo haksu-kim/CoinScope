@@ -6,12 +6,11 @@
     <meta name="theme-color" content="#0a101a" />
     <meta name="description" content="CoinScope — 모바일에서도 편리한 멀티 차트 트레이딩 워크스페이스" />
     <title>CoinScope | Trading Workspace</title>
-    <link rel="stylesheet" href="./styles.css?v=20261024-2" />
+    <link rel="stylesheet" href="./styles.css?v=20261024-3" />
     <script src="https://s3.tradingview.com/tv.js" defer></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="./config.js?v=20261024-2" defer></script>
-    <script src="./symbols-cache.js?v=20261024-2" defer></script>
-    <script src="./app.js?v=20261024-2" defer></script>
+    <script src="https://unpkg.com/lucide@0.456.0/dist/umd/lucide.min.js" defer></script>
+    <script src="./config.js?v=20261024-3" defer></script>
+    <script src="./app.js?v=20261024-3" defer></script>
   </head>
   <body>
     <main class="app-shell">
@@ -25,12 +24,19 @@
             </div>
           </div>
           <div class="header-meta">
-            <span class="header-connection"><span class="connection-dot" aria-hidden="true"></span>TradingView Charts</span>
+            <span class="header-connection" id="connectionStatus" role="status" aria-live="polite"><span class="connection-dot" aria-hidden="true"></span><span id="connectionText">차트 연결 중</span></span>
             <span class="header-divider" aria-hidden="true"></span>
             <span class="header-label"><i data-lucide="hard-drive-download"></i> 이 브라우저에 설정 저장</span>
           </div>
         </div>
 
+        <div class="workspace-profiles" aria-label="저장된 작업 공간">
+          <label for="workspaceSelect">작업 공간</label>
+          <select id="workspaceSelect" aria-label="작업 공간 선택"></select>
+          <button id="newWorkspaceButton" type="button" aria-label="새 작업 공간 만들기" title="새 작업 공간"><i data-lucide="plus"></i></button>
+          <button id="renameWorkspaceButton" type="button" aria-label="작업 공간 이름 변경" title="이름 변경"><i data-lucide="pencil"></i></button>
+          <button id="deleteWorkspaceButton" type="button" aria-label="작업 공간 삭제" title="작업 공간 삭제"><i data-lucide="trash-2"></i></button>
+        </div>
         <form id="chartForm" class="controls" autocomplete="off">
           <section class="chart-manager-field" aria-label="차트 관리">
             <span class="field-label">워크스페이스</span>
@@ -94,6 +100,26 @@
             <p>차트 제목 옆 검색 버튼으로 종목을 변경할 수 있습니다.</p>
           </div>
 
+          <section class="symbol-search-section" aria-label="통합 종목 검색">
+            <label class="symbol-search-label" for="symbolSearchInput">종목 검색 및 추가</label>
+            <input id="symbolSearchInput" type="search" placeholder="BTC, ETH, NAS100, AAPL…" autocomplete="off" spellcheck="false" />
+            <div class="search-preferences">
+              <label>선호 거래소
+                <select id="preferredExchangeSelect" aria-label="선호 거래소"></select>
+              </label>
+              <label>정렬
+                <select id="searchSortSelect" aria-label="검색 결과 정렬">
+                  <option value="relevance">관련도순</option>
+                  <option value="exchange">거래소순</option>
+                  <option value="name">종목명순</option>
+                </select>
+              </label>
+              <label class="favorite-only-label"><input type="checkbox" id="favoriteOnlyToggle" /> 즐겨찾기만</label>
+            </div>
+            <div class="exchange-filter" aria-label="거래소 필터"></div>
+            <div id="symbolResults" class="symbol-results" aria-live="polite"></div>
+          </section>
+          <div class="chart-list-heading"><strong>현재 차트</strong><span>드래그하거나 화살표로 순서 변경</span></div>
           <div id="chartManagerList" class="chart-manager-list"></div>
         </div>
       </section>
@@ -121,6 +147,8 @@
             <button id="sidebarAddChart" class="sidebar-add" type="button" title="차트 추가" aria-label="차트 추가"><i data-lucide="plus"></i></button>
           </div>
           <nav id="sidebarChartList" class="sidebar-chart-list" aria-label="추가한 차트"></nav>
+          <div class="sidebar-favorites-heading">즐겨찾기 <span id="favoriteCount">0</span></div>
+          <nav id="favoriteSymbolList" class="sidebar-favorites" aria-label="즐겨찾기 종목"></nav>
           <div class="sidebar-help">
             <i data-lucide="info"></i>
             <p>차트를 선택하거나 차트 상단 검색 버튼으로 종목을 변경하세요.</p>
@@ -130,7 +158,7 @@
         <div class="workspace-main">
           <div class="workspace-heading">
             <div class="workspace-heading-text">
-              <span class="workspace-eyebrow">MARKET OVERVIEW <span class="eyebrow-separator">/</span> WORKSPACE 01</span>
+              <span class="workspace-eyebrow">MARKET OVERVIEW <span class="eyebrow-separator">/</span> <span id="activeWorkspaceName">기본 작업 공간</span></span>
               <h2>차트 워크스페이스 <span id="workspaceChartCount">3개 차트</span></h2>
             </div>
             <div class="layout-controls" role="group" aria-label="데스크톱 차트 열 수">

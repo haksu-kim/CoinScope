@@ -12,6 +12,10 @@ const LEGACY_DEFAULT_SYMBOLS = ["GATEIO:ETHUSDT.P", "BYBIT:ETHUSDT.P"];
 const DEFAULT_INDICATORS = ["pivot"];
 const DEFAULT_INTERVAL = "60";
 const STORE_KEY = "coinScope.profile.v2";
+const WORKSPACES_KEY = "coinScope.workspaces.v3";
+const SEARCH_PREFS_KEY = "coinScope.searchPrefs.v1";
+const SEARCH_TIMEOUT_MS = 6500;
+const SYMBOL_CACHE_URL = "./symbols-cache.js?v=20261024-3";
 const LEGACY_STORE_KEYS = ["pivotMultiCharts.profile.v1"];
 const MAX_SYMBOLS = 9;
 const SYMBOL_SEARCH_LIMIT = 80;
@@ -39,10 +43,10 @@ const INTERVALS = [
   { value: "D", label: "1D" },
 ];
 const SEARCH_EXCHANGES = [
-  { id: "GATEIO", label: "Gate.io" },
-  { id: "BYBIT", label: "Bybit" },
   { id: "BINANCE", label: "Binance" },
+  { id: "BYBIT", label: "Bybit" },
   { id: "OKX", label: "OKX" },
+  { id: "GATEIO", label: "Gate.io" },
   { id: "BITGET", label: "Bitget" },
   { id: "MEXC", label: "MEXC" },
   { id: "KUCOIN", label: "KuCoin" },
@@ -171,6 +175,12 @@ const state = {
   activeChartSymbol: DEFAULT_SYMBOLS[0],
   indicators: DEFAULT_INDICATORS,
   searchExchange: "ALL",
+  preferredExchange: "BINANCE",
+  searchSort: "relevance",
+  favoritesOnly: false,
+  favorites: [],
+  workspaces: [],
+  currentWorkspaceId: "default",
 };
 let localApiAvailable = null;
 let symbolSearchRunId = 0;
@@ -180,6 +190,9 @@ let symbolSearchController = null;
 let chartQuickSearchTimer = null;
 let cachedSymbolResults = [];
 let symbolCacheAvailable = false;
+let symbolCacheLoadPromise = null;
+let activeSearchResults = [];
+let searchRefreshId = 0;
 
 const els = {
   form: document.querySelector("#chartForm"),
@@ -195,6 +208,18 @@ const els = {
   chartManagerList: document.querySelector("#chartManagerList"),
   chartCountText: document.querySelector("#chartCountText"),
   exchangeFilter: document.querySelector(".exchange-filter"),
+  preferredExchange: document.querySelector("#preferredExchangeSelect"),
+  searchSort: document.querySelector("#searchSortSelect"),
+  favoritesOnly: document.querySelector("#favoriteOnlyToggle"),
+  workspaceSelect: document.querySelector("#workspaceSelect"),
+  activeWorkspaceName: document.querySelector("#activeWorkspaceName"),
+  newWorkspace: document.querySelector("#newWorkspaceButton"),
+  renameWorkspace: document.querySelector("#renameWorkspaceButton"),
+  deleteWorkspace: document.querySelector("#deleteWorkspaceButton"),
+  favoriteList: document.querySelector("#favoriteSymbolList"),
+  favoriteCount: document.querySelector("#favoriteCount"),
+  connectionStatus: document.querySelector("#connectionStatus"),
+  connectionText: document.querySelector("#connectionText"),
   interval: document.querySelector("#intervalSelect"),
   horizontalToggle: document.querySelector("#horizontalToggle"),
   openIndicator: document.querySelector("#openIndicatorButton"),
@@ -214,7 +239,7 @@ const els = {
 };
 const mobileMedia = window.matchMedia("(max-width: 767px), (pointer: coarse) and (max-width: 1024px)");
 
-function loadProfile() {
+function loadLegacyProfile() {
   try {
     const raw = localStorage.getItem(STORE_KEY) || legacyProfileRaw();
     if (!raw) return;
@@ -255,15 +280,139 @@ function profileSnapshot() {
     horizontal: state.horizontal,
     indicators: state.indicators,
     layout: state.layout,
+    activeChartSymbol: state.activeChartSymbol,
   };
 }
 
 function persistProfile() {
   try {
-    localStorage.setItem(STORE_KEY, JSON.stringify(profileSnapshot()));
+    const snapshot = profileSnapshot();
+    localStorage.setItem(STORE_KEY, JSON.stringify(snapshot));
+    const active = state.workspaces.find((item) => item.id === state.currentWorkspaceId);
+    if (active) {
+      active.profile = snapshot;
+      saveWorkspaces();
+    }
   } catch {
-    // Some private browsing or locked-down browser contexts can block local storage.
+    // Private browsing may block localStorage. The app remains usable in memory.
   }
+}
+
+function loadSearchPrefs() {
+  try {
+    const prefs = JSON.parse(localStorage.getItem(SEARCH_PREFS_KEY) || "{}");
+    if (SEARCH_EXCHANGES.some((item) => item.id === prefs.preferredExchange)) state.preferredExchange = prefs.preferredExchange;
+    if (["relevance", "exchange", "name"].includes(prefs.searchSort)) state.searchSort = prefs.searchSort;
+    state.favorites = [...new Set((Array.isArray(prefs.favorites) ? prefs.favorites : []).map(String))].slice(0, 100);
+  } catch { /* defaults */ }
+}
+
+function persistSearchPrefs() {
+  try {
+    localStorage.setItem(SEARCH_PREFS_KEY, JSON.stringify({
+      preferredExchange: state.preferredExchange, searchSort: state.searchSort, favorites: state.favorites,
+    }));
+  } catch { /* private browsing */ }
+}
+
+function saveWorkspaces() {
+  try {
+    localStorage.setItem(WORKSPACES_KEY, JSON.stringify({
+      selected: state.currentWorkspaceId, items: state.workspaces,
+    }));
+  } catch { /* private browsing */ }
+}
+
+function applyWorkspaceProfile(profile) {
+  const symbols = normalizeSymbols(profile?.symbols || DEFAULT_SYMBOLS);
+  state.symbols = symbols;
+  state.interval = normalizeInterval(profile?.interval || DEFAULT_INTERVAL);
+  state.intervals = normalizeChartIntervals(profile?.intervals || {}, symbols, state.interval);
+  state.layout = ["auto", "1", "2", "6"].includes(profile?.layout) ? profile.layout : "auto";
+  state.horizontal = profile?.horizontal === true;
+  state.indicators = normalizeIndicators(profile?.indicators || DEFAULT_INDICATORS);
+  state.activeChartSymbol = symbols.includes(profile?.activeChartSymbol) ? profile.activeChartSymbol : symbols[0] || "";
+}
+
+function loadWorkspaces() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(WORKSPACES_KEY) || "null"); } catch { saved = null; }
+  const items = Array.isArray(saved?.items) ? saved.items.filter((item) =>
+    item && typeof item.id === "string" && typeof item.name === "string" && item.profile && typeof item.profile === "object"
+  ).slice(0, 30) : [];
+  if (!items.length) {
+    loadLegacyProfile();
+    state.workspaces = [{ id: "default", name: "기본 작업 공간", profile: profileSnapshot() }];
+    state.currentWorkspaceId = "default";
+  } else {
+    state.workspaces = items;
+    state.currentWorkspaceId = items.some((item) => item.id === saved.selected) ? saved.selected : items[0].id;
+    applyWorkspaceProfile(state.workspaces.find((item) => item.id === state.currentWorkspaceId).profile);
+  }
+  saveWorkspaces();
+}
+
+function renderWorkspaceSelect() {
+  els.workspaceSelect.innerHTML = state.workspaces.map((item) =>
+    `<option value="${escapeHtml(item.id)}">${escapeHtml(item.name)}</option>`
+  ).join("");
+  els.workspaceSelect.value = state.currentWorkspaceId;
+  const current = state.workspaces.find((item) => item.id === state.currentWorkspaceId);
+  els.activeWorkspaceName.textContent = current?.name || "작업 공간";
+  els.deleteWorkspace.disabled = state.workspaces.length < 2;
+}
+
+function workspaceName(promptText, proposed = "") {
+  const value = window.prompt(promptText, proposed);
+  if (value === null) return null;
+  const name = value.trim().slice(0, 32);
+  return name || null;
+}
+
+function createWorkspace() {
+  if (state.workspaces.length >= 30) return alert("작업 공간은 최대 30개까지 만들 수 있습니다.");
+  const name = workspaceName("새 작업 공간 이름", `작업 공간 ${state.workspaces.length + 1}`);
+  if (!name) return;
+  persistProfile();
+  const id = `workspace-${Date.now()}-${state.workspaces.length}`;
+  state.workspaces.push({ id, name, profile: profileSnapshot() });
+  state.currentWorkspaceId = id;
+  saveWorkspaces();
+  renderWorkspaceSelect();
+}
+
+function switchWorkspace(id) {
+  const target = state.workspaces.find((item) => item.id === id);
+  if (!target || id === state.currentWorkspaceId) return;
+  persistProfile();
+  state.currentWorkspaceId = id;
+  applyWorkspaceProfile(target.profile);
+  syncControls();
+  renderCharts();
+  saveWorkspaces();
+  renderWorkspaceSelect();
+}
+
+function renameWorkspace() {
+  const current = state.workspaces.find((item) => item.id === state.currentWorkspaceId);
+  if (!current) return;
+  const name = workspaceName("작업 공간 이름 변경", current.name);
+  if (!name) return;
+  current.name = name;
+  saveWorkspaces();
+  renderWorkspaceSelect();
+}
+
+function deleteWorkspace() {
+  if (state.workspaces.length < 2) return;
+  if (!window.confirm("현재 작업 공간을 삭제하시겠습니까? 삭제한 설정은 복구할 수 없습니다.")) return;
+  state.workspaces = state.workspaces.filter((item) => item.id !== state.currentWorkspaceId);
+  state.currentWorkspaceId = state.workspaces[0].id;
+  applyWorkspaceProfile(state.workspaces[0].profile);
+  syncControls();
+  renderCharts();
+  saveWorkspaces();
+  renderWorkspaceSelect();
 }
 
 function syncControls() {
@@ -279,9 +428,9 @@ function syncControls() {
 
 function normalizeSymbols(value) {
   const list = Array.isArray(value) ? value : String(value).split(",");
-  return list
+  return [...new Set(list
     .map((symbol) => String(symbol).trim().toUpperCase())
-    .filter(Boolean)
+    .filter(Boolean))]
     .slice(0, MAX_SYMBOLS);
 }
 
@@ -332,6 +481,20 @@ function loadCachedSymbolResults() {
   const payload = window[SYMBOL_CACHE_GLOBAL];
   cachedSymbolResults = normalizeCachedSymbolResults(payload);
   symbolCacheAvailable = cachedSymbolResults.length > 0;
+}
+
+function ensureSymbolCache() {
+  if (symbolCacheAvailable) return Promise.resolve();
+  if (symbolCacheLoadPromise) return symbolCacheLoadPromise;
+  symbolCacheLoadPromise = new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = SYMBOL_CACHE_URL;
+    script.async = true;
+    script.onload = () => { loadCachedSymbolResults(); resolve(); };
+    script.onerror = () => resolve();
+    document.head.appendChild(script);
+  });
+  return symbolCacheLoadPromise;
 }
 
 function normalizeCachedSymbolResults(payload) {
@@ -428,6 +591,14 @@ function setSymbols(symbols, preferredSymbol = els.symbolSelect.dataset.activeSy
 function openSearchPanel() {
   els.searchPanel.hidden = false;
   renderChartManager();
+  renderExchangeFilter();
+  els.preferredExchange.value = state.preferredExchange;
+  els.searchSort.value = state.searchSort;
+  els.favoritesOnly.checked = state.favoritesOnly;
+  ensureSymbolCache().then(() => {
+    if (!els.searchPanel.hidden && els.searchInput.value.trim()) renderSymbolResults();
+  });
+  if (els.searchInput.value.trim()) renderSymbolResults();
   initIcons();
 }
 
@@ -452,6 +623,7 @@ function renderChartManager() {
   els.chartCountText.textContent = countText;
   els.workspaceCount.textContent = `${state.symbols.length}개 차트`;
   renderChartNavigation();
+  renderFavorites();
   if (els.addChart) {
     const atLimit = state.symbols.length >= MAX_SYMBOLS;
     els.addChart.disabled = atLimit;
@@ -536,57 +708,56 @@ function scheduleSymbolResults() {
   symbolSearchTimer = window.setTimeout(renderSymbolResults, SYMBOL_SEARCH_DEBOUNCE_MS);
 }
 
-async function renderSymbolResults() {
-  if (!els.searchInput || !els.searchResults) return;
-  const query = els.searchInput.value.trim();
-  const runId = ++symbolSearchRunId;
-
-  if (!query) {
-    symbolSearchStatus = "idle";
-    if (symbolSearchController) symbolSearchController.abort();
-    els.searchResults.innerHTML = `<div class="empty">TradingView 심볼 검색</div>`;
-    return;
-  }
-
-  if (symbolSearchController) symbolSearchController.abort();
-  symbolSearchController = new AbortController();
-  els.searchResults.innerHTML = `<div class="empty">${symbolCacheAvailable ? "저장된 목록 검색 중" : "심볼 검색 중"}</div>`;
-
-  let results = [];
-  try {
-    results = await fetchTradingViewSymbols(query, symbolSearchController.signal);
-  } catch (error) {
-    if (error.name === "AbortError") return;
-  }
-  if (runId !== symbolSearchRunId) return;
-
-  els.searchResults.innerHTML = results.length
-    ? `${renderSymbolSearchNotice()}${results.slice(0, SYMBOL_SEARCH_LIMIT).map(renderSymbolResult).join("")}`
+function showSymbolResults(results, query) {
+  activeSearchResults = sortSymbolResults(mergeSymbolResults(results), query);
+  const visible = state.favoritesOnly ? activeSearchResults.filter((item) => state.favorites.includes(item.symbol)) : activeSearchResults;
+  els.searchResults.innerHTML = visible.length
+    ? `${renderSymbolSearchNotice()}${visible.slice(0, SYMBOL_SEARCH_LIMIT).map(renderSymbolResult).join("")}`
     : renderEmptySymbolResults(query);
   initIcons();
 }
 
-async function fetchTradingViewSymbols(query, signal) {
-  symbolSearchStatus = "searching";
-  const cachedResults = findCachedTickerSymbols(query);
-  const localResults = findLocalTickerSymbols(query);
-
-  if (symbolCacheAvailable) {
-    const results = mergeSymbolResults(localResults, cachedResults);
-    symbolSearchStatus = cachedResults.length ? "cache" : localResults.length ? "cache-local" : "cache-empty";
-    return results;
+async function renderSymbolResults() {
+  if (!els.searchInput || !els.searchResults) return;
+  const query = els.searchInput.value.trim();
+  const runId = ++symbolSearchRunId;
+  if (symbolSearchController) symbolSearchController.abort();
+  if (!query) {
+    symbolSearchStatus = "idle";
+    activeSearchResults = [];
+    els.searchResults.innerHTML = `<div class="empty">검색할 종목명이나 티커를 입력하세요.</div>`;
+    return;
   }
 
-  const serverResults = await fetchTradingViewSymbolsFromServer(query, signal);
-  if (serverResults) {
+  symbolSearchController = new AbortController();
+  const signal = symbolSearchController.signal;
+  symbolSearchStatus = "cache";
+  const cached = mergeSymbolResults(findCachedTickerSymbols(query), findLocalTickerSymbols(query));
+  showSymbolResults(cached, query); // Render가 잠들어 있어도 즉시 표시
+  await ensureSymbolCache();
+  if (runId !== symbolSearchRunId || signal.aborted) return;
+  const available = mergeSymbolResults(findCachedTickerSymbols(query), findLocalTickerSymbols(query));
+  showSymbolResults(available, query);
+
+  // Render의 무료 서버가 잠든 동안에도 검색 결과가 사라지지 않습니다.
+  let remote = null;
+  try { remote = await fetchTradingViewSymbolsFromServer(query, signal); }
+  catch (error) { if (error.name === "AbortError") return; }
+  if (runId !== symbolSearchRunId || signal.aborted) return;
+  if (remote && remote.length) {
     symbolSearchStatus = "server";
-    return mergeSymbolResults(serverResults, localResults);
+    showSymbolResults(mergeSymbolResults(remote, available), query);
+    return;
   }
+  symbolSearchStatus = available.length ? "cache" : "no-server";
+  showSymbolResults(available, query);
+  if (available.length) return;
 
-  const directResults = await fetchTradingViewSymbolsDirect(query, signal);
-  const results = mergeSymbolResults(directResults, localResults);
-  symbolSearchStatus = directResults.length ? "direct" : localResults.length ? "local" : localApiAvailable === false ? "no-server" : "empty";
-  return results;
+  // API가 응답하지 않을 경우에만 브라우저 직접 검색을 추가로 시도합니다.
+  const direct = await fetchTradingViewSymbolsDirect(query, signal);
+  if (runId !== symbolSearchRunId || signal.aborted) return;
+  if (direct.length) symbolSearchStatus = "direct";
+  showSymbolResults(direct, query);
 }
 
 async function fetchTradingViewSymbolsFromServer(query, signal) {
@@ -604,7 +775,16 @@ async function fetchTradingViewSymbolsFromServer(query, signal) {
     if (url === path && localApiAvailable === false) continue;
 
     try {
-      const response = await fetch(url, { cache: "no-store", signal });
+      const requestController = new AbortController();
+      const timer = window.setTimeout(() => requestController.abort(), SEARCH_TIMEOUT_MS);
+      const abortRequest = () => requestController.abort();
+      signal?.addEventListener("abort", abortRequest, { once: true });
+      let response;
+      try { response = await fetch(url, { cache: "no-store", signal: requestController.signal }); }
+      finally {
+        window.clearTimeout(timer);
+        signal?.removeEventListener("abort", abortRequest);
+      }
       if (response.status === 404) localApiAvailable = false;
       if (!response.ok) continue;
 
@@ -614,7 +794,7 @@ async function fetchTradingViewSymbolsFromServer(query, signal) {
       if (Array.isArray(items) && items.some((item) => item?.error)) continue;
       return normalizeServerSymbolResults(items);
     } catch (error) {
-      if (error.name === "AbortError") throw error;
+      if (error.name === "AbortError" && signal?.aborted) throw error;
       localApiAvailable = false;
       // Local/API-backed search is optional when the app is opened as a static file.
     }
@@ -699,14 +879,40 @@ function mergeSymbolResults(...groups) {
   return results;
 }
 
+function exchangeRank(symbol) {
+  const id = normalizeExchangeId((symbol || "").split(":")[0]);
+  if (id === state.preferredExchange) return 0;
+  const index = SEARCH_EXCHANGES.findIndex((item) => item.id === id);
+  return index < 0 ? 90 : index + 1;
+}
+
+function symbolMatchScore(query, item) {
+  const clean = normalizeSearchText(query);
+  if (!clean) return 0;
+  const symbolPart = (item.symbol || "").split(":").pop() || "";
+  const normSymbol = normalizeSearchText(symbolPart);
+  const values = [normSymbol, normalizeSearchText(item.title || ""), ...((item.aliases || []).map(normalizeSearchText))];
+  if (values.some((value) => value === clean)) return 0;
+  if (values.some((value) => value.startsWith(clean))) return 10;
+  if (values.some((value) => value.includes(clean))) return 30;
+  return 60;
+}
+
+function sortSymbolResults(items, query = "") {
+  return [...items].sort((a, b) => {
+    if (state.searchSort === "name") return (a.title || a.symbol).localeCompare(b.title || b.symbol) || exchangeRank(a.symbol) - exchangeRank(b.symbol);
+    if (state.searchSort === "exchange") return exchangeRank(a.symbol) - exchangeRank(b.symbol) || symbolMatchScore(query, a) - symbolMatchScore(query, b);
+    const score = (item) => symbolMatchScore(query, item);
+    return score(a) - score(b) || exchangeRank(a.symbol) - exchangeRank(b.symbol)
+      || Number(state.favorites.includes(b.symbol)) - Number(state.favorites.includes(a.symbol))
+      || a.symbol.localeCompare(b.symbol);
+  });
+}
+
 function findCachedTickerSymbols(query, exchangeFilter = state.searchExchange) {
   const clean = normalizeSearchText(query);
   if (!clean || !cachedSymbolResults.length) return [];
-
-  return cachedSymbolResults
-    .filter((item) => cachedTickerMatches(clean, item, exchangeFilter))
-    .sort((a, b) => cachedTickerScore(clean, a) - cachedTickerScore(clean, b))
-    .slice(0, SYMBOL_SEARCH_LIMIT);
+  return sortSymbolResults(cachedSymbolResults.filter((item) => cachedTickerMatches(clean, item, exchangeFilter)), query).slice(0, SYMBOL_SEARCH_LIMIT);
 }
 
 function cachedTickerMatches(query, item, exchangeFilter = state.searchExchange) {
@@ -804,13 +1010,13 @@ function localTickerResult(exchange, base, name) {
 
 function renderEmptySymbolResults(query) {
   const exactResult = exactSymbolResult(query);
-  const notice =
+  const notice = state.favoritesOnly ? "즐겨찾기한 종목 중 일치하는 결과가 없습니다." :
     symbolSearchStatus === "cache-empty"
-      ? "저장된 목록에 없는 심볼입니다. 목록을 갱신하면 검색 범위가 늘어납니다."
+      ? "현재 목록에 일치하는 심볼이 없습니다. 직접 입력하거나 검색 조건을 바꿔보세요."
       : symbolSearchStatus === "no-server"
       ? "TradingView 전체 검색 서버 연결이 필요합니다. config.js에 Python 서버 주소를 넣으면 실시간 검색됩니다."
       : "검색 결과 없음";
-  const exactHtml = exactResult ? renderSymbolResult(exactResult) : "";
+  const exactHtml = exactResult && !state.favoritesOnly ? renderSymbolResult(exactResult) : "";
 
   return `
     <div class="search-notice">${escapeHtml(notice)}</div>
@@ -958,6 +1164,30 @@ function exchangeLabelFor(exchangeId) {
   return exchange?.label || normalized || "TradingView";
 }
 
+function renderFavorites() {
+  els.favoriteCount.textContent = String(state.favorites.length);
+  els.favoriteList.innerHTML = state.favorites.length ? state.favorites.map((symbol) => `
+    <button class="favorite-sidebar-item" type="button" data-open-favorite="${escapeHtml(symbol)}" title="${escapeHtml(symbol)} 차트에 추가 또는 선택">
+      <i data-lucide="star"></i><span>${escapeHtml(symbolDisplayName(symbol))}</span><small>${escapeHtml(symbol.split(":")[0])}</small>
+    </button>`).join("") : `<span class="favorite-sidebar-empty">검색에서 ☆를 눌러 저장하세요.</span>`;
+  initIcons();
+}
+
+function toggleFavorite(symbol) {
+  if (state.favorites.includes(symbol)) state.favorites = state.favorites.filter((item) => item !== symbol);
+  else state.favorites = [...state.favorites, symbol].slice(-100);
+  persistSearchPrefs();
+  renderFavorites();
+  if (els.searchInput.value.trim()) showSymbolResults(activeSearchResults, els.searchInput.value.trim());
+  els.grid.querySelectorAll("[data-toggle-chart-favorite]").forEach((button) => {
+    const checked = state.favorites.includes(button.dataset.toggleChartFavorite);
+    button.classList.toggle("is-favorite", checked);
+    button.setAttribute("aria-pressed", String(checked));
+    button.setAttribute("aria-label", checked ? "즐겨찾기 해제" : "즐겨찾기 추가");
+  });
+  initIcons();
+}
+
 function renderSymbolResult({ symbol, title, subtitle, exchangeLabel, typeLabel }) {
   const selected = state.symbols.includes(symbol);
   const atLimit = state.symbols.length >= MAX_SYMBOLS;
@@ -973,6 +1203,7 @@ function renderSymbolResult({ symbol, title, subtitle, exchangeLabel, typeLabel 
         </div>
         <div class="result-sub">${escapeHtml(meta || symbol)} · ${escapeHtml(symbol)}</div>
       </div>
+      <button class="favorite-toggle ${state.favorites.includes(symbol) ? "is-favorite" : ""}" type="button" data-toggle-favorite="${escapeHtml(symbol)}" aria-label="${escapeHtml(symbol)} 즐겨찾기 ${state.favorites.includes(symbol) ? "해제" : "추가"}" aria-pressed="${state.favorites.includes(symbol)}"><i data-lucide="star"></i></button>
       <button class="icon-button ${disabled ? "" : "primary"}" type="button" data-add-symbol="${escapeHtml(symbol)}" ${disabled ? "disabled" : ""}>
         <i data-lucide="${selected ? "check" : atLimit ? "lock" : "plus"}"></i>
         <span>${buttonText}</span>
@@ -982,6 +1213,13 @@ function renderSymbolResult({ symbol, title, subtitle, exchangeLabel, typeLabel 
 }
 
 function renderChartQuickResults(input) {
+  ensureSymbolCache().then(() => {
+    if (input.isConnected && input.value.trim().length >= 2) scheduleQuickResultUpdate(input);
+  });
+  scheduleQuickResultUpdate(input);
+}
+
+function scheduleQuickResultUpdate(input) {
   window.clearTimeout(chartQuickSearchTimer);
   chartQuickSearchTimer = window.setTimeout(() => {
     const index = Number(input.dataset.chartQuickInput);
@@ -1007,10 +1245,10 @@ function renderChartQuickResults(input) {
 }
 
 function quickSymbolResults(query) {
-  return mergeSymbolResults(
-    findLocalTickerSymbols(query, "ALL"),
+  return sortSymbolResults(mergeSymbolResults(
     findCachedTickerSymbols(query, "ALL"),
-  ).slice(0, CHART_QUICK_SEARCH_LIMIT);
+    findLocalTickerSymbols(query, "ALL"),
+  ), query).slice(0, CHART_QUICK_SEARCH_LIMIT);
 }
 
 function renderChartQuickResult({ symbol, title, subtitle, exchangeLabel, typeLabel }, index) {
@@ -1047,6 +1285,10 @@ function replaceSymbolAtIndex(index, symbol) {
   if (!normalized || !state.symbols[index]) return;
 
   const currentSymbol = state.symbols[index];
+  if (normalized !== currentSymbol && state.symbols.includes(normalized)) {
+    activateChart(state.symbols.indexOf(normalized));
+    return;
+  }
   const nextSymbols = [...state.symbols];
   nextSymbols[index] = normalized;
 
@@ -1147,7 +1389,7 @@ function setChartInterval(symbol, interval) {
   state.intervals[symbol] = normalizeInterval(interval);
   persistProfile();
   renderChartManager();
-  renderCharts();
+  renderCharts(); // only the changed chart gets a fresh TradingView widget
 }
 
 function handleSymbolSelectChange() {
@@ -1288,6 +1530,7 @@ function renderChartNavigation() {
 function activateChart(index) {
   if (!Number.isInteger(index) || index < 0 || index >= state.symbols.length) return;
   state.activeChartSymbol = state.symbols[index];
+  persistProfile();
   renderChartNavigation();
   syncChartVisibility();
   if (!isMobileWorkspace()) {
@@ -1297,8 +1540,22 @@ function activateChart(index) {
   }
 }
 
+let chartObserver = null;
+function lazyMountCard(card) {
+  if (card.dataset.mounted === "true" || !card.isConnected || card.hidden) return;
+  card.dataset.mounted = "true";
+  const mount = card.querySelector(".tv-container");
+  if (mount) mountTradingView(mount.id, card.dataset.symbol, intervalForSymbol(card.dataset.symbol));
+}
+
 function syncChartVisibility() {
   const mobile = isMobileWorkspace();
+  if (chartObserver) chartObserver.disconnect();
+  if (!mobile && "IntersectionObserver" in window) {
+    chartObserver = chartObserver || new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) lazyMountCard(entry.target); });
+    }, { rootMargin: "180px" });
+  }
   if (!state.symbols.includes(state.activeChartSymbol)) state.activeChartSymbol = state.symbols[0] || "";
   const cards = els.grid.querySelectorAll(".chart-card");
   cards.forEach((card) => {
@@ -1306,22 +1563,46 @@ function syncChartVisibility() {
     const visible = !mobile || active;
     card.hidden = !visible;
     card.classList.toggle("is-selected", active && !mobile);
-    if (visible && card.dataset.mounted !== "true") {
-      card.dataset.mounted = "true";
-      const mount = card.querySelector(".tv-container");
-      mountTradingView(mount.id, parseSymbol(card.dataset.symbol).tvSymbol, intervalForSymbol(card.dataset.symbol));
-    }
+    if (!visible || card.dataset.mounted === "true") return;
+    if (!mobile && chartObserver) chartObserver.observe(card);
+    else lazyMountCard(card);
   });
   if (!cards.length) els.grid.innerHTML = '<div class="empty">차트 관리에서 차트를 추가해 주세요.</div>';
+}
+
+function refreshChartIndex(card, index) {
+  card.querySelector(".chart-number").textContent = String(index + 1).padStart(2, "0");
+  for (const field of ["toggleQuickSearch", "toggleExpand", "chartQuickIndex", "chartQuickInput", "chartQuickResults"]) {
+    const attr = ({ toggleQuickSearch: "data-toggle-quick-search", toggleExpand: "data-toggle-expand",
+      chartQuickIndex: "data-chart-quick-index", chartQuickInput: "data-chart-quick-input", chartQuickResults: "data-chart-quick-results" })[field];
+    card.querySelector(`[${attr}]`)?.setAttribute(attr, String(index));
+  }
 }
 
 function renderCharts() {
   document.body.classList.remove("chart-expanded");
   els.grid.className = `chart-grid layout-${state.layout}${state.horizontal ? " horizontal" : ""}`;
-  els.grid.innerHTML = "";
-  state.symbols.forEach((symbol, index) => els.grid.append(createChartCard(symbol, index).card));
+  const existing = new Map([...els.grid.querySelectorAll(".chart-card")].map((card) => [card.dataset.symbol, card]));
+  const signature = state.indicators.join(",");
+  // Keep embedded chart if its symbol, studies and interval did not change.
+  const nextCards = state.symbols.map((symbol, index) => {
+    let card = existing.get(symbol);
+    if (!card || card.dataset.interval !== intervalForSymbol(symbol) || card.dataset.studies !== signature) {
+      card = createChartCard(symbol, index).card;
+    }
+    refreshChartIndex(card, index);
+    return card;
+  });
+  // Do not detach existing iframe elements on a no-op render.
+  els.grid.querySelectorAll(":scope > .empty").forEach((element) => element.remove());
+  nextCards.forEach((card, index) => {
+    if (els.grid.children[index] !== card) els.grid.insertBefore(card, els.grid.children[index] || null);
+  });
+  const needed = new Set(nextCards);
+  [...els.grid.children].forEach((child) => { if (!needed.has(child)) child.remove(); });
   renderChartNavigation();
   syncChartVisibility();
+  renderFavorites();
   initIcons();
 }
 
@@ -1330,6 +1611,8 @@ function createChartCard(symbol, index) {
   const card = document.createElement("article");
   card.className = "chart-card";
   card.dataset.symbol = symbol;
+  card.dataset.interval = intervalForSymbol(symbol);
+  card.dataset.studies = state.indicators.join(",");
   card.insertAdjacentHTML("afterbegin", `
     <div class="chart-card-toolbar">
       <div class="chart-card-identity">
@@ -1338,6 +1621,7 @@ function createChartCard(symbol, index) {
       </div>
       <div class="chart-card-actions">
         <span class="chart-interval-tag">${escapeHtml(intervalLabel(intervalForSymbol(symbol)))}</span>
+        <button type="button" class="chart-card-action favorite-chart-action ${state.favorites.includes(symbol) ? "is-favorite" : ""}" data-toggle-chart-favorite="${escapeHtml(symbol)}" aria-pressed="${state.favorites.includes(symbol)}" aria-label="${state.favorites.includes(symbol) ? "즐겨찾기 해제" : "즐겨찾기 추가"}" title="즐겨찾기"><i data-lucide="star"></i></button>
         <button type="button" class="chart-card-action" data-toggle-quick-search="${index}" aria-label="${escapeHtml(symbolDisplayName(symbol))} 종목 변경" title="종목 변경"><i data-lucide="search"></i></button>
         <button type="button" class="chart-card-action" data-toggle-expand="${index}" aria-pressed="false" aria-label="차트 확대" title="차트 확대"><i data-lucide="maximize-2"></i></button>
       </div>
@@ -1395,16 +1679,34 @@ function closeExpandedChart() {
   toggleChartExpand(index);
 }
 
+function updateConnectionStatus() {
+  const available = Boolean(window.TradingView?.widget);
+  els.connectionStatus.classList.toggle("disconnected", !available || !navigator.onLine);
+  els.connectionText.textContent = !navigator.onLine ? "오프라인" : available ? "TradingView 연결" : "차트 연결 대기";
+}
+
+function retryFailedCharts() {
+  updateConnectionStatus();
+  els.grid.querySelectorAll('.chart-card[data-mounted="true"]').forEach((card) => {
+    const container = card.querySelector(".tv-container");
+    if (container?.querySelector("[data-retry-chart]")) {
+      card.dataset.mounted = "false";
+    }
+  });
+  syncChartVisibility();
+}
+
 function mountTradingView(containerId, symbol, interval) {
   const mount = () => {
     const container = document.getElementById(containerId);
     if (!container) return;
     if (!window.TradingView?.widget) {
-      container.innerHTML = `<div class="chart-placeholder">TradingView 연결 대기 · 인터넷 연결을 확인해 주세요.</div>`;
+      container.innerHTML = `<div class="chart-placeholder chart-error">차트 연결에 실패했습니다.<button type="button" data-retry-chart="true">다시 연결</button></div>`;
+      updateConnectionStatus();
       return;
     }
-
-    new window.TradingView.widget({
+    try {
+      new window.TradingView.widget({
       autosize: true,
       symbol,
       interval,
@@ -1420,7 +1722,11 @@ function mountTradingView(containerId, symbol, interval) {
       save_image: false,
       studies: selectedStudies(),
       container_id: containerId,
-    });
+      });
+      updateConnectionStatus();
+    } catch (error) {
+      container.innerHTML = `<div class="chart-placeholder chart-error">차트를 표시할 수 없습니다.<button type="button" data-retry-chart="true">다시 연결</button></div>`;
+    }
   };
 
   if (window.TradingView?.widget) {
@@ -1456,6 +1762,35 @@ function bindEvents() {
   els.form.addEventListener("submit", (event) => {
     event.preventDefault();
     applySettings();
+  });
+
+  els.workspaceSelect.addEventListener("change", () => switchWorkspace(els.workspaceSelect.value));
+  els.newWorkspace.addEventListener("click", createWorkspace);
+  els.renameWorkspace.addEventListener("click", renameWorkspace);
+  els.deleteWorkspace.addEventListener("click", deleteWorkspace);
+  els.preferredExchange.addEventListener("change", () => {
+    state.preferredExchange = els.preferredExchange.value;
+    persistSearchPrefs();
+    if (els.searchInput.value.trim()) showSymbolResults(activeSearchResults, els.searchInput.value.trim());
+  });
+  els.searchSort.addEventListener("change", () => {
+    state.searchSort = els.searchSort.value;
+    persistSearchPrefs();
+    if (els.searchInput.value.trim()) showSymbolResults(activeSearchResults, els.searchInput.value.trim());
+  });
+  els.favoritesOnly.addEventListener("change", () => {
+    state.favoritesOnly = els.favoritesOnly.checked;
+    if (els.searchInput.value.trim()) showSymbolResults(activeSearchResults, els.searchInput.value.trim());
+  });
+  els.favoriteList.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-open-favorite]");
+    if (!button) return;
+    const symbol = button.dataset.openFavorite;
+    if (!state.symbols.includes(symbol)) {
+      if (state.symbols.length >= MAX_SYMBOLS) return openSearchPanel();
+      addSymbol(symbol);
+    }
+    activateChart(state.symbols.indexOf(symbol));
   });
 
   els.openSearch.addEventListener("click", openSearchPanel);
@@ -1499,6 +1834,8 @@ function bindEvents() {
 
   if (els.searchResults) {
     els.searchResults.addEventListener("click", (event) => {
+      const favorite = event.target.closest("button[data-toggle-favorite]");
+      if (favorite) { toggleFavorite(favorite.dataset.toggleFavorite); return; }
       const button = event.target.closest("button[data-add-symbol]");
       if (!button) return;
       addSymbol(button.dataset.addSymbol);
@@ -1529,6 +1866,9 @@ function bindEvents() {
   });
 
   els.grid.addEventListener("click", (event) => {
+    const favButton = event.target.closest("[data-toggle-chart-favorite]");
+    if (favButton) { toggleFavorite(favButton.dataset.toggleChartFavorite); return; }
+    if (event.target.closest("[data-retry-chart]")) { retryFailedCharts(); return; }
     const expandButton = event.target.closest("[data-toggle-expand]");
     if (expandButton) {
       toggleChartExpand(Number(expandButton.dataset.toggleExpand));
@@ -1653,6 +1993,10 @@ function bindEvents() {
     applySettings();
   });
 
+  window.addEventListener("online", retryFailedCharts);
+  window.addEventListener("offline", updateConnectionStatus);
+  window.addEventListener("load", updateConnectionStatus);
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !els.searchPanel.hidden) closeSearchPanel();
     if (event.key === "Escape" && !els.indicatorPanel.hidden) closeIndicatorPanel();
@@ -1666,12 +2010,19 @@ function initIcons() {
 }
 
 function init() {
-  loadCachedSymbolResults();
-  loadProfile();
+  loadSearchPrefs();
+  loadWorkspaces();
+  els.preferredExchange.innerHTML = SEARCH_EXCHANGES.map((item) => `<option value="${item.id}">${item.label}</option>`).join("");
+  els.preferredExchange.value = state.preferredExchange;
+  els.searchSort.value = state.searchSort;
   syncControls();
+  renderWorkspaceSelect();
+  renderExchangeFilter();
+  renderFavorites();
   bindEvents();
   renderCharts();
   syncLayoutButtons();
+  updateConnectionStatus();
   window.addEventListener("load", initIcons);
 }
 

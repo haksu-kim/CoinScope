@@ -1,85 +1,70 @@
-# CoinScope — GitHub Pages + Render 배포
+# CoinScope 2.1 — Responsive Trading Workspace
 
-기존 CoinScope 차트 앱을 **GitHub Pages(정적 프론트엔드)**, 필요하면 **Render(TradingView 심볼 검색 API)**로 운영합니다. 기존 닷홈 주소는 새 사이트를 확인할 때까지 유지하세요.
+CoinScope는 **TradingView 임베드 차트**를 최대 9개까지 확인하고, 모바일에서는 한 번에 한 차트를 크게 표시하는 멀티 차트 웹입니다. 프론트엔드는 GitHub Pages에, 선택적인 종목 검색 API는 Render에 배포합니다.
 
-## 폴더 구성
+## 이번 업데이트
+
+- **통합 종목 검색:** 차트 관리 창에서 종목 검색·추가, 거래소 필터, 결과 정렬(관련도/거래소/종목명), 선호 거래소 설정, 즐겨찾기만 보기를 제공합니다. 관련도가 같으면 기본적으로 Binance → Bybit → OKX → Gate.io 순으로 정렬합니다. 선호 거래소는 변경할 수 있습니다.
+- **Render 검색 연동:** 종목 캐시가 존재해도 Render API를 호출합니다. 저장된 검색 결과를 먼저 보여주고, Render 결과가 도착하면 목록을 갱신합니다. 무료 서버가 잠든 경우 검색 응답을 최대 6.5초 기다리고 캐시로 계속 검색합니다.
+- **차트 성능:** 차트 순서 변경이나 종목 추가 시 바뀌지 않은 TradingView 위젯을 최대한 유지합니다. 데스크톱에서는 화면에 가까운 차트부터 로드합니다. 봉·보조지표 변경 시에는 필요한 차트만 다시 만듭니다.
+- **모바일 UI:** 선택한 차트 하나를 크게 표시하고 탭·이전·다음으로 이동합니다. 좁은 화면에 맞춰 검색/설정 창과 터치 버튼 크기를 조정했습니다.
+- **즐겨찾기:** 통합 검색 또는 차트 상단의 별을 눌러 즐겨찾기를 저장합니다. PC 사이드바에서 빠르게 접근할 수 있습니다.
+- **작업 공간:** 여러 차트 배치/봉/지표 설정을 별도 작업 공간으로 만들고, 이름 변경·전환·삭제할 수 있습니다. 기존 로컬 저장 설정이 있으면 첫 작업 공간으로 이전합니다.
+- **신뢰성:** 외부 아이콘 CDN 버전을 고정하고 차트 연결 실패 시 재시도 버튼을 표시합니다. 심볼 캐시 갱신 GitHub Actions를 추가했습니다.
+
+## 배포 구성
 
 ```text
-coinscope/
-├── docs/                 # GitHub Pages가 배포하는 파일
+CoinScope/
+├── docs/                        # GitHub Pages: main /docs
 │   ├── index.html
 │   ├── styles.css
 │   ├── app.js
-│   ├── config.js         # Render URL 설정
+│   ├── config.js
 │   ├── symbols-cache.js
 │   └── .nojekyll
-├── backend/              # Render Python API
+├── backend/                     # Render Python 서버
 │   ├── server.py
 │   ├── requirements.txt
 │   └── build_symbol_cache.py
-├── render.yaml           # Render Blueprint
-├── .gitignore
-└── README.md
+├── .github/workflows/
+│   └── refresh-symbol-cache.yml
+├── render.yaml
+└── .gitignore
 ```
 
-## 1. GitHub 저장소 만들고 업로드하기
+배포된 사이트: <https://haksu-kim.github.io/CoinScope/>  
+Render API: <https://coinscope-api-zhel.onrender.com>  
+API 상태 점검: <https://coinscope-api-zhel.onrender.com/health>
 
-1. GitHub에서 **New repository** → 이름 `coinscope` → **Public** → Create repository.
-2. 압축을 푼 `coinscope` 폴더에서 터미널을 열고 아래 명령을 실행합니다. GitHub 계정 이름이 다르면 URL을 수정하세요.
+`docs/config.js`에 현재 Render API 주소가 지정되어 있습니다. API를 연결하지 않더라도 기존 저장 목록과 TradingView 위젯을 사용할 수 있습니다.
+
+## 업데이트 적용
+
+**기존 GitHub 저장소 `haksu-kim/CoinScope`의 루트에서** 업데이트 ZIP을 압축 해제하세요. `.git`은 건드리지 마세요.
 
 ```bash
-git init -b main
-git add .
-git commit -m "chore: prepare CoinScope deployment"
-git remote add origin https://github.com/haksu-kim/coinscope.git
-git push -u origin main
+cd ~/Documents/git_local/coinscope
+git switch main
+git pull --ff-only
+# ZIP을 ~/Downloads에 내려받은 경우
+unzip -o ~/Downloads/CoinScope-v3-update.zip -d .
+node --check docs/app.js
+python3 -m py_compile backend/server.py
+git add docs/index.html docs/styles.css docs/app.js backend/server.py .github/workflows/refresh-symbol-cache.yml README.md UPGRADE.md
+git commit -m "feat: improve CoinScope search, workspaces, mobile and chart performance"
+git push origin main
 ```
 
-기존 Git 저장소가 이미 있다면 `git init`/`remote add` 단계는 생략하고 현재 remote를 확인한 뒤 업로드합니다.
+GitHub Pages 설정은 **Settings → Pages → Deploy from a branch → main /docs**로 유지합니다. `render.yaml`은 그대로이므로 Render에서 GitHub 자동 배포를 켜 두었다면 서버 코드도 재배포됩니다. 수동 배포인 경우 Render에서 Deploy latest commit을 실행하세요.
 
-3. GitHub 저장소 → **Settings → Pages**.
-4. Source: **Deploy from a branch** / Branch: `main` / Folder: `/docs` → **Save**.
-5. 공개 주소(저장소 이름과 계정이 이 예시대로라면): `https://haksu-kim.github.io/coinscope/`.
+## 캐시 갱신
 
-GitHub Pages만 사용해도 실시간 TradingView 차트, 차트 배치, 봉과 지표 설정, 저장된 캐시를 이용한 종목 검색 기능이 동작하도록 기존 코드가 구성되어 있습니다. 서버가 없으면 TradingView *실시간 검색*은 브라우저의 직접 요청/CORS 제약으로 일부 제한될 수 있습니다.
+`.github/workflows/refresh-symbol-cache.yml`은 매주 일요일 UTC 03:00(한국 시간 일요일 12:00)에 자동 갱신을 시도합니다. GitHub **Actions → Refresh CoinScope symbol cache → Run workflow**에서 수동 실행도 가능합니다. 새 캐시 데이터가 너무 적으면 파일을 교체하지 않습니다. GitHub Actions가 허용되어야 작동합니다.
 
-## 2. Render 연결 (선택, 실시간 전체 심볼 검색 향상)
+## 제한 사항
 
-1. [Render Dashboard](https://dashboard.render.com/)에 로그인합니다.
-2. **New → Blueprint**에서 위 GitHub 저장소를 연결하고 `render.yaml`을 선택해 배포합니다. Blueprint가 어렵다면 **New → Web Service**로 같은 저장소를 연결하고 Root Directory를 `backend`, Build Command를 `pip install -r requirements.txt`, Start Command를 `python server.py`, Health Check Path를 `/health`로 설정할 수 있습니다.
-3. 배포 후 Render 대시보드에 표시되는 **실제** `https://...onrender.com` 서비스 URL을 복사합니다. 주소가 예시와 같다고 가정하면 안 됩니다.
-4. `docs/config.js`를 아래처럼 수정합니다. 마지막 `/`는 빼세요.
-
-```js
-window.PIVOT_API_BASE_URL = "https://실제로-할당된-주소.onrender.com";
-```
-
-5. 변경 사항을 GitHub에 커밋/푸시하면 GitHub Pages에 자동 반영됩니다.
-6. `https://실제로-할당된-주소.onrender.com/health`에 접속하여 `{"status":"ok", ...}` 응답을 확인합니다.
-7. 새 GitHub Pages 주소에서 **차트 추가 → 종목 검색**을 확인합니다. Render가 정상 연결되면 `TradingView 실시간 검색 연결됨` 문구가 나올 수 있습니다.
-
-Render 서버는 GitHub Pages와 출처가 달라도 검색할 수 있도록 공개 읽기 전용 API에 `Access-Control-Allow-Origin: *`를 사용합니다. 별도의 API 키를 사용하지 않습니다. 비밀키는 `config.js`에 넣으면 안 됩니다.
-
-Render 무료 서비스는 사용하지 않으면 잠시 중지될 수 있으며, 처음 검색할 때 응답이 늦어질 수 있습니다. 차트 자체는 TradingView 위젯이므로 Render 없이도 계속 이용할 수 있습니다. 서버의 외부 TradingView 검색은 상대측 정책이나 장애의 영향을 받을 수 있습니다.
-
-## 3. 심볼 캐시 갱신 (필요한 경우)
-
-```bash
-python3 backend/build_symbol_cache.py --output docs/symbols-cache.js
-```
-
-작업 디렉터리는 `coinscope/` 루트로 잡습니다. 캐시 파일은 현재 ZIP에 포함되어 있으므로 처음 배포할 때 갱신할 필요가 없습니다.
-
-## 4. 확인 사항
-
-- GitHub Pages URL에서 화면 및 차트가 표시되는지
-- 3개 기본 차트 / 추가 차트 / 지표 / 봉 / 가로 배치가 동작하는지
-- BTC, ETH와 다른 심볼이 검색되는지
-- Render 연결 시 `/health`가 200을 반환하는지, 종목 검색 API가 정상 동작하는지
-- 기존 닷홈 주소는 검증이 끝날 때까지 유지할 것
-
-## 참고
-
-정적 사이트의 차트 설정은 기존 코드의 브라우저 `localStorage`에 저장되므로 **닷홈과 GitHub Pages는 도메인이 달라 기존 설정이 자동으로 이전되지는 않습니다.** 새 사이트에서는 기본 설정부터 시작합니다.
-
-프론트엔드에서 호출하는 외부 스크립트는 TradingView 및 Lucide CDN입니다. CDN 또는 외부 서비스가 제한되면 일부 기능에 영향이 있을 수 있습니다.
+- 저장된 작업 공간과 즐겨찾기는 `localStorage`에 저장되므로 **같은 브라우저·기기에서만 유지**됩니다. 로그인/기기 간 동기화는 제공하지 않습니다.
+- 외부 TradingView 위젯 내부의 차트·종목 변경 상태를 CoinScope가 완전히 제어할 수는 없습니다. 차트 추가/관리 설정은 CoinScope가 저장합니다.
+- Render 무료 서버가 잠들었거나 외부 TradingView 검색 API가 제한되면 실시간 검색이 실패할 수 있습니다. 캐시 결과를 계속 이용할 수 있습니다.
+- 배포 전에 실기기에서 TradingView 차트 및 모바일 가로 화면을 확인하세요. 정적 코드 및 모의 데이터 테스트만으로 외부 차트 동작을 보장할 수 없습니다.
