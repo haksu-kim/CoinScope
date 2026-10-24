@@ -168,6 +168,7 @@ const state = {
   intervals: {},
   layout: "auto",
   horizontal: false,
+  activeChartSymbol: DEFAULT_SYMBOLS[0],
   indicators: DEFAULT_INDICATORS,
   searchExchange: "ALL",
 };
@@ -202,7 +203,16 @@ const els = {
   closeIndicator: document.querySelector("#closeIndicatorButton"),
   indicatorOptions: document.querySelector("#indicatorOptions"),
   grid: document.querySelector("#chartGrid"),
+  sidebarList: document.querySelector("#sidebarChartList"),
+  sidebarAdd: document.querySelector("#sidebarAddChart"),
+  workspaceCount: document.querySelector("#workspaceChartCount"),
+  mobileChartTabs: document.querySelector("#mobileChartTabs"),
+  mobileChartCounter: document.querySelector("#mobileChartCounter"),
+  previousChart: document.querySelector("#previousChartButton"),
+  nextChart: document.querySelector("#nextChartButton"),
+  layoutButtons: document.querySelectorAll("[data-layout]"),
 };
+const mobileMedia = window.matchMedia("(max-width: 767px), (pointer: coarse) and (max-width: 1024px)");
 
 function loadProfile() {
   try {
@@ -213,7 +223,7 @@ function loadProfile() {
     state.symbols = isLegacyDefaultSymbols(symbols) ? DEFAULT_SYMBOLS : symbols;
     state.interval = normalizeInterval(profile.interval || state.interval);
     state.intervals = normalizeChartIntervals(profile.intervals || {}, state.symbols, state.interval);
-    state.layout = "auto";
+    state.layout = ["auto", "1", "2", "6"].includes(profile.layout) ? profile.layout : "auto";
     state.horizontal = profile.horizontal === true;
     state.indicators = normalizeIndicators(profile.indicators || DEFAULT_INDICATORS);
   } catch {
@@ -244,6 +254,7 @@ function profileSnapshot() {
     intervals: cleanChartIntervals(),
     horizontal: state.horizontal,
     indicators: state.indicators,
+    layout: state.layout,
   };
 }
 
@@ -263,6 +274,7 @@ function syncControls() {
   renderChartManager();
   renderIndicatorOptions();
   syncIndicatorSummary();
+  syncLayoutButtons();
 }
 
 function normalizeSymbols(value) {
@@ -405,6 +417,9 @@ function renderSymbolSelect(preferredSymbol = els.symbolSelect.value) {
 function setSymbols(symbols, preferredSymbol = els.symbolSelect.dataset.activeSymbol || els.symbolSelect.value) {
   state.symbols = normalizeSymbols(symbols);
   state.intervals = normalizeChartIntervals(state.intervals, state.symbols, state.interval);
+  if (!state.symbols.includes(state.activeChartSymbol)) {
+    state.activeChartSymbol = state.symbols.includes(preferredSymbol) ? preferredSymbol : state.symbols[0] || "";
+  }
   els.symbolInput.value = state.symbols.join(", ");
   renderSymbolSelect(preferredSymbol);
   renderChartManager();
@@ -435,6 +450,8 @@ function renderChartManager() {
   const countText = `${state.symbols.length} / ${MAX_SYMBOLS}`;
   els.chartSummary.textContent = `차트 ${countText}`;
   els.chartCountText.textContent = countText;
+  els.workspaceCount.textContent = `${state.symbols.length}개 차트`;
+  renderChartNavigation();
   if (els.addChart) {
     const atLimit = state.symbols.length >= MAX_SYMBOLS;
     els.addChart.disabled = atLimit;
@@ -470,7 +487,11 @@ function renderManagedChart(symbol, index) {
           </select>
         </label>
       </div>
-      <button class="icon-only" type="button" title="차트 삭제" data-remove-managed-symbol="${escapeHtml(symbol)}">
+      <div class="manager-move-buttons" role="group" aria-label="${escapeHtml(displayName)} 차트 순서">
+        <button type="button" data-shift-managed="${escapeHtml(symbol)}" data-shift-direction="-1" aria-label="위로 이동" ${index === 0 ? "disabled" : ""}><i data-lucide="chevron-up"></i></button>
+        <button type="button" data-shift-managed="${escapeHtml(symbol)}" data-shift-direction="1" aria-label="아래로 이동" ${index === state.symbols.length - 1 ? "disabled" : ""}><i data-lucide="chevron-down"></i></button>
+      </div>
+      <button class="icon-only" type="button" title="차트 삭제" aria-label="${escapeHtml(displayName)} 차트 삭제" data-remove-managed-symbol="${escapeHtml(symbol)}">
         <i data-lucide="trash-2"></i>
       </button>
     </article>
@@ -1016,6 +1037,7 @@ function addChart() {
   const index = state.symbols.length;
   state.intervals[symbol] = normalizeInterval(els.interval.value || state.interval);
   setSymbols([...state.symbols, symbol], symbol);
+  state.activeChartSymbol = symbol;
   persistProfile();
   appendChart(symbol, index);
 }
@@ -1032,6 +1054,7 @@ function replaceSymbolAtIndex(index, symbol) {
   if (!nextSymbols.includes(currentSymbol)) delete state.intervals[currentSymbol];
 
   setSymbols(nextSymbols, normalized);
+  if (state.activeChartSymbol === currentSymbol) state.activeChartSymbol = normalized;
   persistProfile();
   replaceChartAtIndex(index, normalized);
 }
@@ -1055,7 +1078,8 @@ function addSymbol(symbol) {
   }
 
   state.intervals[symbol] = normalizeInterval(els.interval.value || state.interval);
-  setSymbols([...state.symbols, symbol]);
+  setSymbols([...state.symbols, symbol], symbol);
+  state.activeChartSymbol = symbol;
   renderSymbolSelect(symbol);
   applySettings();
   renderSymbolResults();
@@ -1066,7 +1090,8 @@ function removeSymbol(symbol) {
   const nextSymbols = state.symbols.filter((item) => item !== symbol);
   const nextSelection = nextSymbols[Math.min(currentIndex, nextSymbols.length - 1)] || "";
   delete state.intervals[symbol];
-  setSymbols(nextSymbols);
+  setSymbols(nextSymbols, nextSelection);
+  if (!state.symbols.includes(state.activeChartSymbol)) state.activeChartSymbol = nextSelection;
   renderSymbolSelect(nextSelection);
   applySettings();
   renderSymbolResults();
@@ -1219,16 +1244,84 @@ function renderChartQuickSearch(symbol, index) {
   `;
 }
 
+function isMobileWorkspace() {
+  return mobileMedia.matches;
+}
+
+function syncLayoutButtons() {
+  els.layoutButtons.forEach((button) => {
+    const active = button.dataset.layout === state.layout;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+}
+
+function setLayout(layout) {
+  if (!["auto", "1", "2", "6"].includes(layout)) return;
+  state.layout = layout;
+  els.grid.className = `chart-grid layout-${state.layout}${state.horizontal ? " horizontal" : ""}`;
+  syncLayoutButtons();
+  persistProfile();
+}
+
+function renderChartNavigation() {
+  if (!state.symbols.includes(state.activeChartSymbol)) state.activeChartSymbol = state.symbols[0] || "";
+  const activeIndex = state.symbols.indexOf(state.activeChartSymbol);
+  els.mobileChartCounter.textContent = state.symbols.length ? `${activeIndex + 1} / ${state.symbols.length}` : "0 / 0";
+  els.previousChart.disabled = activeIndex <= 0;
+  els.nextChart.disabled = activeIndex < 0 || activeIndex === state.symbols.length - 1;
+  els.mobileChartTabs.innerHTML = state.symbols.map((symbol, index) => {
+    const active = symbol === state.activeChartSymbol;
+    return `<button class="mobile-chart-tab" type="button" role="tab" aria-selected="${active}" aria-label="${index + 1}번 차트 ${escapeHtml(symbolDisplayName(symbol))}" data-focus-chart="${index}">${escapeHtml(symbolDisplayName(symbol))}</button>`;
+  }).join("");
+  els.sidebarList.innerHTML = state.symbols.map((symbol, index) => {
+    const parsed = parseSymbol(symbol);
+    const active = symbol === state.activeChartSymbol;
+    return `<button class="sidebar-chart-item ${active ? "active" : ""}" type="button" aria-current="${active ? "true" : "false"}" data-focus-chart="${index}">
+      <span class="sidebar-symbol-icon">${String(index + 1).padStart(2, "0")}</span>
+      <span class="sidebar-chart-text"><strong>${escapeHtml(symbolDisplayName(symbol))}</strong><small>${escapeHtml(parsed.exchange)} · ${escapeHtml(intervalLabel(intervalForSymbol(symbol)))}</small></span>
+    </button>`;
+  }).join("");
+  initIcons();
+}
+
+function activateChart(index) {
+  if (!Number.isInteger(index) || index < 0 || index >= state.symbols.length) return;
+  state.activeChartSymbol = state.symbols[index];
+  renderChartNavigation();
+  syncChartVisibility();
+  if (!isMobileWorkspace()) {
+    els.grid.querySelectorAll(".chart-card")[index]?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+  } else {
+    els.mobileChartTabs.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+}
+
+function syncChartVisibility() {
+  const mobile = isMobileWorkspace();
+  if (!state.symbols.includes(state.activeChartSymbol)) state.activeChartSymbol = state.symbols[0] || "";
+  const cards = els.grid.querySelectorAll(".chart-card");
+  cards.forEach((card) => {
+    const active = card.dataset.symbol === state.activeChartSymbol;
+    const visible = !mobile || active;
+    card.hidden = !visible;
+    card.classList.toggle("is-selected", active && !mobile);
+    if (visible && card.dataset.mounted !== "true") {
+      card.dataset.mounted = "true";
+      const mount = card.querySelector(".tv-container");
+      mountTradingView(mount.id, parseSymbol(card.dataset.symbol).tvSymbol, intervalForSymbol(card.dataset.symbol));
+    }
+  });
+  if (!cards.length) els.grid.innerHTML = '<div class="empty">차트 관리에서 차트를 추가해 주세요.</div>';
+}
+
 function renderCharts() {
+  document.body.classList.remove("chart-expanded");
   els.grid.className = `chart-grid layout-${state.layout}${state.horizontal ? " horizontal" : ""}`;
   els.grid.innerHTML = "";
-
-  state.symbols.forEach((symbol, index) => {
-    const chart = createChartCard(symbol, index);
-    els.grid.append(chart.card);
-    mountTradingView(chart.containerId, chart.parsed.tvSymbol, intervalForSymbol(symbol));
-  });
-
+  state.symbols.forEach((symbol, index) => els.grid.append(createChartCard(symbol, index).card));
+  renderChartNavigation();
+  syncChartVisibility();
   initIcons();
 }
 
@@ -1237,41 +1330,77 @@ function createChartCard(symbol, index) {
   const card = document.createElement("article");
   card.className = "chart-card";
   card.dataset.symbol = symbol;
-  card.insertAdjacentHTML("afterbegin", renderChartQuickSearch(symbol, index));
+  card.insertAdjacentHTML("afterbegin", `
+    <div class="chart-card-toolbar">
+      <div class="chart-card-identity">
+        <span class="chart-number">${String(index + 1).padStart(2, "0")}</span>
+        <span class="chart-card-name"><strong>${escapeHtml(symbolDisplayName(symbol))}</strong><small>${escapeHtml(parsed.exchange)} · ${escapeHtml(symbol)}</small></span>
+      </div>
+      <div class="chart-card-actions">
+        <span class="chart-interval-tag">${escapeHtml(intervalLabel(intervalForSymbol(symbol)))}</span>
+        <button type="button" class="chart-card-action" data-toggle-quick-search="${index}" aria-label="${escapeHtml(symbolDisplayName(symbol))} 종목 변경" title="종목 변경"><i data-lucide="search"></i></button>
+        <button type="button" class="chart-card-action" data-toggle-expand="${index}" aria-pressed="false" aria-label="차트 확대" title="차트 확대"><i data-lucide="maximize-2"></i></button>
+      </div>
+    </div>
+    ${renderChartQuickSearch(symbol, index)}
+  `);
 
   const container = document.createElement("div");
   container.id = `tv-chart-${index}-${Date.now()}`;
   container.className = "tv-container";
-  container.innerHTML = `<div class="chart-placeholder">차트 로딩</div>`;
-
+  container.innerHTML = `<div class="chart-placeholder">TradingView 차트를 불러오는 중입니다</div>`;
   card.append(container);
   return { card, containerId: container.id, parsed };
 }
 
 function replaceChartAtIndex(index, symbol) {
   const currentCard = els.grid.querySelectorAll(".chart-card")[index];
-  if (!currentCard) {
-    renderCharts();
-    return;
-  }
-
-  const chart = createChartCard(symbol, index);
-  currentCard.replaceWith(chart.card);
-  mountTradingView(chart.containerId, chart.parsed.tvSymbol, intervalForSymbol(symbol));
+  if (!currentCard) { renderCharts(); return; }
+  currentCard.replaceWith(createChartCard(symbol, index).card);
+  renderChartNavigation();
+  syncChartVisibility();
   initIcons();
 }
 
 function appendChart(symbol, index) {
-  const chart = createChartCard(symbol, index);
-  els.grid.append(chart.card);
-  mountTradingView(chart.containerId, chart.parsed.tvSymbol, intervalForSymbol(symbol));
+  els.grid.append(createChartCard(symbol, index).card);
+  renderChartNavigation();
+  syncChartVisibility();
   initIcons();
+}
+
+function toggleChartExpand(index) {
+  const card = els.grid.querySelectorAll(".chart-card")[index];
+  if (!card) return;
+  const shouldExpand = !card.classList.contains("is-maximized");
+  els.grid.querySelectorAll(".is-maximized").forEach((item) => item.classList.remove("is-maximized"));
+  els.grid.querySelectorAll("[data-toggle-expand]").forEach((button) => {
+    button.setAttribute("aria-pressed", "false");
+    button.title = "차트 확대";
+  });
+  card.classList.toggle("is-maximized", shouldExpand);
+  document.body.classList.toggle("chart-expanded", shouldExpand);
+  const button = card.querySelector("[data-toggle-expand]");
+  button.setAttribute("aria-pressed", String(shouldExpand));
+  button.title = shouldExpand ? "확대 종료" : "차트 확대";
+  button.setAttribute("aria-label", button.title);
+  button.innerHTML = `<i data-lucide="${shouldExpand ? "minimize-2" : "maximize-2"}"></i>`;
+  initIcons();
+}
+
+function closeExpandedChart() {
+  const card = els.grid.querySelector(".chart-card.is-maximized");
+  if (!card) return;
+  const index = [...els.grid.querySelectorAll(".chart-card")].indexOf(card);
+  toggleChartExpand(index);
 }
 
 function mountTradingView(containerId, symbol, interval) {
   const mount = () => {
+    const container = document.getElementById(containerId);
+    if (!container) return;
     if (!window.TradingView?.widget) {
-      document.querySelector(`#${containerId}`).innerHTML = `<div class="chart-placeholder">TradingView 연결 대기</div>`;
+      container.innerHTML = `<div class="chart-placeholder">TradingView 연결 대기 · 인터넷 연결을 확인해 주세요.</div>`;
       return;
     }
 
@@ -1316,7 +1445,6 @@ function applySettings() {
   } else {
     state.intervals = normalizeChartIntervals(state.intervals, state.symbols, state.interval);
   }
-  state.layout = "auto";
   state.horizontal = els.horizontalToggle.checked;
   syncIndicatorSummary();
   persistProfile();
@@ -1332,6 +1460,25 @@ function bindEvents() {
 
   els.openSearch.addEventListener("click", openSearchPanel);
   els.closeSearch.addEventListener("click", closeSearchPanel);
+  els.sidebarAdd.addEventListener("click", addChart);
+  for (const button of els.layoutButtons) {
+    button.addEventListener("click", () => setLayout(button.dataset.layout));
+  }
+  const focusFromNavigation = (event) => {
+    const button = event.target.closest("button[data-focus-chart]");
+    if (button) activateChart(Number(button.dataset.focusChart));
+  };
+  els.sidebarList.addEventListener("click", focusFromNavigation);
+  els.mobileChartTabs.addEventListener("click", focusFromNavigation);
+  els.previousChart.addEventListener("click", () => activateChart(state.symbols.indexOf(state.activeChartSymbol) - 1));
+  els.nextChart.addEventListener("click", () => activateChart(state.symbols.indexOf(state.activeChartSymbol) + 1));
+  const handleMediaChange = () => {
+    closeExpandedChart();
+    syncChartVisibility();
+    renderChartNavigation();
+  };
+  if (mobileMedia.addEventListener) mobileMedia.addEventListener("change", handleMediaChange);
+  else mobileMedia.addListener(handleMediaChange);
   if (els.addChart) {
     els.addChart.addEventListener("click", addChart);
   }
@@ -1382,6 +1529,22 @@ function bindEvents() {
   });
 
   els.grid.addEventListener("click", (event) => {
+    const expandButton = event.target.closest("[data-toggle-expand]");
+    if (expandButton) {
+      toggleChartExpand(Number(expandButton.dataset.toggleExpand));
+      return;
+    }
+    const searchButton = event.target.closest("[data-toggle-quick-search]");
+    if (searchButton) {
+      const wrapper = searchButton.closest(".chart-card").querySelector(".chart-quick-search");
+      if (wrapper.classList.contains("open")) {
+        closeChartQuickSearch(wrapper);
+      } else {
+        wrapper.classList.add("open");
+        wrapper.querySelector("[data-chart-quick-input]").focus();
+      }
+      return;
+    }
     const button = event.target.closest("[data-chart-quick-symbol]");
     if (!button) return;
     replaceSymbolAtIndex(Number(button.dataset.chartQuickTarget), button.dataset.chartQuickSymbol);
@@ -1396,6 +1559,11 @@ function bindEvents() {
   });
 
   els.chartManagerList.addEventListener("click", (event) => {
+    const shiftButton = event.target.closest("[data-shift-managed]");
+    if (shiftButton) {
+      moveSymbol(shiftButton.dataset.shiftManaged, Number(shiftButton.dataset.shiftDirection));
+      return;
+    }
     const button = event.target.closest("button[data-remove-managed-symbol]");
     if (!button) return;
     removeSymbol(button.dataset.removeManagedSymbol);
@@ -1488,6 +1656,7 @@ function bindEvents() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !els.searchPanel.hidden) closeSearchPanel();
     if (event.key === "Escape" && !els.indicatorPanel.hidden) closeIndicatorPanel();
+    if (event.key === "Escape") closeExpandedChart();
   });
 
 }
@@ -1502,6 +1671,7 @@ function init() {
   syncControls();
   bindEvents();
   renderCharts();
+  syncLayoutButtons();
   window.addEventListener("load", initIcons);
 }
 

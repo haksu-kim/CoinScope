@@ -2,71 +2,86 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Coin Scope</title>
-    <link rel="stylesheet" href="./styles.css?v=20260805-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a101a" />
+    <meta name="description" content="CoinScope — 모바일에서도 편리한 멀티 차트 트레이딩 워크스페이스" />
+    <title>CoinScope | Trading Workspace</title>
+    <link rel="stylesheet" href="./styles.css?v=20261024-2" />
     <script src="https://s3.tradingview.com/tv.js" defer></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="./config.js?v=20260805-1" defer></script>
-    <script src="./symbols-cache.js?v=20260805-1" defer></script>
-    <script src="./app.js?v=20260805-1" defer></script>
+    <script src="./config.js?v=20261024-2" defer></script>
+    <script src="./symbols-cache.js?v=20261024-2" defer></script>
+    <script src="./app.js?v=20261024-2" defer></script>
   </head>
   <body>
     <main class="app-shell">
       <header class="topbar">
-        <div class="brand">
-          <h1>Coin Scope</h1>
+        <div class="topbar-main">
+          <div class="brand">
+            <span class="brand-icon" aria-hidden="true"><i data-lucide="chart-no-axes-combined"></i></span>
+            <div class="brand-text">
+              <h1>Coin<span>Scope</span></h1>
+              <p>TRADING WORKSPACE</p>
+            </div>
+          </div>
+          <div class="header-meta">
+            <span class="header-connection"><span class="connection-dot" aria-hidden="true"></span>TradingView Charts</span>
+            <span class="header-divider" aria-hidden="true"></span>
+            <span class="header-label"><i data-lucide="hard-drive-download"></i> 이 브라우저에 설정 저장</span>
+          </div>
         </div>
 
         <form id="chartForm" class="controls" autocomplete="off">
           <section class="chart-manager-field" aria-label="차트 관리">
-            <span class="field-label">차트</span>
-            <button id="openSearchButton" class="icon-button chart-manager-button" type="button" title="차트 관리">
-              <i data-lucide="panel-right-open"></i>
+            <span class="field-label">워크스페이스</span>
+            <button id="openSearchButton" class="icon-button chart-manager-button primary" type="button" title="차트 관리">
+              <i data-lucide="panels-top-left"></i>
               <span id="chartSummary">차트 3 / 9</span>
+              <i class="trailing-icon" data-lucide="chevron-down"></i>
             </button>
             <select id="symbolSelect" aria-label="심볼 선택" hidden></select>
             <input id="symbolInput" type="hidden" value="BINANCE:BTCUSDT.P, BINANCE:ETHUSDT.P, OANDA:NAS100USD" />
           </section>
 
-          <label>
-            <span>봉</span>
-            <select id="intervalSelect">
-              <option value="1">1m</option>
-              <option value="5">5m</option>
-              <option value="15">15m</option>
-              <option value="60" selected>1h</option>
-              <option value="240">4h</option>
-              <option value="D">1D</option>
+          <label class="interval-field">
+            <span>전체 봉 주기</span>
+            <select id="intervalSelect" aria-label="전체 차트 봉 주기">
+              <option value="1">1분</option>
+              <option value="5">5분</option>
+              <option value="15">15분</option>
+              <option value="60" selected>1시간</option>
+              <option value="240">4시간</option>
+              <option value="D">1일</option>
             </select>
           </label>
 
           <section class="indicator-field" aria-label="차트 지표">
-            <span class="field-label">지표</span>
+            <span class="field-label">보조지표</span>
             <button id="openIndicatorButton" class="icon-button" type="button" title="지표 선택">
               <i data-lucide="sliders-horizontal"></i>
               <span id="indicatorSummary">지표</span>
             </button>
           </section>
 
-          <section class="horizontal-field" aria-label="가로 정렬">
-            <span class="field-label">가로</span>
-            <label class="compact-switch" title="가로 정렬">
-              <input id="horizontalToggle" type="checkbox" />
+          <section class="horizontal-field" aria-label="세로로 차트 나열">
+            <span class="field-label">세로 나열</span>
+            <label class="compact-switch" title="차트를 세로로 나열">
+              <input id="horizontalToggle" type="checkbox" aria-label="차트 세로 나열" />
               <span></span>
             </label>
           </section>
         </form>
       </header>
 
-      <section id="symbolSearchPanel" class="search-panel manager-panel" aria-label="차트 관리" hidden>
+      <section id="symbolSearchPanel" class="search-panel manager-panel" aria-label="차트 관리" role="dialog" aria-modal="true" hidden>
         <div class="search-card manager-drawer">
           <div class="search-head">
             <div>
+              <span class="drawer-eyebrow">WORKSPACE MANAGER</span>
               <h2>차트 관리</h2>
               <p id="chartCountText">3 / 9</p>
             </div>
-            <button id="closeSearchButton" class="icon-only" type="button" title="닫기">
+            <button id="closeSearchButton" class="icon-only" type="button" title="닫기" aria-label="차트 관리 닫기">
               <i data-lucide="x"></i>
             </button>
           </div>
@@ -76,30 +91,71 @@
               <i data-lucide="plus"></i>
               <span>차트 추가</span>
             </button>
+            <p>차트 제목 옆 검색 버튼으로 종목을 변경할 수 있습니다.</p>
           </div>
 
           <div id="chartManagerList" class="chart-manager-list"></div>
         </div>
       </section>
 
-      <section id="indicatorPanel" class="search-panel" aria-label="지표 선택" hidden>
+      <section id="indicatorPanel" class="search-panel" aria-label="지표 선택" role="dialog" aria-modal="true" hidden>
         <div class="search-card indicator-card">
           <div class="search-head">
             <div>
-              <h2>지표</h2>
-              <p>선택한 지표는 모든 차트에 같이 적용됩니다</p>
+              <span class="drawer-eyebrow">INDICATORS</span>
+              <h2>보조지표</h2>
+              <p>선택한 지표는 모든 차트에 적용됩니다.</p>
             </div>
-            <button id="closeIndicatorButton" class="icon-only" type="button" title="닫기">
+            <button id="closeIndicatorButton" class="icon-only" type="button" title="닫기" aria-label="보조지표 닫기">
               <i data-lucide="x"></i>
             </button>
           </div>
-
           <div id="indicatorOptions" class="indicator-options"></div>
         </div>
       </section>
 
-      <section class="workspace">
-        <section id="chartGrid" class="chart-grid" aria-label="멀티 차트"></section>
+      <section class="workspace" aria-label="트레이딩 작업 공간">
+        <aside class="desktop-sidebar" aria-label="차트 목록">
+          <div class="sidebar-heading">
+            <span>YOUR WATCHLIST</span>
+            <button id="sidebarAddChart" class="sidebar-add" type="button" title="차트 추가" aria-label="차트 추가"><i data-lucide="plus"></i></button>
+          </div>
+          <nav id="sidebarChartList" class="sidebar-chart-list" aria-label="추가한 차트"></nav>
+          <div class="sidebar-help">
+            <i data-lucide="info"></i>
+            <p>차트를 선택하거나 차트 상단 검색 버튼으로 종목을 변경하세요.</p>
+          </div>
+        </aside>
+
+        <div class="workspace-main">
+          <div class="workspace-heading">
+            <div class="workspace-heading-text">
+              <span class="workspace-eyebrow">MARKET OVERVIEW <span class="eyebrow-separator">/</span> WORKSPACE 01</span>
+              <h2>차트 워크스페이스 <span id="workspaceChartCount">3개 차트</span></h2>
+            </div>
+            <div class="layout-controls" role="group" aria-label="데스크톱 차트 열 수">
+              <span class="layout-label">레이아웃</span>
+              <button type="button" data-layout="auto" aria-pressed="true" title="자동 배치">Auto</button>
+              <button type="button" data-layout="1" aria-pressed="false" title="1열">1</button>
+              <button type="button" data-layout="2" aria-pressed="false" title="2열">2</button>
+              <button type="button" data-layout="6" aria-pressed="false" title="3열">3</button>
+            </div>
+          </div>
+
+          <div class="mobile-chart-navigation" aria-label="모바일 차트 전환">
+            <div class="mobile-chart-navigation-top">
+              <span class="mobile-chart-label">CHARTS</span>
+              <span id="mobileChartCounter" class="mobile-chart-counter">1 / 3</span>
+            </div>
+            <div class="mobile-chart-navigation-row">
+              <button id="previousChartButton" class="mobile-nav-arrow" type="button" aria-label="이전 차트"><i data-lucide="chevron-left"></i></button>
+              <div id="mobileChartTabs" class="mobile-chart-tabs" role="tablist" aria-label="차트 선택"></div>
+              <button id="nextChartButton" class="mobile-nav-arrow" type="button" aria-label="다음 차트"><i data-lucide="chevron-right"></i></button>
+            </div>
+          </div>
+
+          <section id="chartGrid" class="chart-grid" aria-label="멀티 차트"></section>
+        </div>
       </section>
     </main>
   </body>
