@@ -1,1 +1,1 @@
-window.PIVOT_API_BASE_URL = "";
+window.PIVOT_API_BASE_URL = "https://coinscope-api-zhel.onrender.com";
