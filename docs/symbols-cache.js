@@ -1,8 +1,8 @@
 window.COIN_SCOPE_SYMBOL_CACHE = {
-  "generatedAt": "2026-10-25T08:03:47+00:00",
+  "generatedAt": "2026-11-01T10:00:11+00:00",
   "source": "tradingview-symbol-search",
   "seedCount": 74,
-  "itemCount": 2251,
+  "itemCount": 2254,
   "items": [
     {
       "symbol": "BINANCE:BTCUSDT.P",
@@ -493,6 +493,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "HTX:BTCUSDT",
+      "title": "BTCUSDT",
+      "subtitle": "BTCUSDT Futures Contract",
+      "exchangeLabel": "HTX",
+      "typeLabel": "futures",
+      "aliases": [
+        "BTCUSDT",
+        "BTCUSDT Futures Contract",
+        "HTX:BTCUSDT"
+      ]
+    },
+    {
       "symbol": "BINANCE:ETHUSDT.P",
       "title": "ETHUSDT.P",
       "subtitle": "Ethereum / TetherUS PERPETUAL CONTRACT",
@@ -978,6 +990,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BITGET:ETHUSDT",
         "ETHUSDT",
         "ETHUSDT SPOT"
+      ]
+    },
+    {
+      "symbol": "HTX:ETHUSDT",
+      "title": "ETHUSDT",
+      "subtitle": "ETHUSDT Futures Contract",
+      "exchangeLabel": "HTX",
+      "typeLabel": "futures",
+      "aliases": [
+        "ETHUSDT",
+        "ETHUSDT Futures Contract",
+        "HTX:ETHUSDT"
       ]
     },
     {
@@ -9263,6 +9287,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BINANCE:1000PEPEUSDT.P",
+      "title": "1000PEPEUSDT.P",
+      "subtitle": "1000PEPE / TetherUS PERPETUAL CONTRACT",
+      "exchangeLabel": "Binance",
+      "typeLabel": "swap",
+      "aliases": [
+        "1000PEPE / TetherUS PERPETUAL CONTRACT",
+        "1000PEPEUSDT",
+        "1000PEPEUSDT.P",
+        "BINANCE:1000PEPEUSDT.P"
+      ]
+    },
+    {
       "symbol": "BINANCE:PEPEUSDT",
       "title": "PEPEUSDT",
       "subtitle": "PEPE / TetherUS",
@@ -13063,18 +13100,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "BITGET:RUNEUSDT",
-      "title": "RUNEUSDT",
-      "subtitle": "RUNEUSDT SPOT",
-      "exchangeLabel": "Bitget",
-      "typeLabel": "spot",
-      "aliases": [
-        "BITGET:RUNEUSDT",
-        "RUNEUSDT",
-        "RUNEUSDT SPOT"
-      ]
-    },
-    {
       "symbol": "DEEPCOIN:MKRUSDT.P",
       "title": "MKRUSDT.P",
       "subtitle": "Maker/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -13228,6 +13253,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "WLDUSDT",
         "WLDUSDT.P",
         "Worldcoin vs Tether USD PERPETUAL CONTRACT"
+      ]
+    },
+    {
+      "symbol": "BYDFI:WLDUSDT.P",
+      "title": "WLDUSDT.P",
+      "subtitle": "WLD / USD TETHER PERPETUAL SWAP CONTRACT",
+      "exchangeLabel": "BYDFI",
+      "typeLabel": "swap",
+      "aliases": [
+        "BYDFI:WLDUSDT.P",
+        "WLD / USD TETHER PERPETUAL SWAP CONTRACT",
+        "WLDUSDT",
+        "WLDUSDT.P"
       ]
     },
     {
@@ -15157,19 +15195,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "XTCOM:NAS100USDT.P",
-      "title": "NAS100USDT.P",
-      "subtitle": "NAS100/USDT PERPETUAL SWAP CONTRACT",
-      "exchangeLabel": "XTCOM",
-      "typeLabel": "swap",
-      "aliases": [
-        "NAS100/USDT PERPETUAL SWAP CONTRACT",
-        "NAS100USDT",
-        "NAS100USDT.P",
-        "XTCOM:NAS100USDT.P"
-      ]
-    },
-    {
       "symbol": "BLACKBULLMARKETS:NAS100",
       "title": "NAS100",
       "subtitle": "NAS100 Index (Cash)",
@@ -15520,11 +15545,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "FWB:US100743AK9",
       "title": "US100743AK9",
-      "subtitle": "Boston Gas Co 3.15% 01-AUG-2027",
+      "subtitle": "Boston Gas Co 3.15% 01-AUG-2027 144A",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "Boston Gas Co 3.15% 01-AUG-2027",
+        "Boston Gas Co 3.15% 01-AUG-2027 144A",
         "FWB:US100743AK9",
         "US100743AK9"
       ]
@@ -15809,63 +15834,27 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "CHIXAU:NDXKCA",
-      "title": "NDXKCA",
-      "subtitle": "Citiwarrants 28278.3274 NDX Mini Long",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCA",
-        "Citiwarrants 28278.3274 NDX Mini Long",
-        "NDXKCA"
-      ]
-    },
-    {
       "symbol": "CHIXAU:NDXKCB",
       "title": "NDXKCB",
-      "subtitle": "Citiwarrants 27029.6298 NDX Mini Long",
+      "subtitle": "Citiwarrants 27054.7811 NDX Mini Long",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXKCB",
-        "Citiwarrants 27029.6298 NDX Mini Long",
+        "Citiwarrants 27054.7811 NDX Mini Long",
         "NDXKCB"
-      ]
-    },
-    {
-      "symbol": "CHIXAU:NDXKCC",
-      "title": "NDXKCC",
-      "subtitle": "Citiwarrants 27562.5056 NDX Mini Long",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCC",
-        "Citiwarrants 27562.5056 NDX Mini Long",
-        "NDXKCC"
       ]
     },
     {
       "symbol": "CHIXAU:NDXKCD",
       "title": "NDXKCD",
-      "subtitle": "Citiwarrants 26251.8627 NDX Mini Long",
+      "subtitle": "Citiwarrants 26276.2903 NDX Mini Long",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXKCD",
-        "Citiwarrants 26251.8627 NDX Mini Long",
+        "Citiwarrants 26276.2903 NDX Mini Long",
         "NDXKCD"
-      ]
-    },
-    {
-      "symbol": "CHIXAU:NDXKCH",
-      "title": "NDXKCH",
-      "subtitle": "Citiwarrants 28105.0168 NDX Mini Long",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCH",
-        "Citiwarrants 28105.0168 NDX Mini Long",
-        "NDXKCH"
       ]
     },
     {
@@ -15878,30 +15867,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CHIXAU:NDXKCJ",
         "Citigroup Global Markets Australia Pty Ltd Warrant 2025-30.12.39 on Nasdaq 100 E-Mini",
         "NDXKCJ"
-      ]
-    },
-    {
-      "symbol": "CHIXAU:NDXKCK",
-      "title": "NDXKCK",
-      "subtitle": "Citigroup Global Markets Australia Pty Ltd Warrant 2026-30.12.39 on ShsNasdaq 100 E-Mini",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCK",
-        "Citigroup Global Markets Australia Pty Ltd Warrant 2026-30.12.39 on ShsNasdaq 100 E-Mini",
-        "NDXKCK"
-      ]
-    },
-    {
-      "symbol": "CHIXAU:NDXKCL",
-      "title": "NDXKCL",
-      "subtitle": "Citiwarrants 26508.1606 NDX Mini Long",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCL",
-        "Citiwarrants 26508.1606 NDX Mini Long",
-        "NDXKCL"
       ]
     },
     {
@@ -15929,87 +15894,63 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "CHIXAU:NDXKCR",
-      "title": "NDXKCR",
-      "subtitle": "Citiwarrants 30212.9012 NDX Mini Short",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCR",
-        "Citiwarrants 30212.9012 NDX Mini Short",
-        "NDXKCR"
-      ]
-    },
-    {
-      "symbol": "CHIXAU:NDXKCS",
-      "title": "NDXKCS",
-      "subtitle": "Citiwarrants 26693.5824 NDX Mini Short",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCS",
-        "Citiwarrants 26693.5824 NDX Mini Short",
-        "NDXKCS"
-      ]
-    },
-    {
-      "symbol": "CHIXAU:NDXKCZ",
-      "title": "NDXKCZ",
-      "subtitle": "Citiwarrants 30512.4264 NDX Mini Short",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCZ",
-        "Citiwarrants 30512.4264 NDX Mini Short",
-        "NDXKCZ"
-      ]
-    },
-    {
       "symbol": "CHIXAU:NDXMCA",
       "title": "NDXMCA",
-      "subtitle": "Citiwarrants 22813.2546 NDX Mini Long",
+      "subtitle": "Citiwarrants 22834.4825 NDX Mini Long",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCA",
-        "Citiwarrants 22813.2546 NDX Mini Long",
+        "Citiwarrants 22834.4825 NDX Mini Long",
         "NDXMCA"
-      ]
-    },
-    {
-      "symbol": "CHIXAU:NDXMCD",
-      "title": "NDXMCD",
-      "subtitle": "Citigroup Global Markets Australia Pty Ltd Warrant 2022-31.12.29 on Nasdaq 100 E-Mini",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXMCD",
-        "Citigroup Global Markets Australia Pty Ltd Warrant 2022-31.12.29 on Nasdaq 100 E-Mini",
-        "NDXMCD"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCT",
       "title": "NDXMCT",
-      "subtitle": "Citiwarrants 35802.9428 NDX Mini Short",
+      "subtitle": "Citiwarrants 35769.6545 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCT",
-        "Citiwarrants 35802.9428 NDX Mini Short",
+        "Citiwarrants 35769.6545 NDX Mini Short",
         "NDXMCT"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCV",
       "title": "NDXMCV",
-      "subtitle": "Citiwarrants 34904.1814 NDX Mini Short",
+      "subtitle": "Citiwarrants 34871.7287 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCV",
-        "Citiwarrants 34904.1814 NDX Mini Short",
+        "Citiwarrants 34871.7287 NDX Mini Short",
         "NDXMCV"
+      ]
+    },
+    {
+      "symbol": "CHIXAU:NDXMCX",
+      "title": "NDXMCX",
+      "subtitle": "Citiwarrants 34190.5362 NDX Mini Short",
+      "exchangeLabel": "CHIXAU",
+      "typeLabel": "warrant",
+      "aliases": [
+        "CHIXAU:NDXMCX",
+        "Citiwarrants 34190.5362 NDX Mini Short",
+        "NDXMCX"
+      ]
+    },
+    {
+      "symbol": "CHIXAU:NDXMCY",
+      "title": "NDXMCY",
+      "subtitle": "Citiwarrants 33640.2463 NDX Mini Short",
+      "exchangeLabel": "CHIXAU",
+      "typeLabel": "warrant",
+      "aliases": [
+        "CHIXAU:NDXMCY",
+        "Citiwarrants 33640.2463 NDX Mini Short",
+        "NDXMCY"
       ]
     },
     {
@@ -16046,6 +15987,90 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "EUREX:NDXF",
         "NDXF",
         "Nordex Futures"
+      ]
+    },
+    {
+      "symbol": "EURONEXTPARIS:NDXH",
+      "title": "NDXH",
+      "subtitle": "Amundi Index Solutions - NASDAQ-100 Swap UCITS ETF UCITS ETF Daily Hedged EUR C- Capitalisation",
+      "exchangeLabel": "EURONEXTPARIS",
+      "typeLabel": "fund",
+      "aliases": [
+        "Amundi Index Solutions - NASDAQ-100 Swap UCITS ETF UCITS ETF Daily Hedged EUR C- Capitalisation",
+        "EURONEXTPARIS:NDXH",
+        "NDXH"
+      ]
+    },
+    {
+      "symbol": "FWB:NDX1",
+      "title": "NDX1",
+      "subtitle": "Nordex SE",
+      "exchangeLabel": "FWB",
+      "typeLabel": "stock",
+      "aliases": [
+        "FWB:NDX1",
+        "NDX1",
+        "Nordex SE"
+      ]
+    },
+    {
+      "symbol": "GETTEX:NDX1",
+      "title": "NDX1",
+      "subtitle": "Nordex SE",
+      "exchangeLabel": "GETTEX",
+      "typeLabel": "stock",
+      "aliases": [
+        "GETTEX:NDX1",
+        "NDX1",
+        "Nordex SE"
+      ]
+    },
+    {
+      "symbol": "HAM:NDX1",
+      "title": "NDX1",
+      "subtitle": "Nordex SE",
+      "exchangeLabel": "HAM",
+      "typeLabel": "stock",
+      "aliases": [
+        "HAM:NDX1",
+        "NDX1",
+        "Nordex SE"
+      ]
+    },
+    {
+      "symbol": "HAN:NDX1",
+      "title": "NDX1",
+      "subtitle": "Nordex SE",
+      "exchangeLabel": "HAN",
+      "typeLabel": "stock",
+      "aliases": [
+        "HAN:NDX1",
+        "NDX1",
+        "Nordex SE"
+      ]
+    },
+    {
+      "symbol": "INTOTHEBLOCK:NDX_ACTIVEADDRESSES",
+      "title": "NDX_ACTIVEADDRESSES",
+      "subtitle": "Indexed Finance: The addresses that made one or more on-chain transaction(s) on a given day",
+      "exchangeLabel": "INTOTHEBLOCK",
+      "typeLabel": "fundamental",
+      "aliases": [
+        "INTOTHEBLOCK:NDX_ACTIVEADDRESSES",
+        "Indexed Finance: The addresses that made one or more on-chain transaction(s) on a given day",
+        "NDX_ACTIVEADDRESSES"
+      ]
+    },
+    {
+      "symbol": "INTOTHEBLOCK:NDX_ACTIVERATIO",
+      "title": "NDX_ACTIVERATIO",
+      "subtitle": "Indexed Finance: The percentage of addresses with a balance that had a transaction on a given day",
+      "exchangeLabel": "INTOTHEBLOCK",
+      "typeLabel": "fundamental",
+      "aliases": [
+        "INTOTHEBLOCK:NDX_ACTIVERATIO",
+        "Indexed Finance: The percentage of addresses with a balance that had a transaction on a given day",
+        "NDX_ACTIVERATIO"
       ]
     },
     {
@@ -16476,24 +16501,24 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "FWB:US50050HAW6",
       "title": "US50050HAW6",
-      "subtitle": "Kookmin Bank /Old/ 5.375% 08-MAY-2027",
+      "subtitle": "Kookmin Bank /Old/ 5.375% 08-MAY-2027 RegS",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
         "FWB:US50050HAW6",
-        "Kookmin Bank /Old/ 5.375% 08-MAY-2027",
+        "Kookmin Bank /Old/ 5.375% 08-MAY-2027 RegS",
         "US50050HAW6"
       ]
     },
     {
       "symbol": "FWB:US50050HAX4",
       "title": "US50050HAX4",
-      "subtitle": "Kookmin Bank /Old/ 5.25% 08-MAY-2029",
+      "subtitle": "Kookmin Bank /Old/ 5.25% 08-MAY-2029 RegS",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
         "FWB:US50050HAX4",
-        "Kookmin Bank /Old/ 5.25% 08-MAY-2029",
+        "Kookmin Bank /Old/ 5.25% 08-MAY-2029 RegS",
         "US50050HAX4"
       ]
     },
@@ -16548,24 +16573,24 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "FWB:US500631AW6",
       "title": "US500631AW6",
-      "subtitle": "Korea Electric Power Corporation 4.0% 14-JUN-2027",
+      "subtitle": "Korea Electric Power Corporation 4.0% 14-JUN-2027 144A",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
         "FWB:US500631AW6",
-        "Korea Electric Power Corporation 4.0% 14-JUN-2027",
+        "Korea Electric Power Corporation 4.0% 14-JUN-2027 144A",
         "US500631AW6"
       ]
     },
     {
       "symbol": "FWB:US500631AY2",
       "title": "US500631AY2",
-      "subtitle": "Korea Electric Power Corporation 5.5% 06-APR-2028",
+      "subtitle": "Korea Electric Power Corporation 5.5% 06-APR-2028 144A",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
         "FWB:US500631AY2",
-        "Korea Electric Power Corporation 5.5% 06-APR-2028",
+        "Korea Electric Power Corporation 5.5% 06-APR-2028 144A",
         "US500631AY2"
       ]
     },
@@ -16692,36 +16717,36 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "FWB:US50064YAQ6",
       "title": "US50064YAQ6",
-      "subtitle": "Korea Hydro & Nuclear Power Co., Ltd. 4.25% 27-JUL-2027",
+      "subtitle": "Korea Hydro & Nuclear Power Co., Ltd. 4.25% 27-JUL-2027 144A",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
         "FWB:US50064YAQ6",
-        "Korea Hydro & Nuclear Power Co., Ltd. 4.25% 27-JUL-2027",
+        "Korea Hydro & Nuclear Power Co., Ltd. 4.25% 27-JUL-2027 144A",
         "US50064YAQ6"
       ]
     },
     {
       "symbol": "FWB:US50065RAZ0",
       "title": "US50065RAZ0",
-      "subtitle": "Korea Housing Finance Corporation 3.875% 15-JAN-2031",
+      "subtitle": "Korea Housing Finance Corporation 3.875% 15-JAN-2031 144A",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
         "FWB:US50065RAZ0",
-        "Korea Housing Finance Corporation 3.875% 15-JAN-2031",
+        "Korea Housing Finance Corporation 3.875% 15-JAN-2031 144A",
         "US50065RAZ0"
       ]
     },
     {
       "symbol": "FWB:US50065XAP9",
       "title": "US50065XAP9",
-      "subtitle": "Korea National Oil Corporation 4.875% 03-APR-2028",
+      "subtitle": "Korea National Oil Corporation 4.875% 03-APR-2028 RegS",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
         "FWB:US50065XAP9",
-        "Korea National Oil Corporation 4.875% 03-APR-2028",
+        "Korea National Oil Corporation 4.875% 03-APR-2028 RegS",
         "US50065XAP9"
       ]
     },
@@ -16735,6 +16760,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "ASX:SPX",
         "SPX",
         "Spenda Limited"
+      ]
+    },
+    {
+      "symbol": "BSESOF:SPX",
+      "title": "SPX",
+      "subtitle": "Space Exploration Technologies Corp. Class A",
+      "exchangeLabel": "BSESOF",
+      "typeLabel": "stock",
+      "aliases": [
+        "BSESOF:SPX",
+        "SPX",
+        "Space Exploration Technologies Corp. Class A"
       ]
     },
     {
@@ -17054,18 +17091,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "SPXUSDT",
         "SPXUSDT Perpetual Swap Contract",
         "SPXUSDT.P"
-      ]
-    },
-    {
-      "symbol": "GATEIO:SPXUSDT",
-      "title": "SPXUSDT",
-      "subtitle": "SPX6900/Tether",
-      "exchangeLabel": "Gate.io",
-      "typeLabel": "spot",
-      "aliases": [
-        "GATEIO:SPXUSDT",
-        "SPX6900/Tether",
-        "SPXUSDT"
       ]
     },
     {
@@ -18252,15 +18277,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:DXY",
+      "symbol": "OPO:DXY",
       "title": "DXY",
       "subtitle": "Dollar Index Future",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "index",
       "aliases": [
         "DXY",
         "Dollar Index Future",
-        "OPOFINANCE:DXY"
+        "OPO:DXY"
       ]
     },
     {
@@ -18419,6 +18444,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "DXYFINANCE / Wrapped Ether on Ethereum (0x0FC81d94dAfa1f8db788aD634750cAAb0213Eb6d) in USD",
         "DXYWETH_0FC81D.USD",
         "UNISWAPV2ETHEREUM:DXYWETH_0FC81D.USD"
+      ]
+    },
+    {
+      "symbol": "XTCOM:DXYZUSDT.P",
+      "title": "DXYZUSDT.P",
+      "subtitle": "dxyz",
+      "exchangeLabel": "XTCOM",
+      "typeLabel": "swap",
+      "aliases": [
+        "DXYZUSDT",
+        "DXYZUSDT.P",
+        "XTCOM:DXYZUSDT.P",
+        "dxyz"
       ]
     },
     {
@@ -18843,18 +18881,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FINRA:VIXX.AG",
-      "title": "VIXX.AG",
-      "subtitle": "VICTORY FAITH FELLOWSHIP SPOKANE VY WASH 7% 01-JUL-2031",
-      "exchangeLabel": "FINRA",
-      "typeLabel": "bond",
-      "aliases": [
-        "FINRA:VIXX.AG",
-        "VICTORY FAITH FELLOWSHIP SPOKANE VY WASH 7% 01-JUL-2031",
-        "VIXX.AG"
-      ]
-    },
-    {
       "symbol": "FRED:VIXCLS",
       "title": "VIXCLS",
       "subtitle": "CBOE Volatility Index: VIX",
@@ -18912,6 +18938,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "HAN:VIXL",
         "VIXL",
         "WisdomTree S&P 500 VIX ShortTerm Futures 2.25x Daily Leveraged"
+      ]
+    },
+    {
+      "symbol": "LSE:VIX2",
+      "title": "VIX2",
+      "subtitle": "Leverage Shares 2.25x Long VIX Short-Term Futures ETC",
+      "exchangeLabel": "LSE",
+      "typeLabel": "fund",
+      "aliases": [
+        "LSE:VIX2",
+        "Leverage Shares 2.25x Long VIX Short-Term Futures ETC",
+        "VIX2"
       ]
     },
     {
@@ -19311,14 +19349,14 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:XAUUSD",
+      "symbol": "OPO:XAUUSD",
       "title": "XAUUSD",
       "subtitle": "Gold vs US Dollar",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "commodity",
       "aliases": [
         "Gold vs US Dollar",
-        "OPOFINANCE:XAUUSD",
+        "OPO:XAUUSD",
         "XAUUSD"
       ]
     },
@@ -19791,13 +19829,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:XAGUSD",
+      "symbol": "OPO:XAGUSD",
       "title": "XAGUSD",
       "subtitle": "Silver vs US Dollar",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "commodity",
       "aliases": [
-        "OPOFINANCE:XAGUSD",
+        "OPO:XAGUSD",
         "Silver vs US Dollar",
         "XAGUSD"
       ]
@@ -20084,7 +20122,7 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "title": "EURUSD",
       "subtitle": "Euro / United States Dollar",
       "exchangeLabel": "CMCMARKETS",
-      "typeLabel": "futures",
+      "typeLabel": "forex",
       "aliases": [
         "CMCMARKETS:EURUSD",
         "EURUSD",
@@ -20415,15 +20453,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:EURUSD",
+      "symbol": "OPO:EURUSD",
       "title": "EURUSD",
       "subtitle": "Euro vs US Dollar",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "forex",
       "aliases": [
         "EURUSD",
         "Euro vs US Dollar",
-        "OPOFINANCE:EURUSD"
+        "OPO:EURUSD"
       ]
     },
     {
@@ -20895,15 +20933,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:GBPUSD",
+      "symbol": "OPO:GBPUSD",
       "title": "GBPUSD",
       "subtitle": "British Pound vs US Dollar",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "forex",
       "aliases": [
         "British Pound vs US Dollar",
         "GBPUSD",
-        "OPOFINANCE:GBPUSD"
+        "OPO:GBPUSD"
       ]
     },
     {
@@ -21339,13 +21377,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:USDJPY",
+      "symbol": "OPO:USDJPY",
       "title": "USDJPY",
       "subtitle": "US Dollar vs Japanese Yen",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "forex",
       "aliases": [
-        "OPOFINANCE:USDJPY",
+        "OPO:USDJPY",
         "US Dollar vs Japanese Yen",
         "USDJPY"
       ]
@@ -21499,7 +21537,7 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "title": "AUDUSD",
       "subtitle": "Australian Dollar / United States Dollar",
       "exchangeLabel": "CMCMARKETS",
-      "typeLabel": "forex",
+      "typeLabel": "futures",
       "aliases": [
         "AUDUSD",
         "Australian Dollar / United States Dollar",
@@ -21819,15 +21857,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:AUDUSD",
+      "symbol": "OPO:AUDUSD",
       "title": "AUDUSD",
       "subtitle": "Australian vs US Dollar",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "forex",
       "aliases": [
         "AUDUSD",
         "Australian vs US Dollar",
-        "OPOFINANCE:AUDUSD"
+        "OPO:AUDUSD"
       ]
     },
     {
@@ -22275,13 +22313,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:USDCAD",
+      "symbol": "OPO:USDCAD",
       "title": "USDCAD",
       "subtitle": "US Dollar vs Canadian",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "forex",
       "aliases": [
-        "OPOFINANCE:USDCAD",
+        "OPO:USDCAD",
         "US Dollar vs Canadian",
         "USDCAD"
       ]
@@ -22755,13 +22793,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:USDCHF",
+      "symbol": "OPO:USDCHF",
       "title": "USDCHF",
       "subtitle": "US Dollar vs Swiss Franc",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "forex",
       "aliases": [
-        "OPOFINANCE:USDCHF",
+        "OPO:USDCHF",
         "US Dollar vs Swiss Franc",
         "USDCHF"
       ]
@@ -23211,15 +23249,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "OPOFINANCE:NZDUSD",
+      "symbol": "OPO:NZDUSD",
       "title": "NZDUSD",
       "subtitle": "New Zeland Dollar vs US Dollar",
-      "exchangeLabel": "OPOFINANCE",
+      "exchangeLabel": "OPO",
       "typeLabel": "forex",
       "aliases": [
         "NZDUSD",
         "New Zeland Dollar vs US Dollar",
-        "OPOFINANCE:NZDUSD"
+        "OPO:NZDUSD"
       ]
     },
     {
@@ -23357,12 +23395,12 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BMV:AAPL",
       "title": "AAPL",
-      "subtitle": "Apple Inc.",
+      "subtitle": "AAPL Futures",
       "exchangeLabel": "BMV",
-      "typeLabel": "stock",
+      "typeLabel": "futures",
       "aliases": [
         "AAPL",
-        "Apple Inc.",
+        "AAPL Futures",
         "BMV:AAPL"
       ]
     },
@@ -23562,6 +23600,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BITGET:AAPLUSDT.P",
+      "title": "AAPLUSDT.P",
+      "subtitle": "AAPLUSDTPERP PERPETUAL MIX CONTRACT",
+      "exchangeLabel": "Bitget",
+      "typeLabel": "swap",
+      "aliases": [
+        "AAPLUSDT",
+        "AAPLUSDT.P",
+        "AAPLUSDTPERP PERPETUAL MIX CONTRACT",
+        "BITGET:AAPLUSDT.P"
+      ]
+    },
+    {
       "symbol": "KUCOIN:AAPLUSDT.P",
       "title": "AAPLUSDT.P",
       "subtitle": "AAPL/Tether Perpetual Contract",
@@ -23733,6 +23784,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "CRYPTO:AAPLBUSD",
+      "title": "AAPLBUSD",
+      "subtitle": "Apple Tokenized bStocks",
+      "exchangeLabel": "CRYPTO",
+      "typeLabel": "spot",
+      "aliases": [
+        "AAPLBUSD",
+        "Apple Tokenized bStocks",
+        "CRYPTO:AAPLBUSD"
+      ]
+    },
+    {
+      "symbol": "CRYPTO:AAPLXUSD",
+      "title": "AAPLXUSD",
+      "subtitle": "Apple tokenized stock (xStock)",
+      "exchangeLabel": "CRYPTO",
+      "typeLabel": "spot",
+      "aliases": [
+        "AAPLXUSD",
+        "Apple tokenized stock (xStock)",
+        "CRYPTO:AAPLXUSD"
+      ]
+    },
+    {
       "symbol": "CRYPTOCAP:AAPLB",
       "title": "AAPLB",
       "subtitle": "Market Cap AAPLB, $",
@@ -23778,42 +23853,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AAPLON.D",
         "CRYPTOCAP:AAPLON.D",
         "Market Cap AAPLON Dominance, %"
-      ]
-    },
-    {
-      "symbol": "CRYPTOCAP:AAPLX",
-      "title": "AAPLX",
-      "subtitle": "Market Cap AAPLX, $",
-      "exchangeLabel": "CRYPTOCAP",
-      "typeLabel": "index",
-      "aliases": [
-        "AAPLX",
-        "CRYPTOCAP:AAPLX",
-        "Market Cap AAPLX, $"
-      ]
-    },
-    {
-      "symbol": "CRYPTOCAP:AAPLX.D",
-      "title": "AAPLX.D",
-      "subtitle": "Market Cap AAPLX Dominance, %",
-      "exchangeLabel": "CRYPTOCAP",
-      "typeLabel": "index",
-      "aliases": [
-        "AAPLX.D",
-        "CRYPTOCAP:AAPLX.D",
-        "Market Cap AAPLX Dominance, %"
-      ]
-    },
-    {
-      "symbol": "FINRA:AAPL_SHORT_VOLUME",
-      "title": "AAPL_SHORT_VOLUME",
-      "subtitle": "AAPL Short Sale Volume",
-      "exchangeLabel": "FINRA",
-      "typeLabel": "index",
-      "aliases": [
-        "AAPL Short Sale Volume",
-        "AAPL_SHORT_VOLUME",
-        "FINRA:AAPL_SHORT_VOLUME"
       ]
     },
     {
@@ -24137,18 +24176,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "MEXC:MSFTONUSDT",
-      "title": "MSFTONUSDT",
-      "subtitle": "Microsoft (Ondo) / USDT",
-      "exchangeLabel": "MEXC",
-      "typeLabel": "spot",
-      "aliases": [
-        "MEXC:MSFTONUSDT",
-        "MSFTONUSDT",
-        "Microsoft (Ondo) / USDT"
-      ]
-    },
-    {
       "symbol": "MEXC:MSFTUSDT.P",
       "title": "MSFTUSDT.P",
       "subtitle": "MSFT / Tether PERPETUAL FUTURES",
@@ -24211,30 +24238,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "BCS:MSFTCL0",
-      "title": "MSFTCL0",
-      "subtitle": "Microsoft Corporation",
-      "exchangeLabel": "BCS",
-      "typeLabel": "stock",
-      "aliases": [
-        "BCS:MSFTCL0",
-        "MSFTCL0",
-        "Microsoft Corporation"
-      ]
-    },
-    {
-      "symbol": "BCS:MSFTCL1",
-      "title": "MSFTCL1",
-      "subtitle": "Microsoft Corporation",
-      "exchangeLabel": "BCS",
-      "typeLabel": "stock",
-      "aliases": [
-        "BCS:MSFTCL1",
-        "MSFTCL1",
-        "Microsoft Corporation"
-      ]
-    },
-    {
       "symbol": "BINGX:MSFTONUSDT",
       "title": "MSFTONUSDT",
       "subtitle": "Microsoft Tokenized Stock (Ondo)/USD Tether Spot",
@@ -24257,6 +24260,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "MSFT/USDT Perpetual Contract",
         "MSFTUSDT",
         "MSFTUSDT.P"
+      ]
+    },
+    {
+      "symbol": "BITUNIX:MSFTUSDT.P",
+      "title": "MSFTUSDT.P",
+      "subtitle": "Microsoft Corp / Tether LINEAR FUTURES CONTRACT",
+      "exchangeLabel": "BITUNIX",
+      "typeLabel": "swap",
+      "aliases": [
+        "BITUNIX:MSFTUSDT.P",
+        "MSFTUSDT",
+        "MSFTUSDT.P",
+        "Microsoft Corp / Tether LINEAR FUTURES CONTRACT"
       ]
     },
     {
@@ -24310,6 +24326,31 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BVL:MSFTUS",
+      "title": "MSFTUS",
+      "subtitle": "Microsoft Corporation",
+      "exchangeLabel": "BVL",
+      "typeLabel": "stock",
+      "aliases": [
+        "BVL:MSFTUS",
+        "MSFTUS",
+        "Microsoft Corporation"
+      ]
+    },
+    {
+      "symbol": "BYDFI:MSFTUSDT.P",
+      "title": "MSFTUSDT.P",
+      "subtitle": "MSFT / USD TETHER PERPETUAL SWAP CONTRACT",
+      "exchangeLabel": "BYDFI",
+      "typeLabel": "swap",
+      "aliases": [
+        "BYDFI:MSFTUSDT.P",
+        "MSFT / USD TETHER PERPETUAL SWAP CONTRACT",
+        "MSFTUSDT",
+        "MSFTUSDT.P"
+      ]
+    },
+    {
       "symbol": "BCS:NVDA",
       "title": "NVDA",
       "subtitle": "NVIDIA Corporation",
@@ -24336,13 +24377,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BMV:NVDA",
       "title": "NVDA",
-      "subtitle": "NVIDIA Corporation",
+      "subtitle": "NVIDIA Futures",
       "exchangeLabel": "BMV",
-      "typeLabel": "stock",
+      "typeLabel": "futures",
       "aliases": [
         "BMV:NVDA",
         "NVDA",
-        "NVIDIA Corporation"
+        "NVIDIA Futures"
       ]
     },
     {
@@ -24602,19 +24643,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "KUCOIN:NVDAUSDT.P",
-      "title": "NVDAUSDT.P",
-      "subtitle": "NVDA/Tether Perpetual Contract",
-      "exchangeLabel": "KuCoin",
-      "typeLabel": "swap",
-      "aliases": [
-        "KUCOIN:NVDAUSDT.P",
-        "NVDA/Tether Perpetual Contract",
-        "NVDAUSDT",
-        "NVDAUSDT.P"
-      ]
-    },
-    {
       "symbol": "BCS:NVDA0",
       "title": "NVDA0",
       "subtitle": "NVIDIA Corporation",
@@ -24797,6 +24825,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "CRYPTOCAP:NVDAON.D",
+      "title": "NVDAON.D",
+      "subtitle": "Market Cap NVDAON Dominance, %",
+      "exchangeLabel": "CRYPTOCAP",
+      "typeLabel": "index",
+      "aliases": [
+        "CRYPTOCAP:NVDAON.D",
+        "Market Cap NVDAON Dominance, %",
+        "NVDAON.D"
+      ]
+    },
+    {
       "symbol": "BCS:TSLA",
       "title": "TSLA",
       "subtitle": "Tesla, Inc.",
@@ -24823,13 +24863,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BMV:TSLA",
       "title": "TSLA",
-      "subtitle": "Tesla, Inc.",
+      "subtitle": "TSLA Futures",
       "exchangeLabel": "BMV",
-      "typeLabel": "stock",
+      "typeLabel": "futures",
       "aliases": [
         "BMV:TSLA",
         "TSLA",
-        "Tesla, Inc."
+        "TSLA Futures"
       ]
     },
     {
@@ -25643,18 +25683,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "MEXC:AMZNXUSDT",
-      "title": "AMZNXUSDT",
-      "subtitle": "Amazon.com xStock / USDT",
-      "exchangeLabel": "MEXC",
-      "typeLabel": "spot",
-      "aliases": [
-        "AMZNXUSDT",
-        "Amazon.com xStock / USDT",
-        "MEXC:AMZNXUSDT"
-      ]
-    },
-    {
       "symbol": "KUCOIN:AMZNUSDT.P",
       "title": "AMZNUSDT.P",
       "subtitle": "AMZN/Tether Perpetual Contract",
@@ -25701,18 +25729,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AMZNCL",
         "Amazon.com, Inc.",
         "BCS:AMZNCL"
-      ]
-    },
-    {
-      "symbol": "BINGX:AMZNONUSDT",
-      "title": "AMZNONUSDT",
-      "subtitle": "Amazon Tokenized Stock (Ondo)/USD Tether Spot",
-      "exchangeLabel": "BINGX",
-      "typeLabel": "spot",
-      "aliases": [
-        "AMZNONUSDT",
-        "Amazon Tokenized Stock (Ondo)/USD Tether Spot",
-        "BINGX:AMZNONUSDT"
       ]
     },
     {
@@ -25777,6 +25793,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AMZNUSDT",
         "AMZNUSDT.P",
         "BYDFI:AMZNUSDT.P"
+      ]
+    },
+    {
+      "symbol": "BYMA:AMZNB",
+      "title": "AMZNB",
+      "subtitle": "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
+      "exchangeLabel": "BYMA",
+      "typeLabel": "dr",
+      "aliases": [
+        "AMZNB",
+        "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
+        "BYMA:AMZNB"
+      ]
+    },
+    {
+      "symbol": "BYMA:AMZNC",
+      "title": "AMZNC",
+      "subtitle": "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
+      "exchangeLabel": "BYMA",
+      "typeLabel": "dr",
+      "aliases": [
+        "AMZNC",
+        "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
+        "BYMA:AMZNC"
       ]
     },
     {
@@ -26214,30 +26254,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "BSE:METALFUND",
-      "title": "METALFUND",
-      "subtitle": "Mirae Asset Nifty Metal ETF Exchange Traded Fund Units",
-      "exchangeLabel": "BSE",
-      "typeLabel": "fund",
-      "aliases": [
-        "BSE:METALFUND",
-        "METALFUND",
-        "Mirae Asset Nifty Metal ETF Exchange Traded Fund Units"
-      ]
-    },
-    {
-      "symbol": "BSE:METALIETF",
-      "title": "METALIETF",
-      "subtitle": "ICICI Prudential Nifty Metal ETF",
-      "exchangeLabel": "BSE",
-      "typeLabel": "fund",
-      "aliases": [
-        "BSE:METALIETF",
-        "ICICI Prudential Nifty Metal ETF",
-        "METALIETF"
-      ]
-    },
-    {
       "symbol": "BSE:META_RE",
       "title": "META_RE",
       "subtitle": "Bio Green Papers Ltd. Rights 2025-28.04.25 For Shares",
@@ -26259,6 +26275,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BVL:METAUS",
         "METAUS",
         "Meta Platforms Inc Class A"
+      ]
+    },
+    {
+      "symbol": "BYMA:META.CI",
+      "title": "META.CI",
+      "subtitle": "Meta Platforms Inc Shs A Cert Deposito Arg Repr 0.041666666 Shs",
+      "exchangeLabel": "BYMA",
+      "typeLabel": "dr",
+      "aliases": [
+        "BYMA:META.CI",
+        "META.CI",
+        "Meta Platforms Inc Shs A Cert Deposito Arg Repr 0.041666666 Shs"
+      ]
+    },
+    {
+      "symbol": "BYMA:METAB",
+      "title": "METAB",
+      "subtitle": "Meta Platforms Inc Shs A Cert Deposito Arg Repr 0.041666666 Shs",
+      "exchangeLabel": "BYMA",
+      "typeLabel": "dr",
+      "aliases": [
+        "BYMA:METAB",
+        "METAB",
+        "Meta Platforms Inc Shs A Cert Deposito Arg Repr 0.041666666 Shs"
       ]
     },
     {
@@ -26392,32 +26432,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "GOOGL / TetherUS PERPETUAL CONTRACT",
         "GOOGLUSDT",
         "GOOGLUSDT.P"
-      ]
-    },
-    {
-      "symbol": "BINANCE:GOOGLUSDT.P_MPRICE",
-      "title": "GOOGLUSDT.P_MPRICE",
-      "subtitle": "GOOGLUSDT.P Mark Price",
-      "exchangeLabel": "Binance",
-      "typeLabel": "derivative-metrics",
-      "aliases": [
-        "BINANCE:GOOGLUSDT.P_MPRICE",
-        "GOOGLUSDT.P Mark Price",
-        "GOOGLUSDT.P_MPRICE",
-        "GOOGLUSDT_MPRICE"
-      ]
-    },
-    {
-      "symbol": "BINANCE:GOOGLUSDT.P_PREMIUM",
-      "title": "GOOGLUSDT.P_PREMIUM",
-      "subtitle": "GOOGLUSDT.P Premium",
-      "exchangeLabel": "Binance",
-      "typeLabel": "derivative-metrics",
-      "aliases": [
-        "BINANCE:GOOGLUSDT.P_PREMIUM",
-        "GOOGLUSDT.P Premium",
-        "GOOGLUSDT.P_PREMIUM",
-        "GOOGLUSDT_PREMIUM"
       ]
     },
     {
@@ -26559,6 +26573,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BCS:GOOGLCL0",
+      "title": "GOOGLCL0",
+      "subtitle": "Alphabet Inc. Class A",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "Alphabet Inc. Class A",
+        "BCS:GOOGLCL0",
+        "GOOGLCL0"
+      ]
+    },
+    {
+      "symbol": "BCS:GOOGLCL1",
+      "title": "GOOGLCL1",
+      "subtitle": "Alphabet Inc. Class A",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "Alphabet Inc. Class A",
+        "BCS:GOOGLCL1",
+        "GOOGLCL1"
+      ]
+    },
+    {
       "symbol": "BINGX:GOOGLUSDT.P",
       "title": "GOOGLUSDT.P",
       "subtitle": "GOOGL/USDT Perpetual Contract",
@@ -26671,6 +26709,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "COINSWITCH:GOOGLUSDT.P",
+      "title": "GOOGLUSDT.P",
+      "subtitle": "GOOGLE/USD TETHER PERPETUAL SWAP CONTRACT",
+      "exchangeLabel": "COINSWITCH",
+      "typeLabel": "swap",
+      "aliases": [
+        "COINSWITCH:GOOGLUSDT.P",
+        "GOOGLE/USD TETHER PERPETUAL SWAP CONTRACT",
+        "GOOGLUSDT",
+        "GOOGLUSDT.P"
+      ]
+    },
+    {
       "symbol": "CRYPTOCAP:GOOGLB",
       "title": "GOOGLB",
       "subtitle": "Market Cap GOOGLB, $",
@@ -26740,18 +26791,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CRYPTOCAP:GOOGLX.D",
         "GOOGLX.D",
         "Market Cap GOOGLX Dominance, %"
-      ]
-    },
-    {
-      "symbol": "FINRA:GOOGL_SHORT_VOLUME",
-      "title": "GOOGL_SHORT_VOLUME",
-      "subtitle": "GOOGL Short Sale Volume",
-      "exchangeLabel": "FINRA",
-      "typeLabel": "index",
-      "aliases": [
-        "FINRA:GOOGL_SHORT_VOLUME",
-        "GOOGL Short Sale Volume",
-        "GOOGL_SHORT_VOLUME"
       ]
     },
     {
@@ -27591,6 +27630,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BINGX:QQQBUSDT",
+      "title": "QQQBUSDT",
+      "subtitle": "Invesco QQQ Trust bStocks/USD Tether Spot",
+      "exchangeLabel": "BINGX",
+      "typeLabel": "spot",
+      "aliases": [
+        "BINGX:QQQBUSDT",
+        "Invesco QQQ Trust bStocks/USD Tether Spot",
+        "QQQBUSDT"
+      ]
+    },
+    {
       "symbol": "BINGX:QQQUSDT.P",
       "title": "QQQUSDT.P",
       "subtitle": "QQQ/USDT Perpetual Contract",
@@ -27724,18 +27775,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CRYPTO:QQQONUSD",
         "Invesco QQQ Tokenized ETF (Ondo)",
         "QQQONUSD"
-      ]
-    },
-    {
-      "symbol": "CRYPTO:QQQXUSD",
-      "title": "QQQXUSD",
-      "subtitle": "Nasdaq tokenized ETF (xStock)",
-      "exchangeLabel": "CRYPTO",
-      "typeLabel": "spot",
-      "aliases": [
-        "CRYPTO:QQQXUSD",
-        "Nasdaq tokenized ETF (xStock)",
-        "QQQXUSD"
       ]
     },
     {
@@ -27932,19 +27971,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "BINANCE:SPYUSDT.P_MPRICE",
-      "title": "SPYUSDT.P_MPRICE",
-      "subtitle": "SPYUSDT.P Mark Price",
-      "exchangeLabel": "Binance",
-      "typeLabel": "derivative-metrics",
-      "aliases": [
-        "BINANCE:SPYUSDT.P_MPRICE",
-        "SPYUSDT.P Mark Price",
-        "SPYUSDT.P_MPRICE",
-        "SPYUSDT_MPRICE"
-      ]
-    },
-    {
       "symbol": "BYBIT:SPYUSDT.P",
       "title": "SPYUSDT.P",
       "subtitle": "SPYUSDT Perpetual Contract",
@@ -27980,19 +28006,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "SPYUSDT",
         "SPYUSDT Perpetual Swap Contract",
         "SPYUSDT.P"
-      ]
-    },
-    {
-      "symbol": "BITGET:SPYUSDT.P",
-      "title": "SPYUSDT.P",
-      "subtitle": "SPYUSDTPERP PERPETUAL MIX CONTRACT",
-      "exchangeLabel": "Bitget",
-      "typeLabel": "swap",
-      "aliases": [
-        "BITGET:SPYUSDT.P",
-        "SPYUSDT",
-        "SPYUSDT.P",
-        "SPYUSDTPERP PERPETUAL MIX CONTRACT"
       ]
     },
     {
@@ -28225,6 +28238,31 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CFI:SPYM",
         "SPDR Portfolio S&P 500 ETF",
         "SPYM"
+      ]
+    },
+    {
+      "symbol": "CFI:SPYV",
+      "title": "SPYV",
+      "subtitle": "SPDR Portfolio S&P 500 Value ETF",
+      "exchangeLabel": "CFI",
+      "typeLabel": "fund",
+      "aliases": [
+        "CFI:SPYV",
+        "SPDR Portfolio S&P 500 Value ETF",
+        "SPYV"
+      ]
+    },
+    {
+      "symbol": "COINBASE:SPYUSDC.P",
+      "title": "SPYUSDC.P",
+      "subtitle": "SPY / USDC PERPETUAL CONTRACT",
+      "exchangeLabel": "COINBASE",
+      "typeLabel": "swap",
+      "aliases": [
+        "COINBASE:SPYUSDC.P",
+        "SPY / USDC PERPETUAL CONTRACT",
+        "SPYUSDC",
+        "SPYUSDC.P"
       ]
     }
   ]
