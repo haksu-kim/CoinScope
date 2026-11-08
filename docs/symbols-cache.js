@@ -1,8 +1,8 @@
 window.COIN_SCOPE_SYMBOL_CACHE = {
-  "generatedAt": "2026-11-01T10:00:11+00:00",
+  "generatedAt": "2026-11-08T09:48:49+00:00",
   "source": "tradingview-symbol-search",
   "seedCount": 74,
-  "itemCount": 2254,
+  "itemCount": 2216,
   "items": [
     {
       "symbol": "BINANCE:BTCUSDT.P",
@@ -184,19 +184,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BTCUSDT",
         "BTCUSDT.P",
         "BYDFI:BTCUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:BTCUSDT.P",
-      "title": "BTCUSDT.P",
-      "subtitle": "BITCOIN / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "BITCOIN / TETHER PERPETUAL CONTRACT",
-        "BTCUSDT",
-        "BTCUSDT.P",
-        "COINEX:BTCUSDT.P"
       ]
     },
     {
@@ -682,19 +669,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:ETHUSDT.P",
         "ETHEREUM / USD TETHER PERPETUAL SWAP CONTRACT",
-        "ETHUSDT",
-        "ETHUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:ETHUSDT.P",
-      "title": "ETHUSDT.P",
-      "subtitle": "ETHEREUM / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:ETHUSDT.P",
-        "ETHEREUM / TETHER PERPETUAL CONTRACT",
         "ETHUSDT",
         "ETHUSDT.P"
       ]
@@ -1187,19 +1161,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:SOLUSDT.P",
-      "title": "SOLUSDT.P",
-      "subtitle": "SOLANA / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:SOLUSDT.P",
-        "SOLANA / TETHER PERPETUAL CONTRACT",
-        "SOLUSDT",
-        "SOLUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:SOLUSDT.P",
       "title": "SOLUSDT.P",
       "subtitle": "SOLANA/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -1622,19 +1583,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:XRPUSDT.P",
         "XRP / USD TETHER PERPETUAL SWAP CONTRACT",
-        "XRPUSDT",
-        "XRPUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:XRPUSDT.P",
-      "title": "XRPUSDT.P",
-      "subtitle": "RIPPLE / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:XRPUSDT.P",
-        "RIPPLE / TETHER PERPETUAL CONTRACT",
         "XRPUSDT",
         "XRPUSDT.P"
       ]
@@ -2067,19 +2015,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:BNBUSDT.P",
-      "title": "BNBUSDT.P",
-      "subtitle": "BINANCE COIN / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "BINANCE COIN / TETHER PERPETUAL CONTRACT",
-        "BNBUSDT",
-        "BNBUSDT.P",
-        "COINEX:BNBUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:BNBUSDT.P",
       "title": "BNBUSDT.P",
       "subtitle": "BINANCE COIN/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -2507,19 +2442,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:DOGEUSDT.P",
-      "title": "DOGEUSDT.P",
-      "subtitle": "DOGECOIN / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:DOGEUSDT.P",
-        "DOGECOIN / TETHER PERPETUAL CONTRACT",
-        "DOGEUSDT",
-        "DOGEUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:DOGEUSDT.P",
       "title": "DOGEUSDT.P",
       "subtitle": "DOGECOIN/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -2931,19 +2853,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "ADAUSDT.P",
         "BYDFI:ADAUSDT.P",
         "CARDANO / USD TETHER PERPETUAL SWAP CONTRACT"
-      ]
-    },
-    {
-      "symbol": "COINEX:ADAUSDT.P",
-      "title": "ADAUSDT.P",
-      "subtitle": "CARDANO / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "ADAUSDT",
-        "ADAUSDT.P",
-        "CARDANO / TETHER PERPETUAL CONTRACT",
-        "COINEX:ADAUSDT.P"
       ]
     },
     {
@@ -3361,19 +3270,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:AVAXUSDT.P",
-      "title": "AVAXUSDT.P",
-      "subtitle": "AVALANCHE / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "AVALANCHE / TETHER PERPETUAL CONTRACT",
-        "AVAXUSDT",
-        "AVAXUSDT.P",
-        "COINEX:AVAXUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:AVAXUSDT.P",
       "title": "AVAXUSDT.P",
       "subtitle": "AVALANCHE/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -3788,19 +3684,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:LINKUSDT.P",
-      "title": "LINKUSDT.P",
-      "subtitle": "CHAINLINK / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "CHAINLINK / TETHER PERPETUAL CONTRACT",
-        "COINEX:LINKUSDT.P",
-        "LINKUSDT",
-        "LINKUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:LINKUSDT.P",
       "title": "LINKUSDT.P",
       "subtitle": "CHAINLINK/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -4210,19 +4093,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:SUIUSDT.P",
         "SUI / USD TETHER PERPETUAL SWAP CONTRACT",
-        "SUIUSDT",
-        "SUIUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:SUIUSDT.P",
-      "title": "SUIUSDT.P",
-      "subtitle": "SUI / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:SUIUSDT.P",
-        "SUI / TETHER PERPETUAL CONTRACT",
         "SUIUSDT",
         "SUIUSDT.P"
       ]
@@ -4655,19 +4525,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:TRXUSDT.P",
-      "title": "TRXUSDT.P",
-      "subtitle": "TRON / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:TRXUSDT.P",
-        "TRON / TETHER PERPETUAL CONTRACT",
-        "TRXUSDT",
-        "TRXUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:TRXUSDT.P",
       "title": "TRXUSDT.P",
       "subtitle": "TRON/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -5079,19 +4936,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "DOTUSDT",
         "DOTUSDT.P",
         "POLKADOT / USD TETHER PERPETUAL SWAP CONTRACT"
-      ]
-    },
-    {
-      "symbol": "COINEX:DOTUSDT.P",
-      "title": "DOTUSDT.P",
-      "subtitle": "POLKADOT / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:DOTUSDT.P",
-        "DOTUSDT",
-        "DOTUSDT.P",
-        "POLKADOT / TETHER PERPETUAL CONTRACT"
       ]
     },
     {
@@ -5522,19 +5366,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:LTCUSDT.P",
-      "title": "LTCUSDT.P",
-      "subtitle": "LITECOIN / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:LTCUSDT.P",
-        "LITECOIN / TETHER PERPETUAL CONTRACT",
-        "LTCUSDT",
-        "LTCUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:LTCUSDT.P",
       "title": "LTCUSDT.P",
       "subtitle": "LITECOIN/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -5946,19 +5777,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BCHUSDT.P",
         "BITCOIN CASH / USD TETHER PERPETUAL SWAP CONTRACT",
         "BYDFI:BCHUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:BCHUSDT.P",
-      "title": "BCHUSDT.P",
-      "subtitle": "BITCOIN CASH / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "BCHUSDT",
-        "BCHUSDT.P",
-        "BITCOIN CASH / TETHER PERPETUAL CONTRACT",
-        "COINEX:BCHUSDT.P"
       ]
     },
     {
@@ -6428,19 +6246,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:UNIUSDT.P",
-      "title": "UNIUSDT.P",
-      "subtitle": "UNISWAP / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:UNIUSDT.P",
-        "UNISWAP / TETHER PERPETUAL CONTRACT",
-        "UNIUSDT",
-        "UNIUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:UNIUSDT.P",
       "title": "UNIUSDT.P",
       "subtitle": "UNISWAP/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -6842,19 +6647,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:APTUSDT.P",
-      "title": "APTUSDT.P",
-      "subtitle": "APTOS / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "APTOS / TETHER PERPETUAL CONTRACT",
-        "APTUSDT",
-        "APTUSDT.P",
-        "COINEX:APTUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:APTUSDT.P",
       "title": "APTUSDT.P",
       "subtitle": "APTOS/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -7238,19 +7030,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:NEARUSDT.P",
         "NEAR / USD TETHER PERPETUAL SWAP CONTRACT",
-        "NEARUSDT",
-        "NEARUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:NEARUSDT.P",
-      "title": "NEARUSDT.P",
-      "subtitle": "NEAR PROTOCOL / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:NEARUSDT.P",
-        "NEAR PROTOCOL / TETHER PERPETUAL CONTRACT",
         "NEARUSDT",
         "NEARUSDT.P"
       ]
@@ -7657,19 +7436,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:ARBUSDT.P",
-      "title": "ARBUSDT.P",
-      "subtitle": "ARBITRUM / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "ARBITRUM / TETHER PERPETUAL CONTRACT",
-        "ARBUSDT",
-        "ARBUSDT.P",
-        "COINEX:ARBUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:ARBUSDT.P",
       "title": "ARBUSDT.P",
       "subtitle": "ARBITRUM/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -8071,19 +7837,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:OPUSDT.P",
-      "title": "OPUSDT.P",
-      "subtitle": "OPTIMISM / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:OPUSDT.P",
-        "OPTIMISM / TETHER PERPETUAL CONTRACT",
-        "OPUSDT",
-        "OPUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:OPUSDT.P",
       "title": "OPUSDT.P",
       "subtitle": "OPTIMISM/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -8469,19 +8222,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AAVEUSDT",
         "AAVEUSDT.P",
         "BYDFI:AAVEUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:AAVEUSDT.P",
-      "title": "AAVEUSDT.P",
-      "subtitle": "AAVE / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "AAVE / TETHER PERPETUAL CONTRACT",
-        "AAVEUSDT",
-        "AAVEUSDT.P",
-        "COINEX:AAVEUSDT.P"
       ]
     },
     {
@@ -8886,19 +8626,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:ENAUSDT.P",
-      "title": "ENAUSDT.P",
-      "subtitle": "ETHENA / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:ENAUSDT.P",
-        "ENAUSDT",
-        "ENAUSDT.P",
-        "ETHENA / TETHER PERPETUAL CONTRACT"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:ENAUSDT.P",
       "title": "ENAUSDT.P",
       "subtitle": "ETHENA/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -9209,19 +8936,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:PEPEUSDT.P",
-      "title": "PEPEUSDT.P",
-      "subtitle": "PEPE / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:PEPEUSDT.P",
-        "PEPE / TETHER PERPETUAL CONTRACT",
-        "PEPEUSDT",
-        "PEPEUSDT.P"
-      ]
-    },
-    {
       "symbol": "HTX:PEPEUSDT.P",
       "title": "PEPEUSDT.P",
       "subtitle": "PEPE Perpetual LinearSwap Contract",
@@ -9284,19 +8998,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "PEPEUSDT.P",
         "Pepe perpetual contract",
         "WHITEBIT:PEPEUSDT.P"
-      ]
-    },
-    {
-      "symbol": "BINANCE:1000PEPEUSDT.P",
-      "title": "1000PEPEUSDT.P",
-      "subtitle": "1000PEPE / TetherUS PERPETUAL CONTRACT",
-      "exchangeLabel": "Binance",
-      "typeLabel": "swap",
-      "aliases": [
-        "1000PEPE / TetherUS PERPETUAL CONTRACT",
-        "1000PEPEUSDT",
-        "1000PEPEUSDT.P",
-        "BINANCE:1000PEPEUSDT.P"
       ]
     },
     {
@@ -9409,19 +9110,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BLOFIN:SHIBUSDT.P",
         "SHIBA INU/USD TETHER PERPETUAL SWAP CONTRACT",
-        "SHIBUSDT",
-        "SHIBUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:SHIBUSDT.P",
-      "title": "SHIBUSDT.P",
-      "subtitle": "SHIBA INU / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:SHIBUSDT.P",
-        "SHIBA INU / TETHER PERPETUAL CONTRACT",
         "SHIBUSDT",
         "SHIBUSDT.P"
       ]
@@ -9667,19 +9355,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:INJUSDT.P",
         "INJECTIVE / USD TETHER PERPETUAL SWAP CONTRACT",
-        "INJUSDT",
-        "INJUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:INJUSDT.P",
-      "title": "INJUSDT.P",
-      "subtitle": "INJECTIVE / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:INJUSDT.P",
-        "INJECTIVE / TETHER PERPETUAL CONTRACT",
         "INJUSDT",
         "INJUSDT.P"
       ]
@@ -10073,19 +9748,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:SEIUSDT.P",
-      "title": "SEIUSDT.P",
-      "subtitle": "SEI / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:SEIUSDT.P",
-        "SEI / TETHER PERPETUAL CONTRACT",
-        "SEIUSDT",
-        "SEIUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:SEIUSDT.P",
       "title": "SEIUSDT.P",
       "subtitle": "SEI/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -10456,19 +10118,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:TIAUSDT.P",
         "TIA / USD TETHER PERPETUAL SWAP CONTRACT",
-        "TIAUSDT",
-        "TIAUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:TIAUSDT.P",
-      "title": "TIAUSDT.P",
-      "subtitle": "CELESTIA / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "CELESTIA / TETHER PERPETUAL CONTRACT",
-        "COINEX:TIAUSDT.P",
         "TIAUSDT",
         "TIAUSDT.P"
       ]
@@ -10857,19 +10506,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:FILUSDT.P",
         "FILECOIN / USD TETHER PERPETUAL SWAP CONTRACT",
-        "FILUSDT",
-        "FILUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:FILUSDT.P",
-      "title": "FILUSDT.P",
-      "subtitle": "FILECOIN / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:FILUSDT.P",
-        "FILECOIN / TETHER PERPETUAL CONTRACT",
         "FILUSDT",
         "FILUSDT.P"
       ]
@@ -11276,19 +10912,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:ETCUSDT.P",
-      "title": "ETCUSDT.P",
-      "subtitle": "ETHEREUM CLASSIC / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:ETCUSDT.P",
-        "ETCUSDT",
-        "ETCUSDT.P",
-        "ETHEREUM CLASSIC / TETHER PERPETUAL CONTRACT"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:ETCUSDT.P",
       "title": "ETCUSDT.P",
       "subtitle": "ETHEREUM CLASSIC/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -11690,19 +11313,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:ATOMUSDT.P",
-      "title": "ATOMUSDT.P",
-      "subtitle": "COSMOS / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "ATOMUSDT",
-        "ATOMUSDT.P",
-        "COINEX:ATOMUSDT.P",
-        "COSMOS / TETHER PERPETUAL CONTRACT"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:ATOMUSDT.P",
       "title": "ATOMUSDT.P",
       "subtitle": "COSMOS/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -12091,19 +11701,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:ICPUSDT.P",
-      "title": "ICPUSDT.P",
-      "subtitle": "INTERNET COMPUTER / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:ICPUSDT.P",
-        "ICPUSDT",
-        "ICPUSDT.P",
-        "INTERNET COMPUTER / TETHER PERPETUAL CONTRACT"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:ICPUSDT.P",
       "title": "ICPUSDT.P",
       "subtitle": "INTERNET COMPUTER/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -12487,19 +12084,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:JUPUSDT.P",
         "JUPITER / USD TETHER PERPETUAL SWAP CONTRACT",
-        "JUPUSDT",
-        "JUPUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:JUPUSDT.P",
-      "title": "JUPUSDT.P",
-      "subtitle": "JUPITER / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:JUPUSDT.P",
-        "JUPITER / TETHER PERPETUAL CONTRACT",
         "JUPUSDT",
         "JUPUSDT.P"
       ]
@@ -12893,19 +12477,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:RUNEUSDT.P",
-      "title": "RUNEUSDT.P",
-      "subtitle": "THORCHAIN / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:RUNEUSDT.P",
-        "RUNEUSDT",
-        "RUNEUSDT.P",
-        "THORCHAIN / TETHER PERPETUAL CONTRACT"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:RUNEUSDT.P",
       "title": "RUNEUSDT.P",
       "subtitle": "THORCHAIN/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -13266,19 +12837,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "WLD / USD TETHER PERPETUAL SWAP CONTRACT",
         "WLDUSDT",
         "WLDUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:WLDUSDT.P",
-      "title": "WLDUSDT.P",
-      "subtitle": "WORLDCOIN / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:WLDUSDT.P",
-        "WLDUSDT",
-        "WLDUSDT.P",
-        "WORLDCOIN / TETHER PERPETUAL CONTRACT"
       ]
     },
     {
@@ -13670,19 +13228,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "COINEX:ORDIUSDT.P",
-      "title": "ORDIUSDT.P",
-      "subtitle": "ORDINALS / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:ORDIUSDT.P",
-        "ORDINALS / TETHER PERPETUAL CONTRACT",
-        "ORDIUSDT",
-        "ORDIUSDT.P"
-      ]
-    },
-    {
       "symbol": "COINSWITCH:ORDIUSDT.P",
       "title": "ORDIUSDT.P",
       "subtitle": "ORDI/USD TETHER PERPETUAL SWAP CONTRACT",
@@ -13995,13 +13540,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "KUCOIN:GALAUSDT.P",
       "title": "GALAUSDT.P",
-      "subtitle": "GALAX/Tether Perpetual Contract",
+      "subtitle": "Gala/Tether Perpetual Contract",
       "exchangeLabel": "KuCoin",
       "typeLabel": "swap",
       "aliases": [
         "GALAUSDT",
         "GALAUSDT.P",
-        "GALAX/Tether Perpetual Contract",
+        "Gala/Tether Perpetual Contract",
         "KUCOIN:GALAUSDT.P"
       ]
     },
@@ -14066,19 +13611,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:GALAUSDT.P",
         "GALA / USD TETHER PERPETUAL SWAP CONTRACT",
-        "GALAUSDT",
-        "GALAUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:GALAUSDT.P",
-      "title": "GALAUSDT.P",
-      "subtitle": "GALA / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:GALAUSDT.P",
-        "GALA / TETHER PERPETUAL CONTRACT",
         "GALAUSDT",
         "GALAUSDT.P"
       ]
@@ -14428,19 +13960,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:PENDLEUSDT.P",
         "PENDLE / USD TETHER PERPETUAL SWAP CONTRACT",
-        "PENDLEUSDT",
-        "PENDLEUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:PENDLEUSDT.P",
-      "title": "PENDLEUSDT.P",
-      "subtitle": "PENDLE / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:PENDLEUSDT.P",
-        "PENDLE / TETHER PERPETUAL CONTRACT",
         "PENDLEUSDT",
         "PENDLEUSDT.P"
       ]
@@ -14816,19 +14335,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "aliases": [
         "BYDFI:ONDOUSDT.P",
         "ONDO / USD TETHER PERPETUAL SWAP CONTRACT",
-        "ONDOUSDT",
-        "ONDOUSDT.P"
-      ]
-    },
-    {
-      "symbol": "COINEX:ONDOUSDT.P",
-      "title": "ONDOUSDT.P",
-      "subtitle": "ONDO / TETHER PERPETUAL CONTRACT",
-      "exchangeLabel": "COINEX",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINEX:ONDOUSDT.P",
-        "ONDO / TETHER PERPETUAL CONTRACT",
         "ONDOUSDT",
         "ONDOUSDT.P"
       ]
@@ -15389,12 +14895,12 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BLACKBULLMARKETS:USTEC.F",
       "title": "USTEC.F",
-      "subtitle": "NAS100 Future",
+      "subtitle": "NAS100 Index (Futures)",
       "exchangeLabel": "BLACKBULLMARKETS",
       "typeLabel": "index",
       "aliases": [
         "BLACKBULLMARKETS:USTEC.F",
-        "NAS100 Future",
+        "NAS100 Index (Futures)",
         "USTEC.F"
       ]
     },
@@ -15521,12 +15027,12 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BONDSCOM:US100743AK97",
       "title": "US100743AK97",
-      "subtitle": "Boston Gas Co 3.15% 01-AUG-2027",
+      "subtitle": "Boston Gas Co 3.15% 01-AUG-2027 144A",
       "exchangeLabel": "BONDSCOM",
       "typeLabel": "bond",
       "aliases": [
         "BONDSCOM:US100743AK97",
-        "Boston Gas Co 3.15% 01-AUG-2027",
+        "Boston Gas Co 3.15% 01-AUG-2027 144A",
         "US100743AK97"
       ]
     },
@@ -15836,24 +15342,24 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "CHIXAU:NDXKCB",
       "title": "NDXKCB",
-      "subtitle": "Citiwarrants 27054.7811 NDX Mini Long",
+      "subtitle": "Citiwarrants 27069.1638 NDX Mini Long",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXKCB",
-        "Citiwarrants 27054.7811 NDX Mini Long",
+        "Citiwarrants 27069.1638 NDX Mini Long",
         "NDXKCB"
       ]
     },
     {
       "symbol": "CHIXAU:NDXKCD",
       "title": "NDXKCD",
-      "subtitle": "Citiwarrants 26276.2903 NDX Mini Long",
+      "subtitle": "Citiwarrants 26300.7406 NDX Mini Long",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXKCD",
-        "Citiwarrants 26276.2903 NDX Mini Long",
+        "Citiwarrants 26300.7406 NDX Mini Long",
         "NDXKCD"
       ]
     },
@@ -15896,60 +15402,60 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "CHIXAU:NDXMCA",
       "title": "NDXMCA",
-      "subtitle": "Citiwarrants 22834.4825 NDX Mini Long",
+      "subtitle": "Citiwarrants 22855.7302 NDX Mini Long",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCA",
-        "Citiwarrants 22834.4825 NDX Mini Long",
+        "Citiwarrants 22855.7302 NDX Mini Long",
         "NDXMCA"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCT",
       "title": "NDXMCT",
-      "subtitle": "Citiwarrants 35769.6545 NDX Mini Short",
+      "subtitle": "Citiwarrants 35736.397 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCT",
-        "Citiwarrants 35769.6545 NDX Mini Short",
+        "Citiwarrants 35736.397 NDX Mini Short",
         "NDXMCT"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCV",
       "title": "NDXMCV",
-      "subtitle": "Citiwarrants 34871.7287 NDX Mini Short",
+      "subtitle": "Citiwarrants 34839.3061 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCV",
-        "Citiwarrants 34871.7287 NDX Mini Short",
+        "Citiwarrants 34839.3061 NDX Mini Short",
         "NDXMCV"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCX",
       "title": "NDXMCX",
-      "subtitle": "Citiwarrants 34190.5362 NDX Mini Short",
+      "subtitle": "Citiwarrants 34158.747 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCX",
-        "Citiwarrants 34190.5362 NDX Mini Short",
+        "Citiwarrants 34158.747 NDX Mini Short",
         "NDXMCX"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCY",
       "title": "NDXMCY",
-      "subtitle": "Citiwarrants 33640.2463 NDX Mini Short",
+      "subtitle": "Citiwarrants 33608.9687 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCY",
-        "Citiwarrants 33640.2463 NDX Mini Short",
+        "Citiwarrants 33608.9687 NDX Mini Short",
         "NDXMCY"
       ]
     },
@@ -16272,12 +15778,12 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BLACKBULLMARKETS:US500.F",
       "title": "US500.F",
-      "subtitle": "SPX500 Future",
+      "subtitle": "SPX500 Index (Futures)",
       "exchangeLabel": "BLACKBULLMARKETS",
       "typeLabel": "index",
       "aliases": [
         "BLACKBULLMARKETS:US500.F",
-        "SPX500 Future",
+        "SPX500 Index (Futures)",
         "US500.F"
       ]
     },
@@ -16447,6 +15953,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "TRADENATION:US500",
         "US 500 (per 1.0)",
         "US500"
+      ]
+    },
+    {
+      "symbol": "OKX:US500USD.UM",
+      "title": "US500USD.UM",
+      "subtitle": "US500USD UM X-Perp Contract",
+      "exchangeLabel": "OKX",
+      "typeLabel": "futures",
+      "aliases": [
+        "OKX:US500USD.UM",
+        "US500USD UM X-Perp Contract",
+        "US500USD.UM"
       ]
     },
     {
@@ -16736,18 +16254,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "FWB:US50065RAZ0",
         "Korea Housing Finance Corporation 3.875% 15-JAN-2031 144A",
         "US50065RAZ0"
-      ]
-    },
-    {
-      "symbol": "FWB:US50065XAP9",
-      "title": "US50065XAP9",
-      "subtitle": "Korea National Oil Corporation 4.875% 03-APR-2028 RegS",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "FWB:US50065XAP9",
-        "Korea National Oil Corporation 4.875% 03-APR-2028 RegS",
-        "US50065XAP9"
       ]
     },
     {
@@ -18667,13 +18173,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BLACKBULLMARKETS:VIX.F",
       "title": "VIX.F",
-      "subtitle": "Volatility Index Futures",
+      "subtitle": "Volatility Index (Futures)",
       "exchangeLabel": "BLACKBULLMARKETS",
       "typeLabel": "index",
       "aliases": [
         "BLACKBULLMARKETS:VIX.F",
         "VIX.F",
-        "Volatility Index Futures"
+        "Volatility Index (Futures)"
       ]
     },
     {
@@ -20122,7 +19628,7 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "title": "EURUSD",
       "subtitle": "Euro / United States Dollar",
       "exchangeLabel": "CMCMARKETS",
-      "typeLabel": "forex",
+      "typeLabel": "futures",
       "aliases": [
         "CMCMARKETS:EURUSD",
         "EURUSD",
@@ -23784,18 +23290,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "CRYPTO:AAPLBUSD",
-      "title": "AAPLBUSD",
-      "subtitle": "Apple Tokenized bStocks",
-      "exchangeLabel": "CRYPTO",
-      "typeLabel": "spot",
-      "aliases": [
-        "AAPLBUSD",
-        "Apple Tokenized bStocks",
-        "CRYPTO:AAPLBUSD"
-      ]
-    },
-    {
       "symbol": "CRYPTO:AAPLXUSD",
       "title": "AAPLXUSD",
       "subtitle": "Apple tokenized stock (xStock)",
@@ -23853,6 +23347,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AAPLON.D",
         "CRYPTOCAP:AAPLON.D",
         "Market Cap AAPLON Dominance, %"
+      ]
+    },
+    {
+      "symbol": "CRYPTOCAP:AAPLX",
+      "title": "AAPLX",
+      "subtitle": "Market Cap AAPLX, $",
+      "exchangeLabel": "CRYPTOCAP",
+      "typeLabel": "index",
+      "aliases": [
+        "AAPLX",
+        "CRYPTOCAP:AAPLX",
+        "Market Cap AAPLX, $"
       ]
     },
     {
@@ -24580,6 +24086,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BINANCE:NVDAUSDT.P_PREMIUM",
+      "title": "NVDAUSDT.P_PREMIUM",
+      "subtitle": "NVDAUSDT.P Premium",
+      "exchangeLabel": "Binance",
+      "typeLabel": "derivative-metrics",
+      "aliases": [
+        "BINANCE:NVDAUSDT.P_PREMIUM",
+        "NVDAUSDT.P Premium",
+        "NVDAUSDT.P_PREMIUM",
+        "NVDAUSDT_PREMIUM"
+      ]
+    },
+    {
       "symbol": "BYBIT:NVDAUSDT.P",
       "title": "NVDAUSDT.P",
       "subtitle": "NVDAUSDT Perpetual Contract",
@@ -24643,6 +24162,32 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "MEXC:NVDAUSDT.P",
+      "title": "NVDAUSDT.P",
+      "subtitle": "NVDA / Tether PERPETUAL FUTURES",
+      "exchangeLabel": "MEXC",
+      "typeLabel": "swap",
+      "aliases": [
+        "MEXC:NVDAUSDT.P",
+        "NVDA / Tether PERPETUAL FUTURES",
+        "NVDAUSDT",
+        "NVDAUSDT.P"
+      ]
+    },
+    {
+      "symbol": "KUCOIN:NVDAUSDT.P",
+      "title": "NVDAUSDT.P",
+      "subtitle": "NVDA/Tether Perpetual Contract",
+      "exchangeLabel": "KuCoin",
+      "typeLabel": "swap",
+      "aliases": [
+        "KUCOIN:NVDAUSDT.P",
+        "NVDA/Tether Perpetual Contract",
+        "NVDAUSDT",
+        "NVDAUSDT.P"
+      ]
+    },
+    {
       "symbol": "BCS:NVDA0",
       "title": "NVDA0",
       "subtitle": "NVIDIA Corporation",
@@ -24689,6 +24234,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "NVDA/USDT Perpetual Contract",
         "NVDAUSDT",
         "NVDAUSDT.P"
+      ]
+    },
+    {
+      "symbol": "BTSE:NVDAUSD.P",
+      "title": "NVDAUSD.P",
+      "subtitle": "NVDAUSD Futures Contract (Perpetual)",
+      "exchangeLabel": "BTSE",
+      "typeLabel": "swap",
+      "aliases": [
+        "BTSE:NVDAUSD.P",
+        "NVDAUSD",
+        "NVDAUSD Futures Contract (Perpetual)",
+        "NVDAUSD.P"
       ]
     },
     {
@@ -24789,54 +24347,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "CRYPTOCAP:NVDABN",
-      "title": "NVDABN",
-      "subtitle": "Market Cap NVDABN, $",
-      "exchangeLabel": "CRYPTOCAP",
-      "typeLabel": "index",
-      "aliases": [
-        "CRYPTOCAP:NVDABN",
-        "Market Cap NVDABN, $",
-        "NVDABN"
-      ]
-    },
-    {
-      "symbol": "CRYPTOCAP:NVDABN.D",
-      "title": "NVDABN.D",
-      "subtitle": "Market Cap NVDABN Dominance, %",
-      "exchangeLabel": "CRYPTOCAP",
-      "typeLabel": "index",
-      "aliases": [
-        "CRYPTOCAP:NVDABN.D",
-        "Market Cap NVDABN Dominance, %",
-        "NVDABN.D"
-      ]
-    },
-    {
-      "symbol": "CRYPTOCAP:NVDAON",
-      "title": "NVDAON",
-      "subtitle": "Market Cap NVDAON, $",
-      "exchangeLabel": "CRYPTOCAP",
-      "typeLabel": "index",
-      "aliases": [
-        "CRYPTOCAP:NVDAON",
-        "Market Cap NVDAON, $",
-        "NVDAON"
-      ]
-    },
-    {
-      "symbol": "CRYPTOCAP:NVDAON.D",
-      "title": "NVDAON.D",
-      "subtitle": "Market Cap NVDAON Dominance, %",
-      "exchangeLabel": "CRYPTOCAP",
-      "typeLabel": "index",
-      "aliases": [
-        "CRYPTOCAP:NVDAON.D",
-        "Market Cap NVDAON Dominance, %",
-        "NVDAON.D"
-      ]
-    },
-    {
       "symbol": "BCS:TSLA",
       "title": "TSLA",
       "subtitle": "Tesla, Inc.",
@@ -24863,13 +24373,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BMV:TSLA",
       "title": "TSLA",
-      "subtitle": "TSLA Futures",
+      "subtitle": "Tesla, Inc.",
       "exchangeLabel": "BMV",
-      "typeLabel": "futures",
+      "typeLabel": "stock",
       "aliases": [
         "BMV:TSLA",
         "TSLA",
-        "TSLA Futures"
+        "Tesla, Inc."
       ]
     },
     {
@@ -25167,6 +24677,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BCS:TSLACL1",
+      "title": "TSLACL1",
+      "subtitle": "Tesla, Inc.",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "BCS:TSLACL1",
+        "TSLACL1",
+        "Tesla, Inc."
+      ]
+    },
+    {
       "symbol": "BINGX:TSLAUSDT.P",
       "title": "TSLAUSDT.P",
       "subtitle": "TSLA/USDT Perpetual Contract",
@@ -25310,19 +24832,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CBOE:TSLAIO",
         "Cboe Tesla Income Only Index",
         "TSLAIO"
-      ]
-    },
-    {
-      "symbol": "COINBASE:TSLAUSDC.P",
-      "title": "TSLAUSDC.P",
-      "subtitle": "TSLA / USDC PERPETUAL CONTRACT",
-      "exchangeLabel": "COINBASE",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINBASE:TSLAUSDC.P",
-        "TSLA / USDC PERPETUAL CONTRACT",
-        "TSLAUSDC",
-        "TSLAUSDC.P"
       ]
     },
     {
@@ -25696,6 +25205,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "KUCOIN:AMZNXUSDT",
+      "title": "AMZNXUSDT",
+      "subtitle": "Amazon.com xStock / Tether",
+      "exchangeLabel": "KuCoin",
+      "typeLabel": "spot",
+      "aliases": [
+        "AMZNXUSDT",
+        "Amazon.com xStock / Tether",
+        "KUCOIN:AMZNXUSDT"
+      ]
+    },
+    {
       "symbol": "BCS:AMZN0",
       "title": "AMZN0",
       "subtitle": "Amazon.com, Inc.",
@@ -25729,6 +25250,42 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AMZNCL",
         "Amazon.com, Inc.",
         "BCS:AMZNCL"
+      ]
+    },
+    {
+      "symbol": "BCS:AMZNCL0",
+      "title": "AMZNCL0",
+      "subtitle": "Amazon.com, Inc.",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "AMZNCL0",
+        "Amazon.com, Inc.",
+        "BCS:AMZNCL0"
+      ]
+    },
+    {
+      "symbol": "BCS:AMZNCL1",
+      "title": "AMZNCL1",
+      "subtitle": "Amazon.com, Inc.",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "AMZNCL1",
+        "Amazon.com, Inc.",
+        "BCS:AMZNCL1"
+      ]
+    },
+    {
+      "symbol": "BINGX:AMZNONUSDT",
+      "title": "AMZNONUSDT",
+      "subtitle": "Amazon Tokenized Stock (Ondo)/USD Tether Spot",
+      "exchangeLabel": "BINGX",
+      "typeLabel": "spot",
+      "aliases": [
+        "AMZNONUSDT",
+        "Amazon Tokenized Stock (Ondo)/USD Tether Spot",
+        "BINGX:AMZNONUSDT"
       ]
     },
     {
@@ -25771,55 +25328,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "BVL:AMZNUS",
-      "title": "AMZNUS",
-      "subtitle": "Amazon.com, Inc.",
-      "exchangeLabel": "BVL",
-      "typeLabel": "stock",
-      "aliases": [
-        "AMZNUS",
-        "Amazon.com, Inc.",
-        "BVL:AMZNUS"
-      ]
-    },
-    {
-      "symbol": "BYDFI:AMZNUSDT.P",
-      "title": "AMZNUSDT.P",
-      "subtitle": "AMZN / USD TETHER PERPETUAL SWAP CONTRACT",
-      "exchangeLabel": "BYDFI",
-      "typeLabel": "swap",
-      "aliases": [
-        "AMZN / USD TETHER PERPETUAL SWAP CONTRACT",
-        "AMZNUSDT",
-        "AMZNUSDT.P",
-        "BYDFI:AMZNUSDT.P"
-      ]
-    },
-    {
-      "symbol": "BYMA:AMZNB",
-      "title": "AMZNB",
-      "subtitle": "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-      "exchangeLabel": "BYMA",
-      "typeLabel": "dr",
-      "aliases": [
-        "AMZNB",
-        "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-        "BYMA:AMZNB"
-      ]
-    },
-    {
-      "symbol": "BYMA:AMZNC",
-      "title": "AMZNC",
-      "subtitle": "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-      "exchangeLabel": "BYMA",
-      "typeLabel": "dr",
-      "aliases": [
-        "AMZNC",
-        "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-        "BYMA:AMZNC"
-      ]
-    },
-    {
       "symbol": "BCS:META",
       "title": "META",
       "subtitle": "Meta Platforms Inc Class A",
@@ -25846,13 +25354,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BMV:META",
       "title": "META",
-      "subtitle": "Meta Platforms Inc Class A",
+      "subtitle": "META Futures",
       "exchangeLabel": "BMV",
-      "typeLabel": "stock",
+      "typeLabel": "futures",
       "aliases": [
         "BMV:META",
         "META",
-        "Meta Platforms Inc Class A"
+        "META Futures"
       ]
     },
     {
@@ -26206,15 +25714,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "BMFBOVESPA:META11",
-      "title": "META11",
-      "subtitle": "Hashdex Crypto Metaverse Index Fund",
-      "exchangeLabel": "BMFBOVESPA",
-      "typeLabel": "fund",
+      "symbol": "BOATS:METAM",
+      "title": "METAM",
+      "subtitle": "Meta Platforms Inc Depositary Shs Repr 1/20th Cum Conv Red Perp Pfd Shs A",
+      "exchangeLabel": "BOATS",
+      "typeLabel": "stock",
       "aliases": [
-        "BMFBOVESPA:META11",
-        "Hashdex Crypto Metaverse Index Fund",
-        "META11"
+        "BOATS:METAM",
+        "METAM",
+        "Meta Platforms Inc Depositary Shs Repr 1/20th Cum Conv Red Perp Pfd Shs A"
       ]
     },
     {
@@ -26435,6 +25943,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BINANCE:GOOGLUSDT.P_MPRICE",
+      "title": "GOOGLUSDT.P_MPRICE",
+      "subtitle": "GOOGLUSDT.P Mark Price",
+      "exchangeLabel": "Binance",
+      "typeLabel": "derivative-metrics",
+      "aliases": [
+        "BINANCE:GOOGLUSDT.P_MPRICE",
+        "GOOGLUSDT.P Mark Price",
+        "GOOGLUSDT.P_MPRICE",
+        "GOOGLUSDT_MPRICE"
+      ]
+    },
+    {
       "symbol": "BYBIT:GOOGLUSDT.P",
       "title": "GOOGLUSDT.P",
       "subtitle": "GOOGLUSDT Perpetual Contract",
@@ -26582,18 +26103,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "Alphabet Inc. Class A",
         "BCS:GOOGLCL0",
         "GOOGLCL0"
-      ]
-    },
-    {
-      "symbol": "BCS:GOOGLCL1",
-      "title": "GOOGLCL1",
-      "subtitle": "Alphabet Inc. Class A",
-      "exchangeLabel": "BCS",
-      "typeLabel": "stock",
-      "aliases": [
-        "Alphabet Inc. Class A",
-        "BCS:GOOGLCL1",
-        "GOOGLCL1"
       ]
     },
     {
