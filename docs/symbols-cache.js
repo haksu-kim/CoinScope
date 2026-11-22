@@ -1,8 +1,8 @@
 window.COIN_SCOPE_SYMBOL_CACHE = {
-  "generatedAt": "2026-11-15T10:19:06+00:00",
+  "generatedAt": "2026-11-22T10:39:27+00:00",
   "source": "tradingview-symbol-search",
   "seedCount": 74,
-  "itemCount": 2249,
+  "itemCount": 2253,
   "items": [
     {
       "symbol": "BINANCE:BTCUSDT.P",
@@ -345,11 +345,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:BTCUSDT.P",
       "title": "BTCUSDT.P",
-      "subtitle": "BITCOIN / TETHER PERPETUAL FUTURES",
+      "subtitle": "BITCOIN / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "BITCOIN / TETHER PERPETUAL FUTURES",
+        "BITCOIN / TETHER USD PERPETUAL FUTURES",
         "BTCUSDT",
         "BTCUSDT.P",
         "WOOX:BTCUSDT.P"
@@ -490,6 +490,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BITGET:BTCUSDT",
         "BTCUSDT",
         "BTCUSDT SPOT"
+      ]
+    },
+    {
+      "symbol": "HTX:BTCUSDT",
+      "title": "BTCUSDT",
+      "subtitle": "BTCUSDT Futures Contract",
+      "exchangeLabel": "HTX",
+      "typeLabel": "futures",
+      "aliases": [
+        "BTCUSDT",
+        "BTCUSDT Futures Contract",
+        "HTX:BTCUSDT"
       ]
     },
     {
@@ -833,11 +845,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ETHUSDT.P",
       "title": "ETHUSDT.P",
-      "subtitle": "ETHEREUM / TETHER PERPETUAL FUTURES",
+      "subtitle": "ETHEREUM / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "ETHEREUM / TETHER PERPETUAL FUTURES",
+        "ETHEREUM / TETHER USD PERPETUAL FUTURES",
         "ETHUSDT",
         "ETHUSDT.P",
         "WOOX:ETHUSDT.P"
@@ -978,6 +990,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BITGET:ETHUSDT",
         "ETHUSDT",
         "ETHUSDT SPOT"
+      ]
+    },
+    {
+      "symbol": "HTX:ETHUSDT",
+      "title": "ETHUSDT",
+      "subtitle": "ETHUSDT Futures Contract",
+      "exchangeLabel": "HTX",
+      "typeLabel": "futures",
+      "aliases": [
+        "ETHUSDT",
+        "ETHUSDT Futures Contract",
+        "HTX:ETHUSDT"
       ]
     },
     {
@@ -1321,11 +1345,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:SOLUSDT.P",
       "title": "SOLUSDT.P",
-      "subtitle": "SOLANA / TETHER PERPETUAL FUTURES",
+      "subtitle": "SOLANA / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "SOLANA / TETHER PERPETUAL FUTURES",
+        "SOLANA / TETHER USD PERPETUAL FUTURES",
         "SOLUSDT",
         "SOLUSDT.P",
         "WOOX:SOLUSDT.P"
@@ -1761,11 +1785,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:XRPUSDT.P",
       "title": "XRPUSDT.P",
-      "subtitle": "RIPPLE / TETHER PERPETUAL FUTURES",
+      "subtitle": "RIPPLE / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "RIPPLE / TETHER PERPETUAL FUTURES",
+        "RIPPLE / TETHER USD PERPETUAL FUTURES",
         "WOOX:XRPUSDT.P",
         "XRPUSDT",
         "XRPUSDT.P"
@@ -2201,11 +2225,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:BNBUSDT.P",
       "title": "BNBUSDT.P",
-      "subtitle": "BNB / TETHER PERPETUAL FUTURES",
+      "subtitle": "BNB / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "BNB / TETHER PERPETUAL FUTURES",
+        "BNB / TETHER USD PERPETUAL FUTURES",
         "BNBUSDT",
         "BNBUSDT.P",
         "WOOX:BNBUSDT.P"
@@ -2641,11 +2665,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:DOGEUSDT.P",
       "title": "DOGEUSDT.P",
-      "subtitle": "DOGECOIN / TETHER PERPETUAL FUTURES",
+      "subtitle": "DOGECOIN / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "DOGECOIN / TETHER PERPETUAL FUTURES",
+        "DOGECOIN / TETHER USD PERPETUAL FUTURES",
         "DOGEUSDT",
         "DOGEUSDT.P",
         "WOOX:DOGEUSDT.P"
@@ -3068,13 +3092,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ADAUSDT.P",
       "title": "ADAUSDT.P",
-      "subtitle": "CARDANO / TETHER PERPETUAL FUTURES",
+      "subtitle": "CARDANO / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "ADAUSDT",
         "ADAUSDT.P",
-        "CARDANO / TETHER PERPETUAL FUTURES",
+        "CARDANO / TETHER USD PERPETUAL FUTURES",
         "WOOX:ADAUSDT.P"
       ]
     },
@@ -3495,11 +3519,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:AVAXUSDT.P",
       "title": "AVAXUSDT.P",
-      "subtitle": "AVALANCHE / TETHER PERPETUAL FUTURES",
+      "subtitle": "AVALANCHE / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "AVALANCHE / TETHER PERPETUAL FUTURES",
+        "AVALANCHE / TETHER USD PERPETUAL FUTURES",
         "AVAXUSDT",
         "AVAXUSDT.P",
         "WOOX:AVAXUSDT.P"
@@ -3922,11 +3946,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:LINKUSDT.P",
       "title": "LINKUSDT.P",
-      "subtitle": "CHAINLINK / TETHER PERPETUAL FUTURES",
+      "subtitle": "CHAINLINK / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "CHAINLINK / TETHER PERPETUAL FUTURES",
+        "CHAINLINK / TETHER USD PERPETUAL FUTURES",
         "LINKUSDT",
         "LINKUSDT.P",
         "WOOX:LINKUSDT.P"
@@ -4349,11 +4373,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:SUIUSDT.P",
       "title": "SUIUSDT.P",
-      "subtitle": "SUI / TETHER PERPETUAL FUTURES",
+      "subtitle": "SUI / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "SUI / TETHER PERPETUAL FUTURES",
+        "SUI / TETHER USD PERPETUAL FUTURES",
         "SUIUSDT",
         "SUIUSDT.P",
         "WOOX:SUIUSDT.P"
@@ -4789,11 +4813,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:TRXUSDT.P",
       "title": "TRXUSDT.P",
-      "subtitle": "TRON / TETHER PERPETUAL FUTURES",
+      "subtitle": "TRON / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "TRON / TETHER PERPETUAL FUTURES",
+        "TRON / TETHER USD PERPETUAL FUTURES",
         "TRXUSDT",
         "TRXUSDT.P",
         "WOOX:TRXUSDT.P"
@@ -5216,13 +5240,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:DOTUSDT.P",
       "title": "DOTUSDT.P",
-      "subtitle": "POLKADOT / TETHER PERPETUAL FUTURES",
+      "subtitle": "POLKADOT / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "DOTUSDT",
         "DOTUSDT.P",
-        "POLKADOT / TETHER PERPETUAL FUTURES",
+        "POLKADOT / TETHER USD PERPETUAL FUTURES",
         "WOOX:DOTUSDT.P"
       ]
     },
@@ -5656,11 +5680,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:LTCUSDT.P",
       "title": "LTCUSDT.P",
-      "subtitle": "LITECOIN / TETHER PERPETUAL FUTURES",
+      "subtitle": "LITECOIN / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "LITECOIN / TETHER PERPETUAL FUTURES",
+        "LITECOIN / TETHER USD PERPETUAL FUTURES",
         "LTCUSDT",
         "LTCUSDT.P",
         "WOOX:LTCUSDT.P"
@@ -6083,13 +6107,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:BCHUSDT.P",
       "title": "BCHUSDT.P",
-      "subtitle": "BITCOIN CASH / TETHER PERPETUAL FUTURES",
+      "subtitle": "BITCOIN CASH / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "BCHUSDT",
         "BCHUSDT.P",
-        "BITCOIN CASH / TETHER PERPETUAL FUTURES",
+        "BITCOIN CASH / TETHER USD PERPETUAL FUTURES",
         "WOOX:BCHUSDT.P"
       ]
     },
@@ -6562,11 +6586,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:UNIUSDT.P",
       "title": "UNIUSDT.P",
-      "subtitle": "UNISWAP / TETHER PERPETUAL FUTURES",
+      "subtitle": "UNISWAP / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "UNISWAP / TETHER PERPETUAL FUTURES",
+        "UNISWAP / TETHER USD PERPETUAL FUTURES",
         "UNIUSDT",
         "UNIUSDT.P",
         "WOOX:UNIUSDT.P"
@@ -6963,11 +6987,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:APTUSDT.P",
       "title": "APTUSDT.P",
-      "subtitle": "APT / TETHER PERPETUAL FUTURES",
+      "subtitle": "APT / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "APT / TETHER PERPETUAL FUTURES",
+        "APT / TETHER USD PERPETUAL FUTURES",
         "APTUSDT",
         "APTUSDT.P",
         "WOOX:APTUSDT.P"
@@ -7377,11 +7401,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:NEARUSDT.P",
       "title": "NEARUSDT.P",
-      "subtitle": "NEAR PROTOCOL / TETHER PERPETUAL FUTURES",
+      "subtitle": "NEAR PROTOCOL / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "NEAR PROTOCOL / TETHER PERPETUAL FUTURES",
+        "NEAR PROTOCOL / TETHER USD PERPETUAL FUTURES",
         "NEARUSDT",
         "NEARUSDT.P",
         "WOOX:NEARUSDT.P"
@@ -7791,11 +7815,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ARBUSDT.P",
       "title": "ARBUSDT.P",
-      "subtitle": "ARBITRUM / TETHER PERPETUAL FUTURES",
+      "subtitle": "ARBITRUM / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "ARBITRUM / TETHER PERPETUAL FUTURES",
+        "ARBITRUM / TETHER USD PERPETUAL FUTURES",
         "ARBUSDT",
         "ARBUSDT.P",
         "WOOX:ARBUSDT.P"
@@ -8192,11 +8216,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:OPUSDT.P",
       "title": "OPUSDT.P",
-      "subtitle": "OPTIMISM / TETHER PERPETUAL FUTURES",
+      "subtitle": "OPTIMISM / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "OPTIMISM / TETHER PERPETUAL FUTURES",
+        "OPTIMISM / TETHER USD PERPETUAL FUTURES",
         "OPUSDT",
         "OPUSDT.P",
         "WOOX:OPUSDT.P"
@@ -8606,11 +8630,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:AAVEUSDT.P",
       "title": "AAVEUSDT.P",
-      "subtitle": "AAVE / TETHER PERPETUAL FUTURES",
+      "subtitle": "AAVE / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "AAVE / TETHER PERPETUAL FUTURES",
+        "AAVE / TETHER USD PERPETUAL FUTURES",
         "AAVEUSDT",
         "AAVEUSDT.P",
         "WOOX:AAVEUSDT.P"
@@ -9007,13 +9031,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ENAUSDT.P",
       "title": "ENAUSDT.P",
-      "subtitle": "ETHENA / TETHER PERPETUAL FUTURES",
+      "subtitle": "ETHENA / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "ENAUSDT",
         "ENAUSDT.P",
-        "ETHENA / TETHER PERPETUAL FUTURES",
+        "ETHENA / TETHER USD PERPETUAL FUTURES",
         "WOOX:ENAUSDT.P"
       ]
     },
@@ -9754,11 +9778,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:INJUSDT.P",
       "title": "INJUSDT.P",
-      "subtitle": "INJECTIVE / TETHER PERPETUAL FUTURES",
+      "subtitle": "INJECTIVE / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "INJECTIVE / TETHER PERPETUAL FUTURES",
+        "INJECTIVE / TETHER USD PERPETUAL FUTURES",
         "INJUSDT",
         "INJUSDT.P",
         "WOOX:INJUSDT.P"
@@ -10142,11 +10166,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:SEIUSDT.P",
       "title": "SEIUSDT.P",
-      "subtitle": "SEI / TETHER PERPETUAL FUTURES",
+      "subtitle": "SEI / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "SEI / TETHER PERPETUAL FUTURES",
+        "SEI / TETHER USD PERPETUAL FUTURES",
         "SEIUSDT",
         "SEIUSDT.P",
         "WOOX:SEIUSDT.P"
@@ -10543,11 +10567,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:TIAUSDT.P",
       "title": "TIAUSDT.P",
-      "subtitle": "CELESTIA / TETHER PERPETUAL FUTURES",
+      "subtitle": "CELESTIA / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "CELESTIA / TETHER PERPETUAL FUTURES",
+        "CELESTIA / TETHER USD PERPETUAL FUTURES",
         "TIAUSDT",
         "TIAUSDT.P",
         "WOOX:TIAUSDT.P"
@@ -10957,11 +10981,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:FILUSDT.P",
       "title": "FILUSDT.P",
-      "subtitle": "FILECOIN / TETHER PERPETUAL FUTURES",
+      "subtitle": "FILECOIN / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "FILECOIN / TETHER PERPETUAL FUTURES",
+        "FILECOIN / TETHER USD PERPETUAL FUTURES",
         "FILUSDT",
         "FILUSDT.P",
         "WOOX:FILUSDT.P"
@@ -11371,13 +11395,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ETCUSDT.P",
       "title": "ETCUSDT.P",
-      "subtitle": "ETHEREUM CLASSIC / TETHER PERPETUAL FUTURES",
+      "subtitle": "ETHEREUM CLASSIC / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "ETCUSDT",
         "ETCUSDT.P",
-        "ETHEREUM CLASSIC / TETHER PERPETUAL FUTURES",
+        "ETHEREUM CLASSIC / TETHER USD PERPETUAL FUTURES",
         "WOOX:ETCUSDT.P"
       ]
     },
@@ -11772,13 +11796,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ATOMUSDT.P",
       "title": "ATOMUSDT.P",
-      "subtitle": "COSMOS / TETHER PERPETUAL FUTURES",
+      "subtitle": "COSMOS / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "ATOMUSDT",
         "ATOMUSDT.P",
-        "COSMOS / TETHER PERPETUAL FUTURES",
+        "COSMOS / TETHER USD PERPETUAL FUTURES",
         "WOOX:ATOMUSDT.P"
       ]
     },
@@ -12173,13 +12197,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ICPUSDT.P",
       "title": "ICPUSDT.P",
-      "subtitle": "INTERNET COMPUTER / TETHER PERPETUAL FUTURES",
+      "subtitle": "INTERNET COMPUTER / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "ICPUSDT",
         "ICPUSDT.P",
-        "INTERNET COMPUTER / TETHER PERPETUAL FUTURES",
+        "INTERNET COMPUTER / TETHER USD PERPETUAL FUTURES",
         "WOOX:ICPUSDT.P"
       ]
     },
@@ -12587,11 +12611,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:JUPUSDT.P",
       "title": "JUPUSDT.P",
-      "subtitle": "JUPITER / TETHER PERPETUAL FUTURES",
+      "subtitle": "JUPITER / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "JUPITER / TETHER PERPETUAL FUTURES",
+        "JUPITER / TETHER USD PERPETUAL FUTURES",
         "JUPUSDT",
         "JUPUSDT.P",
         "WOOX:JUPUSDT.P"
@@ -12949,13 +12973,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:RUNEUSDT.P",
       "title": "RUNEUSDT.P",
-      "subtitle": "THORCHAIN / TETHER PERPETUAL FUTURES",
+      "subtitle": "THORCHAIN / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
         "RUNEUSDT",
         "RUNEUSDT.P",
-        "THORCHAIN / TETHER PERPETUAL FUTURES",
+        "THORCHAIN / TETHER USD PERPETUAL FUTURES",
         "WOOX:RUNEUSDT.P"
       ]
     },
@@ -13752,11 +13776,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ORDIUSDT.P",
       "title": "ORDIUSDT.P",
-      "subtitle": "ORDINALS / TETHER PERPETUAL FUTURES",
+      "subtitle": "ORDINALS / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "ORDINALS / TETHER PERPETUAL FUTURES",
+        "ORDINALS / TETHER USD PERPETUAL FUTURES",
         "ORDIUSDT",
         "ORDIUSDT.P",
         "WOOX:ORDIUSDT.P"
@@ -14114,11 +14138,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:GALAUSDT.P",
       "title": "GALAUSDT.P",
-      "subtitle": "GALA / TETHER PERPETUAL FUTURES",
+      "subtitle": "GALA / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "GALA / TETHER PERPETUAL FUTURES",
+        "GALA / TETHER USD PERPETUAL FUTURES",
         "GALAUSDT",
         "GALAUSDT.P",
         "WOOX:GALAUSDT.P"
@@ -14502,11 +14526,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:PENDLEUSDT.P",
       "title": "PENDLEUSDT.P",
-      "subtitle": "PENDLE / TETHER PERPETUAL FUTURES",
+      "subtitle": "PENDLE / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "PENDLE / TETHER PERPETUAL FUTURES",
+        "PENDLE / TETHER USD PERPETUAL FUTURES",
         "PENDLEUSDT",
         "PENDLEUSDT.P",
         "WOOX:PENDLEUSDT.P"
@@ -14903,11 +14927,11 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "WOOX:ONDOUSDT.P",
       "title": "ONDOUSDT.P",
-      "subtitle": "ONDO / TETHER PERPETUAL FUTURES",
+      "subtitle": "ONDO / TETHER USD PERPETUAL FUTURES",
       "exchangeLabel": "WOOX",
       "typeLabel": "swap",
       "aliases": [
-        "ONDO / TETHER PERPETUAL FUTURES",
+        "ONDO / TETHER USD PERPETUAL FUTURES",
         "ONDOUSDT",
         "ONDOUSDT.P",
         "WOOX:ONDOUSDT.P"
@@ -15261,6 +15285,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "NAS100",
         "NAS100 Cash",
         "VANTAGE:NAS100"
+      ]
+    },
+    {
+      "symbol": "PEPPERSTONE:NAS100.P",
+      "title": "NAS100.P",
+      "subtitle": "US Tech 100 Index Perpetual",
+      "exchangeLabel": "PEPPERSTONE",
+      "typeLabel": "index",
+      "aliases": [
+        "NAS100",
+        "NAS100.P",
+        "PEPPERSTONE:NAS100.P",
+        "US Tech 100 Index Perpetual"
       ]
     },
     {
@@ -15687,18 +15724,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "ASX:NDXKOZ",
-      "title": "NDXKOZ",
-      "subtitle": "Citigroup Global Markets Australia Pty Ltd Warrant 2026-30.12.39 on Nasdaq 100 E-Mini",
-      "exchangeLabel": "ASX",
-      "typeLabel": "warrant",
-      "aliases": [
-        "ASX:NDXKOZ",
-        "Citigroup Global Markets Australia Pty Ltd Warrant 2026-30.12.39 on Nasdaq 100 E-Mini",
-        "NDXKOZ"
-      ]
-    },
-    {
       "symbol": "ASX:NDXMOC",
       "title": "NDXMOC",
       "subtitle": "Citigroup Global Markets Australia Pty Ltd Warrant 2024-31.12.29 on Nasdaq 100 E-Mini",
@@ -15807,74 +15832,62 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "CHIXAU:NDXKCO",
-      "title": "NDXKCO",
-      "subtitle": "Citigroup Global Markets Australia Pty Ltd Warrant 2026-30.12.39 on ShsNasdaq 100 E-Mini",
-      "exchangeLabel": "CHIXAU",
-      "typeLabel": "warrant",
-      "aliases": [
-        "CHIXAU:NDXKCO",
-        "Citigroup Global Markets Australia Pty Ltd Warrant 2026-30.12.39 on ShsNasdaq 100 E-Mini",
-        "NDXKCO"
-      ]
-    },
-    {
       "symbol": "CHIXAU:NDXMCA",
       "title": "NDXMCA",
-      "subtitle": "Citiwarrants 22876.9976 NDX Mini Long",
+      "subtitle": "Citiwarrants 22898.2848 NDX Mini Long",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCA",
-        "Citiwarrants 22876.9976 NDX Mini Long",
+        "Citiwarrants 22898.2848 NDX Mini Long",
         "NDXMCA"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCT",
       "title": "NDXMCT",
-      "subtitle": "Citiwarrants 35703.1706 NDX Mini Short",
+      "subtitle": "Citiwarrants 35669.9749 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCT",
-        "Citiwarrants 35703.1706 NDX Mini Short",
+        "Citiwarrants 35669.9749 NDX Mini Short",
         "NDXMCT"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCV",
       "title": "NDXMCV",
-      "subtitle": "Citiwarrants 34806.9137 NDX Mini Short",
+      "subtitle": "Citiwarrants 34774.5514 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCV",
-        "Citiwarrants 34806.9137 NDX Mini Short",
+        "Citiwarrants 34774.5514 NDX Mini Short",
         "NDXMCV"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCX",
       "title": "NDXMCX",
-      "subtitle": "Citiwarrants 34126.9874 NDX Mini Short",
+      "subtitle": "Citiwarrants 34095.2573 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCX",
-        "Citiwarrants 34126.9874 NDX Mini Short",
+        "Citiwarrants 34095.2573 NDX Mini Short",
         "NDXMCX"
       ]
     },
     {
       "symbol": "CHIXAU:NDXMCY",
       "title": "NDXMCY",
-      "subtitle": "Citiwarrants 33577.7202 NDX Mini Short",
+      "subtitle": "Citiwarrants 33546.5008 NDX Mini Short",
       "exchangeLabel": "CHIXAU",
       "typeLabel": "warrant",
       "aliases": [
         "CHIXAU:NDXMCY",
-        "Citiwarrants 33577.7202 NDX Mini Short",
+        "Citiwarrants 33546.5008 NDX Mini Short",
         "NDXMCY"
       ]
     },
@@ -16008,6 +16021,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "INTOTHEBLOCK:NDX_AVGBALANCE",
         "Indexed Finance: Mean value an address holds (Market cap divided by number of addresses with a balance of tokens)",
         "NDX_AVGBALANCE"
+      ]
+    },
+    {
+      "symbol": "INTOTHEBLOCK:NDX_AVGTIMEBETWEENTX",
+      "title": "NDX_AVGTIMEBETWEENTX",
+      "subtitle": "Indexed Finance: The average duration between one transaction block and the next in seconds",
+      "exchangeLabel": "INTOTHEBLOCK",
+      "typeLabel": "fundamental",
+      "aliases": [
+        "INTOTHEBLOCK:NDX_AVGTIMEBETWEENTX",
+        "Indexed Finance: The average duration between one transaction block and the next in seconds",
+        "NDX_AVGTIMEBETWEENTX"
+      ]
+    },
+    {
+      "symbol": "INTOTHEBLOCK:NDX_AVGTX",
+      "title": "NDX_AVGTX",
+      "subtitle": "Indexed Finance: Mean transaction value for a crypto-asset on any given day",
+      "exchangeLabel": "INTOTHEBLOCK",
+      "typeLabel": "fundamental",
+      "aliases": [
+        "INTOTHEBLOCK:NDX_AVGTX",
+        "Indexed Finance: Mean transaction value for a crypto-asset on any given day",
+        "NDX_AVGTX"
       ]
     },
     {
@@ -16448,6 +16485,42 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "FWB:US500472AE5",
+      "title": "US500472AE5",
+      "subtitle": "Koninklijke Philips N.V. 5.0% 15-MAR-2042",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "FWB:US500472AE5",
+        "Koninklijke Philips N.V. 5.0% 15-MAR-2042",
+        "US500472AE5"
+      ]
+    },
+    {
+      "symbol": "FWB:US50050HAX4",
+      "title": "US50050HAX4",
+      "subtitle": "Kookmin Bank /Old/ 5.25% 08-MAY-2029 RegS",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "FWB:US50050HAX4",
+        "Kookmin Bank /Old/ 5.25% 08-MAY-2029 RegS",
+        "US50050HAX4"
+      ]
+    },
+    {
+      "symbol": "FWB:US500630DH8",
+      "title": "US500630DH8",
+      "subtitle": "Korea Development Bank 1.625% 19-JAN-2031",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "FWB:US500630DH8",
+        "Korea Development Bank 1.625% 19-JAN-2031",
+        "US500630DH8"
+      ]
+    },
+    {
       "symbol": "FWB:US500630DR6",
       "title": "US500630DR6",
       "subtitle": "Korea Development Bank 2.25% 24-FEB-2027",
@@ -16457,6 +16530,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "FWB:US500630DR6",
         "Korea Development Bank 2.25% 24-FEB-2027",
         "US500630DR6"
+      ]
+    },
+    {
+      "symbol": "FWB:US500631AH9",
+      "title": "US500631AH9",
+      "subtitle": "Korea Electric Power Corporation 7.0% 01-FEB-2027",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "FWB:US500631AH9",
+        "Korea Electric Power Corporation 7.0% 01-FEB-2027",
+        "US500631AH9"
       ]
     },
     {
@@ -16472,99 +16557,27 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FWB:US50064FAY0",
-      "title": "US50064FAY0",
-      "subtitle": "Government of South Korea 3.625% 29-OCT-2030",
+      "symbol": "FWB:US50064FAU8",
+      "title": "US50064FAU8",
+      "subtitle": "Government of South Korea 1.75% 15-OCT-2031",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US50064FAY0",
-        "Government of South Korea 3.625% 29-OCT-2030",
-        "US50064FAY0"
+        "FWB:US50064FAU8",
+        "Government of South Korea 1.75% 15-OCT-2031",
+        "US50064FAU8"
       ]
     },
     {
-      "symbol": "FWB:US50064YAQ6",
-      "title": "US50064YAQ6",
-      "subtitle": "Korea Hydro & Nuclear Power Co., Ltd. 4.25% 27-JUL-2027 144A",
+      "symbol": "FWB:US50066CAT6",
+      "title": "US50066CAT6",
+      "subtitle": "Korea Gas Corporation 3.875% 13-JUL-2027 RegS",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US50064YAQ6",
-        "Korea Hydro & Nuclear Power Co., Ltd. 4.25% 27-JUL-2027 144A",
-        "US50064YAQ6"
-      ]
-    },
-    {
-      "symbol": "FWB:US50065XAP9",
-      "title": "US50065XAP9",
-      "subtitle": "Korea National Oil Corporation 4.875% 03-APR-2028 RegS",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "FWB:US50065XAP9",
-        "Korea National Oil Corporation 4.875% 03-APR-2028 RegS",
-        "US50065XAP9"
-      ]
-    },
-    {
-      "symbol": "FWB:US50066CAP4",
-      "title": "US50066CAP4",
-      "subtitle": "Korea Gas Corporation 2.875% 16-JUL-2029 RegS",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "FWB:US50066CAP4",
-        "Korea Gas Corporation 2.875% 16-JUL-2029 RegS",
-        "US50066CAP4"
-      ]
-    },
-    {
-      "symbol": "FWB:US50066CAV1",
-      "title": "US50066CAV1",
-      "subtitle": "Korea Gas Corporation 5.0% 08-JUL-2029 RegS",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "FWB:US50066CAV1",
-        "Korea Gas Corporation 5.0% 08-JUL-2029 RegS",
-        "US50066CAV1"
-      ]
-    },
-    {
-      "symbol": "FWB:US50066RAQ9",
-      "title": "US50066RAQ9",
-      "subtitle": "Korea National Oil Corporation 2.375% 07-APR-2031 RegS",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "FWB:US50066RAQ9",
-        "Korea National Oil Corporation 2.375% 07-APR-2031 RegS",
-        "US50066RAQ9"
-      ]
-    },
-    {
-      "symbol": "FWB:US50066RAT3",
-      "title": "US50066RAT3",
-      "subtitle": "Korea National Oil Corporation 2.625% 18-APR-2032 RegS",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "FWB:US50066RAT3",
-        "Korea National Oil Corporation 2.625% 18-APR-2032 RegS",
-        "US50066RAT3"
-      ]
-    },
-    {
-      "symbol": "FWB:US500688AG1",
-      "title": "US500688AG1",
-      "subtitle": "Kosmos Energy Ltd. 3.125% 15-MAR-2030 144A",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "FWB:US500688AG1",
-        "Kosmos Energy Ltd. 3.125% 15-MAR-2030 144A",
-        "US500688AG1"
+        "FWB:US50066CAT6",
+        "Korea Gas Corporation 3.875% 13-JUL-2027 RegS",
+        "US50066CAT6"
       ]
     },
     {
@@ -16580,75 +16593,87 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FWB:US500769JW5",
-      "title": "US500769JW5",
-      "subtitle": "KfW 3.75% 15-FEB-2028",
+      "symbol": "FWB:US500769BR4",
+      "title": "US500769BR4",
+      "subtitle": "KfW 0.0% 18-APR-2036",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US500769JW5",
-        "KfW 3.75% 15-FEB-2028",
-        "US500769JW5"
+        "FWB:US500769BR4",
+        "KfW 0.0% 18-APR-2036",
+        "US500769BR4"
       ]
     },
     {
-      "symbol": "FWB:US500769KB9",
-      "title": "US500769KB9",
-      "subtitle": "KfW 4.75% 29-OCT-2030",
+      "symbol": "FWB:US500769CG7",
+      "title": "US500769CG7",
+      "subtitle": "KfW 2.6% 20-JUN-2037",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US500769KB9",
-        "KfW 4.75% 29-OCT-2030",
-        "US500769KB9"
+        "FWB:US500769CG7",
+        "KfW 2.6% 20-JUN-2037",
+        "US500769CG7"
       ]
     },
     {
-      "symbol": "FWB:US500769KD5",
-      "title": "US500769KD5",
-      "subtitle": "KfW 4.375% 28-FEB-2034",
+      "symbol": "FWB:US500769HS6",
+      "title": "US500769HS6",
+      "subtitle": "KfW 2.875% 03-APR-2028",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US500769KD5",
-        "KfW 4.375% 28-FEB-2034",
-        "US500769KD5"
+        "FWB:US500769HS6",
+        "KfW 2.875% 03-APR-2028",
+        "US500769HS6"
       ]
     },
     {
-      "symbol": "FWB:US500769KE3",
-      "title": "US500769KE3",
-      "subtitle": "KfW 4.375% 01-MAR-2027",
+      "symbol": "FWB:US500769JY1",
+      "title": "US500769JY1",
+      "subtitle": "KfW 4.125% 15-JUL-2033",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US500769KE3",
-        "KfW 4.375% 01-MAR-2027",
-        "US500769KE3"
+        "FWB:US500769JY1",
+        "KfW 4.125% 15-JUL-2033",
+        "US500769JY1"
       ]
     },
     {
-      "symbol": "FWB:US500769KG8",
-      "title": "US500769KG8",
-      "subtitle": "KfW 3.5% 27-AUG-2027",
+      "symbol": "FWB:US500769KJ2",
+      "title": "US500769KJ2",
+      "subtitle": "KfW 3.875% 15-MAY-2028",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US500769KG8",
-        "KfW 3.5% 27-AUG-2027",
-        "US500769KG8"
+        "FWB:US500769KJ2",
+        "KfW 3.875% 15-MAY-2028",
+        "US500769KJ2"
       ]
     },
     {
-      "symbol": "FWB:US500769KL7",
-      "title": "US500769KL7",
-      "subtitle": "KfW 4.0% 28-JUN-2027",
+      "symbol": "FWB:US500769KK9",
+      "title": "US500769KK9",
+      "subtitle": "KfW 3.75% 15-JUL-2030",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US500769KL7",
-        "KfW 4.0% 28-JUN-2027",
-        "US500769KL7"
+        "FWB:US500769KK9",
+        "KfW 3.75% 15-JUL-2030",
+        "US500769KK9"
+      ]
+    },
+    {
+      "symbol": "FWB:US500769KP8",
+      "title": "US500769KP8",
+      "subtitle": "KfW 3.5% 15-MAY-2029",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "FWB:US500769KP8",
+        "KfW 3.5% 15-MAY-2029",
+        "US500769KP8"
       ]
     },
     {
@@ -16664,15 +16689,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FWB:US500769KT0",
-      "title": "US500769KT0",
-      "subtitle": "KfW 4.5% 10-OCT-2031",
+      "symbol": "FWB:US500769KS2",
+      "title": "US500769KS2",
+      "subtitle": "KfW 4.375% 15-AUG-2033",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "FWB:US500769KT0",
-        "KfW 4.5% 10-OCT-2031",
-        "US500769KT0"
+        "FWB:US500769KS2",
+        "KfW 4.375% 15-AUG-2033",
+        "US500769KS2"
       ]
     },
     {
@@ -16685,6 +16710,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "FWB:US50076QAE6",
         "Kraft Heinz Foods Co. 5.0% 04-JUN-2042",
         "US50076QAE6"
+      ]
+    },
+    {
+      "symbol": "FWB:US50077LAT3",
+      "title": "US50077LAT3",
+      "subtitle": "Kraft Heinz Foods Co. 4.625% 30-JAN-2029",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "FWB:US50077LAT3",
+        "Kraft Heinz Foods Co. 4.625% 30-JAN-2029",
+        "US50077LAT3"
       ]
     },
     {
@@ -17554,15 +17591,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FWB:US3027XAW0",
-      "title": "US3027XAW0",
-      "subtitle": "American Tower Corporation 3.8% 15-AUG-2029",
+      "symbol": "FWB:US3027XAR1",
+      "title": "US3027XAR1",
+      "subtitle": "American Tower Corporation 3.6% 15-JAN-2028",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "American Tower Corporation 3.8% 15-AUG-2029",
-        "FWB:US3027XAW0",
-        "US3027XAW0"
+        "American Tower Corporation 3.6% 15-JAN-2028",
+        "FWB:US3027XAR1",
+        "US3027XAR1"
       ]
     },
     {
@@ -17578,39 +17615,15 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FWB:US3027XBJ8",
-      "title": "US3027XBJ8",
-      "subtitle": "American Tower Corporation 1.5% 31-JAN-2028",
+      "symbol": "FWB:US3027XBZ2",
+      "title": "US3027XBZ2",
+      "subtitle": "American Tower Corporation 5.65% 15-MAR-2033",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "American Tower Corporation 1.5% 31-JAN-2028",
-        "FWB:US3027XBJ8",
-        "US3027XBJ8"
-      ]
-    },
-    {
-      "symbol": "FWB:US3027XBV1",
-      "title": "US3027XBV1",
-      "subtitle": "American Tower Corporation 3.65% 15-MAR-2027",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "American Tower Corporation 3.65% 15-MAR-2027",
-        "FWB:US3027XBV1",
-        "US3027XBV1"
-      ]
-    },
-    {
-      "symbol": "FWB:US3027XCH1",
-      "title": "US3027XCH1",
-      "subtitle": "American Tower Corporation 5.45% 15-FEB-2034",
-      "exchangeLabel": "FWB",
-      "typeLabel": "bond",
-      "aliases": [
-        "American Tower Corporation 5.45% 15-FEB-2034",
-        "FWB:US3027XCH1",
-        "US3027XCH1"
+        "American Tower Corporation 5.65% 15-MAR-2033",
+        "FWB:US3027XBZ2",
+        "US3027XBZ2"
       ]
     },
     {
@@ -17626,39 +17639,63 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FWB:US3027XCR9",
-      "title": "US3027XCR9",
-      "subtitle": "American Tower Corporation 4.7% 15-DEC-2032",
+      "symbol": "FWB:US3040WAU9",
+      "title": "US3040WAU9",
+      "subtitle": "American Water Capital Corp. 3.45% 01-JUN-2029",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "American Tower Corporation 4.7% 15-DEC-2032",
-        "FWB:US3027XCR9",
-        "US3027XCR9"
+        "American Water Capital Corp. 3.45% 01-JUN-2029",
+        "FWB:US3040WAU9",
+        "US3040WAU9"
       ]
     },
     {
-      "symbol": "FWB:US3073EAN5",
-      "title": "US3073EAN5",
-      "subtitle": "Cencora, Inc. 4.25% 01-MAR-2045",
+      "symbol": "FWB:US3040WAX3",
+      "title": "US3040WAX3",
+      "subtitle": "American Water Capital Corp. 3.45% 01-MAY-2050",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "Cencora, Inc. 4.25% 01-MAR-2045",
-        "FWB:US3073EAN5",
-        "US3073EAN5"
+        "American Water Capital Corp. 3.45% 01-MAY-2050",
+        "FWB:US3040WAX3",
+        "US3040WAX3"
       ]
     },
     {
-      "symbol": "FWB:US3073EAV7",
-      "title": "US3073EAV7",
-      "subtitle": "Cencora, Inc. 4.625% 15-DEC-2027",
+      "symbol": "FWB:US3040WAY1",
+      "title": "US3040WAY1",
+      "subtitle": "American Water Capital Corp. 2.3% 01-JUN-2031",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "Cencora, Inc. 4.625% 15-DEC-2027",
-        "FWB:US3073EAV7",
-        "US3073EAV7"
+        "American Water Capital Corp. 2.3% 01-JUN-2031",
+        "FWB:US3040WAY1",
+        "US3040WAY1"
+      ]
+    },
+    {
+      "symbol": "FWB:US3040WBG9",
+      "title": "US3040WBG9",
+      "subtitle": "American Water Capital Corp. 5.7% 01-SEP-2055",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "American Water Capital Corp. 5.7% 01-SEP-2055",
+        "FWB:US3040WBG9",
+        "US3040WBG9"
+      ]
+    },
+    {
+      "symbol": "FWB:US3073EAR6",
+      "title": "US3073EAR6",
+      "subtitle": "Cencora, Inc. 2.8% 15-MAY-2030",
+      "exchangeLabel": "FWB",
+      "typeLabel": "bond",
+      "aliases": [
+        "Cencora, Inc. 2.8% 15-MAY-2030",
+        "FWB:US3073EAR6",
+        "US3073EAR6"
       ]
     },
     {
@@ -17674,27 +17711,27 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "FWB:US3073EBF1",
-      "title": "US3073EBF1",
-      "subtitle": "Cencora, Inc. 5.65% 13-FEB-2056",
+      "symbol": "FWB:US3073EBC8",
+      "title": "US3073EBC8",
+      "subtitle": "Cencora, Inc. 3.95% 13-FEB-2029",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "Cencora, Inc. 5.65% 13-FEB-2056",
-        "FWB:US3073EBF1",
-        "US3073EBF1"
+        "Cencora, Inc. 3.95% 13-FEB-2029",
+        "FWB:US3073EBC8",
+        "US3073EBC8"
       ]
     },
     {
-      "symbol": "FWB:US3076CAM8",
-      "title": "US3076CAM8",
-      "subtitle": "Ameriprise Financial, Inc. 5.15% 15-MAY-2033",
+      "symbol": "FWB:US3073EBD6",
+      "title": "US3073EBD6",
+      "subtitle": "Cencora, Inc. 4.6% 13-FEB-2033",
       "exchangeLabel": "FWB",
       "typeLabel": "bond",
       "aliases": [
-        "Ameriprise Financial, Inc. 5.15% 15-MAY-2033",
-        "FWB:US3076CAM8",
-        "US3076CAM8"
+        "Cencora, Inc. 4.6% 13-FEB-2033",
+        "FWB:US3073EBD6",
+        "US3073EBD6"
       ]
     },
     {
@@ -18259,6 +18296,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "DXY",
         "TVC:DXY",
         "U.S. Dollar Currency Index"
+      ]
+    },
+    {
+      "symbol": "BITGET:DXYUSDT.P",
+      "title": "DXYUSDT.P",
+      "subtitle": "DXYUSDTPERP PERPETUAL MIX CONTRACT",
+      "exchangeLabel": "Bitget",
+      "typeLabel": "swap",
+      "aliases": [
+        "BITGET:DXYUSDT.P",
+        "DXYUSDT",
+        "DXYUSDT.P",
+        "DXYUSDTPERP PERPETUAL MIX CONTRACT"
       ]
     },
     {
@@ -20058,7 +20108,7 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "title": "EURUSD",
       "subtitle": "Euro / United States Dollar",
       "exchangeLabel": "CMCMARKETS",
-      "typeLabel": "futures",
+      "typeLabel": "forex",
       "aliases": [
         "CMCMARKETS:EURUSD",
         "EURUSD",
@@ -20537,7 +20587,7 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "title": "GBPUSD",
       "subtitle": "British Pound Sterling / United States Dollar",
       "exchangeLabel": "CMCMARKETS",
-      "typeLabel": "forex",
+      "typeLabel": "futures",
       "aliases": [
         "British Pound Sterling / United States Dollar",
         "CMCMARKETS:GBPUSD",
@@ -21473,7 +21523,7 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "title": "AUDUSD",
       "subtitle": "Australian Dollar / United States Dollar",
       "exchangeLabel": "CMCMARKETS",
-      "typeLabel": "forex",
+      "typeLabel": "futures",
       "aliases": [
         "AUDUSD",
         "Australian Dollar / United States Dollar",
@@ -22901,7 +22951,7 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       "title": "NZDUSD",
       "subtitle": "New Zealand Dollar / United States Dollar",
       "exchangeLabel": "CMCMARKETS",
-      "typeLabel": "futures",
+      "typeLabel": "forex",
       "aliases": [
         "CMCMARKETS:NZDUSD",
         "NZDUSD",
@@ -23331,12 +23381,12 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BMV:AAPL",
       "title": "AAPL",
-      "subtitle": "AAPL Futures",
+      "subtitle": "Apple Inc.",
       "exchangeLabel": "BMV",
-      "typeLabel": "futures",
+      "typeLabel": "stock",
       "aliases": [
         "AAPL",
-        "AAPL Futures",
+        "Apple Inc.",
         "BMV:AAPL"
       ]
     },
@@ -23549,19 +23599,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "MEXC:AAPLUSDT.P",
-      "title": "AAPLUSDT.P",
-      "subtitle": "AAPL / Tether PERPETUAL FUTURES",
-      "exchangeLabel": "MEXC",
-      "typeLabel": "swap",
-      "aliases": [
-        "AAPL / Tether PERPETUAL FUTURES",
-        "AAPLUSDT",
-        "AAPLUSDT.P",
-        "MEXC:AAPLUSDT.P"
-      ]
-    },
-    {
       "symbol": "KUCOIN:AAPLUSDT.P",
       "title": "AAPLUSDT.P",
       "subtitle": "AAPL/Tether Perpetual Contract",
@@ -23608,30 +23645,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AAPLCL",
         "Apple Inc.",
         "BCS:AAPLCL"
-      ]
-    },
-    {
-      "symbol": "BCS:AAPLCL0",
-      "title": "AAPLCL0",
-      "subtitle": "Apple Inc.",
-      "exchangeLabel": "BCS",
-      "typeLabel": "stock",
-      "aliases": [
-        "AAPLCL0",
-        "Apple Inc.",
-        "BCS:AAPLCL0"
-      ]
-    },
-    {
-      "symbol": "BCS:AAPLCL1",
-      "title": "AAPLCL1",
-      "subtitle": "Apple Inc.",
-      "exchangeLabel": "BCS",
-      "typeLabel": "stock",
-      "aliases": [
-        "AAPLCL1",
-        "Apple Inc.",
-        "BCS:AAPLCL1"
       ]
     },
     {
@@ -23790,6 +23803,42 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AAPLB.D",
         "CRYPTOCAP:AAPLB.D",
         "Market Cap AAPLB Dominance, %"
+      ]
+    },
+    {
+      "symbol": "CRYPTOCAP:AAPLON",
+      "title": "AAPLON",
+      "subtitle": "Market Cap AAPLON, $",
+      "exchangeLabel": "CRYPTOCAP",
+      "typeLabel": "index",
+      "aliases": [
+        "AAPLON",
+        "CRYPTOCAP:AAPLON",
+        "Market Cap AAPLON, $"
+      ]
+    },
+    {
+      "symbol": "CRYPTOCAP:AAPLON.D",
+      "title": "AAPLON.D",
+      "subtitle": "Market Cap AAPLON Dominance, %",
+      "exchangeLabel": "CRYPTOCAP",
+      "typeLabel": "index",
+      "aliases": [
+        "AAPLON.D",
+        "CRYPTOCAP:AAPLON.D",
+        "Market Cap AAPLON Dominance, %"
+      ]
+    },
+    {
+      "symbol": "CRYPTOCAP:AAPLX",
+      "title": "AAPLX",
+      "subtitle": "Market Cap AAPLX, $",
+      "exchangeLabel": "CRYPTOCAP",
+      "typeLabel": "index",
+      "aliases": [
+        "AAPLX",
+        "CRYPTOCAP:AAPLX",
+        "Market Cap AAPLX, $"
       ]
     },
     {
@@ -24126,6 +24175,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "KUCOIN:MSFTONUSDT",
+      "title": "MSFTONUSDT",
+      "subtitle": "Microsoft / Tether",
+      "exchangeLabel": "KuCoin",
+      "typeLabel": "spot",
+      "aliases": [
+        "KUCOIN:MSFTONUSDT",
+        "MSFTONUSDT",
+        "Microsoft / Tether"
+      ]
+    },
+    {
       "symbol": "KUCOIN:MSFTUSDT.P",
       "title": "MSFTUSDT.P",
       "subtitle": "MSFT/Tether Perpetual Contract",
@@ -24175,6 +24236,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BCS:MSFTCL0",
+      "title": "MSFTCL0",
+      "subtitle": "Microsoft Corporation",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "BCS:MSFTCL0",
+        "MSFTCL0",
+        "Microsoft Corporation"
+      ]
+    },
+    {
+      "symbol": "BCS:MSFTCL1",
+      "title": "MSFTCL1",
+      "subtitle": "Microsoft Corporation",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "BCS:MSFTCL1",
+        "MSFTCL1",
+        "Microsoft Corporation"
+      ]
+    },
+    {
       "symbol": "BINGX:MSFTONUSDT",
       "title": "MSFTONUSDT",
       "subtitle": "Microsoft Tokenized Stock (Ondo)/USD Tether Spot",
@@ -24197,19 +24282,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "MSFT/USDT Perpetual Contract",
         "MSFTUSDT",
         "MSFTUSDT.P"
-      ]
-    },
-    {
-      "symbol": "BITUNIX:MSFTUSDT.P",
-      "title": "MSFTUSDT.P",
-      "subtitle": "Microsoft Corp / Tether LINEAR FUTURES CONTRACT",
-      "exchangeLabel": "BITUNIX",
-      "typeLabel": "swap",
-      "aliases": [
-        "BITUNIX:MSFTUSDT.P",
-        "MSFTUSDT",
-        "MSFTUSDT.P",
-        "Microsoft Corp / Tether LINEAR FUTURES CONTRACT"
       ]
     },
     {
@@ -24260,31 +24332,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BVC:MSFTCO",
         "MSFTCO",
         "Microsoft Corporation"
-      ]
-    },
-    {
-      "symbol": "BVL:MSFTUS",
-      "title": "MSFTUS",
-      "subtitle": "Microsoft Corporation",
-      "exchangeLabel": "BVL",
-      "typeLabel": "stock",
-      "aliases": [
-        "BVL:MSFTUS",
-        "MSFTUS",
-        "Microsoft Corporation"
-      ]
-    },
-    {
-      "symbol": "BYDFI:MSFTUSDT.P",
-      "title": "MSFTUSDT.P",
-      "subtitle": "MSFT / USD TETHER PERPETUAL SWAP CONTRACT",
-      "exchangeLabel": "BYDFI",
-      "typeLabel": "swap",
-      "aliases": [
-        "BYDFI:MSFTUSDT.P",
-        "MSFT / USD TETHER PERPETUAL SWAP CONTRACT",
-        "MSFTUSDT",
-        "MSFTUSDT.P"
       ]
     },
     {
@@ -24668,6 +24715,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BCS:NVDACL0",
+      "title": "NVDACL0",
+      "subtitle": "NVIDIA Corporation",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "BCS:NVDACL0",
+        "NVDACL0",
+        "NVIDIA Corporation"
+      ]
+    },
+    {
+      "symbol": "BCS:NVDACL1",
+      "title": "NVDACL1",
+      "subtitle": "NVIDIA Corporation",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "BCS:NVDACL1",
+        "NVDACL1",
+        "NVIDIA Corporation"
+      ]
+    },
+    {
       "symbol": "BINGX:NVDAUSDT.P",
       "title": "NVDAUSDT.P",
       "subtitle": "NVDA/USDT Perpetual Contract",
@@ -24690,6 +24761,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BVL:NVDAUS",
         "NVDAUS",
         "NVIDIA Corporation"
+      ]
+    },
+    {
+      "symbol": "BYMA:NVDA.CI",
+      "title": "NVDA.CI",
+      "subtitle": "NVIDIA Corporation Shs Cert Deposito Arg Repr 0.04166667 Sh",
+      "exchangeLabel": "BYMA",
+      "typeLabel": "dr",
+      "aliases": [
+        "BYMA:NVDA.CI",
+        "NVDA.CI",
+        "NVIDIA Corporation Shs Cert Deposito Arg Repr 0.04166667 Sh"
       ]
     },
     {
@@ -24738,43 +24821,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CBOE:NVDACW",
         "Cboe NVIDIA Call Writing Index",
         "NVDACW"
-      ]
-    },
-    {
-      "symbol": "CBOE:NVDADI",
-      "title": "NVDADI",
-      "subtitle": "Cboe NVIDIA Defined Income Index",
-      "exchangeLabel": "CBOE",
-      "typeLabel": "index",
-      "aliases": [
-        "CBOE:NVDADI",
-        "Cboe NVIDIA Defined Income Index",
-        "NVDADI"
-      ]
-    },
-    {
-      "symbol": "CBOE:NVDAIO",
-      "title": "NVDAIO",
-      "subtitle": "Cboe NVIDIA Income Only Index",
-      "exchangeLabel": "CBOE",
-      "typeLabel": "index",
-      "aliases": [
-        "CBOE:NVDAIO",
-        "Cboe NVIDIA Income Only Index",
-        "NVDAIO"
-      ]
-    },
-    {
-      "symbol": "COINBASE:NVDAUSDC.P",
-      "title": "NVDAUSDC.P",
-      "subtitle": "NVDA / USDC PERPETUAL CONTRACT",
-      "exchangeLabel": "COINBASE",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINBASE:NVDAUSDC.P",
-        "NVDA / USDC PERPETUAL CONTRACT",
-        "NVDAUSDC",
-        "NVDAUSDC.P"
       ]
     },
     {
@@ -24968,19 +25014,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "TSLA / TetherUS PERPETUAL CONTRACT",
         "TSLAUSDT",
         "TSLAUSDT.P"
-      ]
-    },
-    {
-      "symbol": "BINANCE:TSLAUSDT.P_PREMIUM",
-      "title": "TSLAUSDT.P_PREMIUM",
-      "subtitle": "TSLAUSDT.P Premium",
-      "exchangeLabel": "Binance",
-      "typeLabel": "derivative-metrics",
-      "aliases": [
-        "BINANCE:TSLAUSDT.P_PREMIUM",
-        "TSLAUSDT.P Premium",
-        "TSLAUSDT.P_PREMIUM",
-        "TSLAUSDT_PREMIUM"
       ]
     },
     {
@@ -25264,6 +25297,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CBOE:TSLADI",
         "Cboe Tesla Defined Income Index",
         "TSLADI"
+      ]
+    },
+    {
+      "symbol": "CBOE:TSLAIO",
+      "title": "TSLAIO",
+      "subtitle": "Cboe Tesla Income Only Index",
+      "exchangeLabel": "CBOE",
+      "typeLabel": "index",
+      "aliases": [
+        "CBOE:TSLAIO",
+        "Cboe Tesla Income Only Index",
+        "TSLAIO"
       ]
     },
     {
@@ -25574,18 +25619,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "GATEIO:AMZNXUSDT",
-      "title": "AMZNXUSDT",
-      "subtitle": "Amazon xStock/Tether",
-      "exchangeLabel": "Gate.io",
-      "typeLabel": "spot",
-      "aliases": [
-        "AMZNXUSDT",
-        "Amazon xStock/Tether",
-        "GATEIO:AMZNXUSDT"
-      ]
-    },
-    {
       "symbol": "BITGET:AMZNUSDT.P",
       "title": "AMZNUSDT.P",
       "subtitle": "AMZNUSDTPERP PERPETUAL MIX CONTRACT",
@@ -25609,6 +25642,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AMZNUSDT",
         "AMZNUSDT.P",
         "MEXC:AMZNUSDT.P"
+      ]
+    },
+    {
+      "symbol": "KUCOIN:AMZNONUSDT",
+      "title": "AMZNONUSDT",
+      "subtitle": "Amazon / Tether",
+      "exchangeLabel": "KuCoin",
+      "typeLabel": "spot",
+      "aliases": [
+        "AMZNONUSDT",
+        "Amazon / Tether",
+        "KUCOIN:AMZNONUSDT"
       ]
     },
     {
@@ -25670,6 +25715,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AMZNCL",
         "Amazon.com, Inc.",
         "BCS:AMZNCL"
+      ]
+    },
+    {
+      "symbol": "BCS:AMZNCL0",
+      "title": "AMZNCL0",
+      "subtitle": "Amazon.com, Inc.",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "AMZNCL0",
+        "Amazon.com, Inc.",
+        "BCS:AMZNCL0"
+      ]
+    },
+    {
+      "symbol": "BCS:AMZNCL1",
+      "title": "AMZNCL1",
+      "subtitle": "Amazon.com, Inc.",
+      "exchangeLabel": "BCS",
+      "typeLabel": "stock",
+      "aliases": [
+        "AMZNCL1",
+        "Amazon.com, Inc.",
+        "BCS:AMZNCL1"
       ]
     },
     {
@@ -25737,30 +25806,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "BYMA:AMZNB",
-      "title": "AMZNB",
-      "subtitle": "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-      "exchangeLabel": "BYMA",
-      "typeLabel": "dr",
-      "aliases": [
-        "AMZNB",
-        "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-        "BYMA:AMZNB"
-      ]
-    },
-    {
-      "symbol": "BYMA:AMZNC",
-      "title": "AMZNC",
-      "subtitle": "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-      "exchangeLabel": "BYMA",
-      "typeLabel": "dr",
-      "aliases": [
-        "AMZNC",
-        "Amazon.com, Inc. Shs Cert Deposito Arg Repr 0.00694444 Sh",
-        "BYMA:AMZNC"
-      ]
-    },
-    {
       "symbol": "BCS:META",
       "title": "META",
       "subtitle": "Meta Platforms Inc Class A",
@@ -25787,13 +25832,13 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "BMV:META",
       "title": "META",
-      "subtitle": "Meta Platforms Inc Class A",
+      "subtitle": "META Futures",
       "exchangeLabel": "BMV",
-      "typeLabel": "stock",
+      "typeLabel": "futures",
       "aliases": [
         "BMV:META",
         "META",
-        "Meta Platforms Inc Class A"
+        "META Futures"
       ]
     },
     {
@@ -25967,12 +26012,12 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
     {
       "symbol": "SET:META",
       "title": "META",
-      "subtitle": "Meta Corporation Public Company Limited",
+      "subtitle": "META CORPORATION PCL",
       "exchangeLabel": "SET",
       "typeLabel": "stock",
       "aliases": [
         "META",
-        "Meta Corporation Public Company Limited",
+        "META CORPORATION PCL",
         "SET:META"
       ]
     },
@@ -26208,6 +26253,30 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BSE:METALFUND",
+      "title": "METALFUND",
+      "subtitle": "Mirae Asset Nifty Metal ETF Exchange Traded Fund Units",
+      "exchangeLabel": "BSE",
+      "typeLabel": "fund",
+      "aliases": [
+        "BSE:METALFUND",
+        "METALFUND",
+        "Mirae Asset Nifty Metal ETF Exchange Traded Fund Units"
+      ]
+    },
+    {
+      "symbol": "BSE:METALIETF",
+      "title": "METALIETF",
+      "subtitle": "ICICI Prudential Nifty Metal ETF",
+      "exchangeLabel": "BSE",
+      "typeLabel": "fund",
+      "aliases": [
+        "BSE:METALIETF",
+        "ICICI Prudential Nifty Metal ETF",
+        "METALIETF"
+      ]
+    },
+    {
       "symbol": "BSE:META_RE",
       "title": "META_RE",
       "subtitle": "Bio Green Papers Ltd. Rights 2025-28.04.25 For Shares",
@@ -26217,30 +26286,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "BSE:META_RE",
         "Bio Green Papers Ltd. Rights 2025-28.04.25 For Shares",
         "META_RE"
-      ]
-    },
-    {
-      "symbol": "BVL:METAUS",
-      "title": "METAUS",
-      "subtitle": "Meta Platforms Inc Class A",
-      "exchangeLabel": "BVL",
-      "typeLabel": "stock",
-      "aliases": [
-        "BVL:METAUS",
-        "METAUS",
-        "Meta Platforms Inc Class A"
-      ]
-    },
-    {
-      "symbol": "BYMA:META.CI",
-      "title": "META.CI",
-      "subtitle": "Meta Platforms Inc Shs A Cert Deposito Arg Repr 0.041666666 Shs",
-      "exchangeLabel": "BYMA",
-      "typeLabel": "dr",
-      "aliases": [
-        "BYMA:META.CI",
-        "META.CI",
-        "Meta Platforms Inc Shs A Cert Deposito Arg Repr 0.041666666 Shs"
       ]
     },
     {
@@ -27048,6 +27093,58 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BINANCE:AMDLUSDT.P",
+      "title": "AMDLUSDT.P",
+      "subtitle": "AMDL / TetherUS PERPETUAL CONTRACT",
+      "exchangeLabel": "Binance",
+      "typeLabel": "swap",
+      "aliases": [
+        "AMDL / TetherUS PERPETUAL CONTRACT",
+        "AMDLUSDT",
+        "AMDLUSDT.P",
+        "BINANCE:AMDLUSDT.P"
+      ]
+    },
+    {
+      "symbol": "BINANCE:AMDLUSDT.P_IPRICE",
+      "title": "AMDLUSDT.P_IPRICE",
+      "subtitle": "AMDLUSDT.P Index Price",
+      "exchangeLabel": "Binance",
+      "typeLabel": "derivative-metrics",
+      "aliases": [
+        "AMDLUSDT.P Index Price",
+        "AMDLUSDT.P_IPRICE",
+        "AMDLUSDT_IPRICE",
+        "BINANCE:AMDLUSDT.P_IPRICE"
+      ]
+    },
+    {
+      "symbol": "BINANCE:AMDLUSDT.P_MPRICE",
+      "title": "AMDLUSDT.P_MPRICE",
+      "subtitle": "AMDLUSDT.P Mark Price",
+      "exchangeLabel": "Binance",
+      "typeLabel": "derivative-metrics",
+      "aliases": [
+        "AMDLUSDT.P Mark Price",
+        "AMDLUSDT.P_MPRICE",
+        "AMDLUSDT_MPRICE",
+        "BINANCE:AMDLUSDT.P_MPRICE"
+      ]
+    },
+    {
+      "symbol": "BINANCE:AMDLUSDT.P_PREMIUM",
+      "title": "AMDLUSDT.P_PREMIUM",
+      "subtitle": "AMDLUSDT.P Premium",
+      "exchangeLabel": "Binance",
+      "typeLabel": "derivative-metrics",
+      "aliases": [
+        "AMDLUSDT.P Premium",
+        "AMDLUSDT.P_PREMIUM",
+        "AMDLUSDT_PREMIUM",
+        "BINANCE:AMDLUSDT.P_PREMIUM"
+      ]
+    },
+    {
       "symbol": "BINANCE:AMDUSDT.P",
       "title": "AMDUSDT.P",
       "subtitle": "AMD / TetherUS PERPETUAL CONTRACT",
@@ -27100,6 +27197,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BYBIT:AMDLUSDT.P",
+      "title": "AMDLUSDT.P",
+      "subtitle": "AMDLUSDT Perpetual Contract",
+      "exchangeLabel": "Bybit",
+      "typeLabel": "swap",
+      "aliases": [
+        "AMDLUSDT",
+        "AMDLUSDT Perpetual Contract",
+        "AMDLUSDT.P",
+        "BYBIT:AMDLUSDT.P"
+      ]
+    },
+    {
       "symbol": "BYBIT:AMDSTOCKUSDT.P",
       "title": "AMDSTOCKUSDT.P",
       "subtitle": "AMDSTOCKUSDT Perpetual Contract",
@@ -27138,18 +27248,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "GATEIO:AMDGUSDT",
-      "title": "AMDGUSDT",
-      "subtitle": "Advanced Micro Devices/Tether",
-      "exchangeLabel": "Gate.io",
-      "typeLabel": "spot",
-      "aliases": [
-        "AMDGUSDT",
-        "Advanced Micro Devices/Tether",
-        "GATEIO:AMDGUSDT"
-      ]
-    },
-    {
       "symbol": "GATEIO:AMDONUSDT",
       "title": "AMDONUSDT",
       "subtitle": "AMD Ondo Tokenized/Tether",
@@ -27172,57 +27270,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "AMDUSDT",
         "AMDUSDT.P",
         "GATEIO:AMDUSDT.P"
-      ]
-    },
-    {
-      "symbol": "BITGET:AMDUSDT.P",
-      "title": "AMDUSDT.P",
-      "subtitle": "AMDUSDTPERP PERPETUAL MIX CONTRACT",
-      "exchangeLabel": "Bitget",
-      "typeLabel": "swap",
-      "aliases": [
-        "AMDUSDT",
-        "AMDUSDT.P",
-        "AMDUSDTPERP PERPETUAL MIX CONTRACT",
-        "BITGET:AMDUSDT.P"
-      ]
-    },
-    {
-      "symbol": "MEXC:AMDONUSDT",
-      "title": "AMDONUSDT",
-      "subtitle": "AMD (Ondo) / USDT",
-      "exchangeLabel": "MEXC",
-      "typeLabel": "spot",
-      "aliases": [
-        "AMD (Ondo) / USDT",
-        "AMDONUSDT",
-        "MEXC:AMDONUSDT"
-      ]
-    },
-    {
-      "symbol": "MEXC:AMDUSDT.P",
-      "title": "AMDUSDT.P",
-      "subtitle": "AMD / Tether PERPETUAL FUTURES",
-      "exchangeLabel": "MEXC",
-      "typeLabel": "swap",
-      "aliases": [
-        "AMD / Tether PERPETUAL FUTURES",
-        "AMDUSDT",
-        "AMDUSDT.P",
-        "MEXC:AMDUSDT.P"
-      ]
-    },
-    {
-      "symbol": "KUCOIN:AMDUSDT.P",
-      "title": "AMDUSDT.P",
-      "subtitle": "AMD/Tether Perpetual Contract",
-      "exchangeLabel": "KuCoin",
-      "typeLabel": "swap",
-      "aliases": [
-        "AMD/Tether Perpetual Contract",
-        "AMDUSDT",
-        "AMDUSDT.P",
-        "KUCOIN:AMDUSDT.P"
       ]
     },
     {
@@ -27535,6 +27582,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "KUCOIN:QQQONUSDT",
+      "title": "QQQONUSDT",
+      "subtitle": "Invesco QQQ / Tether",
+      "exchangeLabel": "KuCoin",
+      "typeLabel": "spot",
+      "aliases": [
+        "Invesco QQQ / Tether",
+        "KUCOIN:QQQONUSDT",
+        "QQQONUSDT"
+      ]
+    },
+    {
       "symbol": "KUCOIN:QQQUSDT.P",
       "title": "QQQUSDT.P",
       "subtitle": "QQQ/Tether Perpetual Contract",
@@ -27622,6 +27681,19 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
+      "symbol": "BLOFIN:QQQUSDT.P",
+      "title": "QQQUSDT.P",
+      "subtitle": "INVESCO QQQ TRUST/USD TETHER PERPETUAL SWAP CONTRACT",
+      "exchangeLabel": "BLOFIN",
+      "typeLabel": "swap",
+      "aliases": [
+        "BLOFIN:QQQUSDT.P",
+        "INVESCO QQQ TRUST/USD TETHER PERPETUAL SWAP CONTRACT",
+        "QQQUSDT",
+        "QQQUSDT.P"
+      ]
+    },
+    {
       "symbol": "BTSE:QQQUSD.P",
       "title": "QQQUSD.P",
       "subtitle": "QQQUSD Futures Contract (Perpetual)",
@@ -27692,31 +27764,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CFI:QQQU",
         "Direxion Daily Concentrated Qs Bull 2x Shares",
         "QQQU"
-      ]
-    },
-    {
-      "symbol": "COINBASE:QQQUSDC.P",
-      "title": "QQQUSDC.P",
-      "subtitle": "QQQ / USDC PERPETUAL CONTRACT",
-      "exchangeLabel": "COINBASE",
-      "typeLabel": "swap",
-      "aliases": [
-        "COINBASE:QQQUSDC.P",
-        "QQQ / USDC PERPETUAL CONTRACT",
-        "QQQUSDC",
-        "QQQUSDC.P"
-      ]
-    },
-    {
-      "symbol": "CRYPTO:QQQXUSD",
-      "title": "QQQXUSD",
-      "subtitle": "Nasdaq tokenized ETF (xStock)",
-      "exchangeLabel": "CRYPTO",
-      "typeLabel": "spot",
-      "aliases": [
-        "CRYPTO:QQQXUSD",
-        "Nasdaq tokenized ETF (xStock)",
-        "QQQXUSD"
       ]
     },
     {
@@ -27964,19 +28011,6 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
       ]
     },
     {
-      "symbol": "MEXC:SPYUSDT.P",
-      "title": "SPYUSDT.P",
-      "subtitle": "SPY / Tether PERPETUAL FUTURES",
-      "exchangeLabel": "MEXC",
-      "typeLabel": "swap",
-      "aliases": [
-        "MEXC:SPYUSDT.P",
-        "SPY / Tether PERPETUAL FUTURES",
-        "SPYUSDT",
-        "SPYUSDT.P"
-      ]
-    },
-    {
       "symbol": "KUCOIN:SPYUSDT.P",
       "title": "SPYUSDT.P",
       "subtitle": "SPY/Tether Perpetual Contract",
@@ -28206,6 +28240,18 @@ window.COIN_SCOPE_SYMBOL_CACHE = {
         "CFI:SPYM",
         "SPDR Portfolio S&P 500 ETF",
         "SPYM"
+      ]
+    },
+    {
+      "symbol": "CFI:SPYV",
+      "title": "SPYV",
+      "subtitle": "SPDR Portfolio S&P 500 Value ETF",
+      "exchangeLabel": "CFI",
+      "typeLabel": "fund",
+      "aliases": [
+        "CFI:SPYV",
+        "SPDR Portfolio S&P 500 Value ETF",
+        "SPYV"
       ]
     }
   ]
